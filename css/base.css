@@ -266,6 +266,10 @@ img {
   margin-bottom: 40px;
 }
 
+.article-item > a {
+  text-decoration: underline;
+}
+
 .meta-bar {
   display: flex;
 }
