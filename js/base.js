@@ -11,3 +11,9 @@ window.onscroll = function () {
     }
   } else header.classList.remove('header-shadow')
 }
+
+window.oncontextmenu = function (event) {
+  event.preventDefault()
+  event.stopPropagation()
+  return false
+}
