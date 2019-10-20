@@ -270,6 +270,12 @@ img {
   text-decoration: underline;
 }
 
+#embedded-music {
+  height: 86px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
 .meta-bar {
   display: flex;
 }
