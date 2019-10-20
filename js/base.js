@@ -13,7 +13,10 @@ window.onscroll = function () {
 }
 
 window.oncontextmenu = function (event) {
-  event.preventDefault()
-  event.stopPropagation()
-  return false
+  if (window.location.href.includes('/classified/s')) {
+    event.preventDefault()
+    event.stopPropagation()
+    return false
+  }
+  return true
 }
