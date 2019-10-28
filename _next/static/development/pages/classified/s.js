@@ -21378,7 +21378,12 @@ var s = {
   }, {
     left: "0",
     height: "62px"
-  }))
+  })),
+  ert: Object(typestyle__WEBPACK_IMPORTED_MODULE_13__["style"])({
+    marginLeft: "10px",
+    lineHeight: "2rem",
+    opacity: 0.4
+  })
 };
 
 var ClassifiedArticleItem =
@@ -21488,6 +21493,9 @@ function (_React$Component) {
           });
 
           setTimeout(function () {
+            window.scrollTo(0, 0);
+          }, 10);
+          setTimeout(function () {
             document.getElementById("embedded-music").src = data.meta.music;
           }, 500);
         })["catch"](function (err) {
@@ -21521,35 +21529,42 @@ function (_React$Component) {
       var meta = !authored ? __jsx(_components_Spacer__WEBPACK_IMPORTED_MODULE_19__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 195
+          lineNumber: 205
         },
         __self: this
       }) : __jsx(_components_HStack__WEBPACK_IMPORTED_MODULE_15__["default"], {
         className: s.meta,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 196
+          lineNumber: 206
         },
         __self: this
       }, __jsx("div", {
         className: s.category,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 197
+          lineNumber: 207
         },
         __self: this
       }, article.meta.category), __jsx("div", {
         className: s.date,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 200
+          lineNumber: 210
         },
         __self: this
-      }, article.meta.date));
+      }, article.meta.date), __jsx("div", {
+        className: s.ert,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 213
+        },
+        __self: this
+      }, Math.ceil(article.body.length / 400), "min"));
       var body = !authored ? __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 206
+          lineNumber: 219
         },
         __self: this
       }, __jsx("input", {
@@ -21558,87 +21573,87 @@ function (_React$Component) {
         type: "password",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 207
+          lineNumber: 220
         },
         __self: this
       }), __jsx("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 208
+          lineNumber: 221
         },
         __self: this
       }, "You are accessing a classified article, password authentication is required. The password should already been provided from Yiqin to you, please use it."), __jsx("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 209
+          lineNumber: 222
         },
         __self: this
       }, __jsx("b", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 209
+          lineNumber: 222
         },
         __self: this
       }, "Note:"), " Please ", __jsx("b", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 209
+          lineNumber: 222
         },
         __self: this
       }, "DO NOT"), " ", __jsx("u", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 209
+          lineNumber: 222
         },
         __self: this
       }, "redistribute"), " or ", __jsx("u", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 209
+          lineNumber: 222
         },
         __self: this
       }, "share any information"), " from classified articles, including ", __jsx("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 209
+          lineNumber: 222
         },
         __self: this
       }, "copy-paste"), ", ", __jsx("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 209
+          lineNumber: 222
         },
         __self: this
       }, "screenshot"), ", ", __jsx("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 209
+          lineNumber: 222
         },
         __self: this
       }, "print"), ", etc. To protect the classified information, your usage of ", __jsx("a", {
         href: "yiqinzhao.me",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 209
+          lineNumber: 222
         },
         __self: this
       }, "yiqinzhao.me"), " on classified articles ", __jsx("b", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 209
+          lineNumber: 222
         },
         __self: this
       }, "will be tracked"), ". By clicking the ", __jsx("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 209
+          lineNumber: 222
         },
         __self: this
       }, "Proceed"), " button, you have acknowledged and agree the above regulations."), __jsx(_components_HStack__WEBPACK_IMPORTED_MODULE_15__["default"], {
         align: "flex-end",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 210
+          lineNumber: 223
         },
         __self: this
       }, __jsx("button", {
@@ -21646,14 +21661,14 @@ function (_React$Component) {
         onClick: this.onProceedButtonClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 211
+          lineNumber: 224
         },
         __self: this
       }, "Proceed"))) : __jsx(_components_MarkdownView__WEBPACK_IMPORTED_MODULE_20__["default"], {
         content: article.body,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 214
+          lineNumber: 227
         },
         __self: this
       });
@@ -21661,20 +21676,20 @@ function (_React$Component) {
         className: s.bodyLoading,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 217
+          lineNumber: 230
         },
         __self: this
       }, "Loading...") : body;
       var musicSection = article && article.meta.music ? __jsx(_components_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_18__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 221
+          lineNumber: 234
         },
         __self: this
       }, __jsx(_components_Spacer__WEBPACK_IMPORTED_MODULE_19__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 222
+          lineNumber: 235
         },
         __self: this
       }), __jsx("iframe", {
@@ -21685,13 +21700,13 @@ function (_React$Component) {
         src: "data:text/html,<div style='font-size: 40px; text-align: center; width: 100%; line-height: 66px; font-family: Impact, sans-serif; color: rgba(0, 0, 0, 0.1)'>Loading Music</div>",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 223
+          lineNumber: 236
         },
         __self: this
       }), __jsx(_components_Spacer__WEBPACK_IMPORTED_MODULE_19__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 224
+          lineNumber: 237
         },
         __self: this
       })) : __jsx(react__WEBPACK_IMPORTED_MODULE_11___default.a.Fragment, null);
@@ -21699,7 +21714,7 @@ function (_React$Component) {
         className: s.watermark,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 229
+          lineNumber: 242
         },
         __self: this
       }, "Accessor: ", article.accessor) : __jsx(react__WEBPACK_IMPORTED_MODULE_11___default.a.Fragment, null);
@@ -21707,60 +21722,28 @@ function (_React$Component) {
         className: "classified-container main-container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 233
+          lineNumber: 246
         },
         __self: this
       }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_12___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 234
+          lineNumber: 247
         },
         __self: this
       }, __jsx("title", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 235
+          lineNumber: 248
         },
         __self: this
       }, "\uD83D\uDD12 ", authored ? article.meta.title : "Classified", " | YiqinZhao")), __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_16__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 238
+          lineNumber: 251
         },
         __self: this
       }), watermark, __jsx(_components_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_18__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 242
-        },
-        __self: this
-      }, __jsx(_components_Spacer__WEBPACK_IMPORTED_MODULE_19__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 243
-        },
-        __self: this
-      }), __jsx("div", {
-        className: s.titleContainer,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 244
-        },
-        __self: this
-      }, __jsx("h1", {
-        className: s.title,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 245
-        },
-        __self: this
-      }, authored ? article.meta.title : title), meta), __jsx(_components_Spacer__WEBPACK_IMPORTED_MODULE_19__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 250
-        },
-        __self: this
-      })), musicSection, __jsx(_components_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_18__["default"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 255
@@ -21772,17 +21755,49 @@ function (_React$Component) {
           lineNumber: 256
         },
         __self: this
-      }), body, __jsx(_components_Spacer__WEBPACK_IMPORTED_MODULE_19__["default"], {
+      }), __jsx("div", {
+        className: s.titleContainer,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 257
+        },
+        __self: this
+      }, __jsx("h1", {
+        className: s.title,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 258
+        },
+        __self: this
+      }, authored ? article.meta.title : title), meta), __jsx(_components_Spacer__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 263
+        },
+        __self: this
+      })), musicSection, __jsx(_components_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_18__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 268
+        },
+        __self: this
+      }, __jsx(_components_Spacer__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 269
+        },
+        __self: this
+      }), body, __jsx(_components_Spacer__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 271
         },
         __self: this
       })), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_17__["default"], {
         date: date,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 261
+          lineNumber: 274
         },
         __self: this
       }));
@@ -21822,7 +21837,7 @@ function capitalizeFirstLetter(string) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 0:
 /*!******************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fclassified%2Fs&absolutePagePath=%2FUsers%2Fyiqinzhao%2FDesktop%2Fcoden%2Fyiqinzhao-src%2Fpages%2Fclassified%2Fs.tsx ***!
   \******************************************************************************************************************************************************************/
@@ -21845,5 +21860,5 @@ module.exports = dll_b35e09dc2ca94ac6d9c1;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=s.js.map
