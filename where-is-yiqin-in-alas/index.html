@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <title>Where is Yiqin in ALAS | Yiqin Zhao</title>
     <style>
 
@@ -104,11 +105,13 @@
     var picState = PIC_MAX;
 
     document.getElementById("container").addEventListener("click", function () {
-        if (count === 4) {
+        if (count === 3) {
             document.getElementsByClassName("chinese-zombie")[0].classList.remove("hide");
+            document.getElementsByClassName("chinese-zombie")[0].classList.add("animated");
+            document.getElementsByClassName("chinese-zombie")[0].classList.add("tada");
         }
 
-        if (count > 4) {
+        if (count > 3) {
             return;
         }
 
