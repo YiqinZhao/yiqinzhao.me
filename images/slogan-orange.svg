@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="322px" height="58px" viewBox="0 0 322 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>Yiqin Zhao</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-9.50329195%" y1="53.4154384%" x2="104.345059%" y2="47.248895%" id="linearGradient-1">
+            <stop stop-color="#FFBC98" offset="0%"></stop>
+            <stop stop-color="#F15D43" offset="26.8020359%"></stop>
+            <stop stop-color="#EE7551" offset="77.7305107%"></stop>
+            <stop stop-color="#FFAD69" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-5.84187273%" y1="46.847575%" x2="108.492563%" y2="54.5069988%" id="linearGradient-2">
+            <stop stop-color="#FF5600" offset="0%"></stop>
+            <stop stop-color="#E69587" offset="100%"></stop>
+        </linearGradient>
+        <text id="text-3" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="64" font-weight="bold">
+            <tspan x="0" y="62">Yiqin Zhao</tspan>
+        </text>
+    </defs>
+    <g id="PC" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Yiqin-Orange" transform="translate(0.000000, -16.000000)">
+            <g id="Yiqin-Zhao">
+                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#text-3"></use>
+                <use fill-opacity="0.5" fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#text-3"></use>
+                <use fill="#D8D8D8" fill-opacity="1" xlink:href="#text-3"></use>
+            </g>
+        </g>
+    </g>
+</svg>
