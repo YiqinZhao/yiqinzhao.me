@@ -1,0 +1,284 @@
+* {
+  font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Apple Legacy Chevron", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  letter-spacing: -.01em;
+  line-height: 1.33337;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Mobile */
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  body {
+    margin-top: 62px;
+  }
+  .header-shadow {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .main-container {
+    min-height: calc(100vh - 62px);
+  }
+}
+
+a {
+  /* color: black; */
+  text-decoration: none;
+}
+
+p a {
+  text-decoration: underline;
+}
+
+img {
+  width: 100%;
+}
+
+.index-news>ul>li:nth-of-type(1n+9) {
+  display: none;
+}
+
+.markdown h1 {
+  margin: 0 0 0.5rem;
+  line-height: 4rem;
+}
+
+.markdown h2 {
+  margin: 0 0 1.5rem 0;
+  line-height: 1.5rem;
+  font-weight: 700;
+}
+
+.markdown h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.markdown h5 {
+  font-size: 1.125rem;
+  font-weight: normal;
+}
+
+.markdown h6 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.markdown p {
+  margin: 0 0 1.25rem 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.markdown li {
+  margin-bottom: 0.25rem;
+}
+
+.markdown a, .markdown .md-def-url {
+  text-decoration: underline;
+}
+
+.markdown a:hover {
+  text-decoration: underline;
+}
+
+.markdown table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.markdown table th, .markdown table td {
+  padding: 8px;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+  line-height: 1.25rem;
+}
+
+.markdown table th {
+  font-weight: bold;
+}
+
+.markdown table thead th {
+  vertical-align: bottom;
+}
+
+.markdown table caption+thead tr:first-child th, .markdown table caption+thead tr:first-child td, .markdown table colgroup+thead tr:first-child th, .markdown table colgroup+thead tr:first-child td, .markdown table thead:first-child tr:first-child th, .markdown table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+.markdown table tbody+tbody {
+  border-top: 2px solid #dddddd;
+}
+
+.markdown code, .markdown .md-fences {
+  margin-right: 0.2em;
+  margin-left: 0.2em;
+  padding: .5em;
+  padding: .1em;
+  /*background: #f0f0f0;*/
+  border: 1px solid #ccc;
+  font-size: 0.9em;
+}
+
+.markdown .md-fences {
+  margin: 0 0 20px;
+  padding: 0.3em 1em;
+  padding-top: 0.4em;
+  font-size: 1em;
+}
+
+.markdown .task-list {
+  padding-left: 0;
+}
+
+.markdown .task-list-item {
+  padding-left: 2.125rem;
+}
+
+.markdown .task-list-item input {
+  top: 3px;
+}
+
+.markdown .task-list-item input:before {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-top: -0.8rem;
+  margin-left: 0;
+  content: "";
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid gray;
+  background-color: #fdfdfd;
+}
+
+.markdown .task-list-item input:checked:before, .markdown .task-list-item input[checked]:before {
+  margin-top: -1rem;
+  content: '\25FC';
+  /*◘*/
+  font-size: 0.8125rem;
+  line-height: 0.9375rem;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .markdown .task-list-item input:before {
+    margin-top: -0.2rem;
+  }
+  .markdown .task-list-item input:checked:before, .markdown .task-list-item input[checked]:before {
+    margin-top: -0.2rem;
+  }
+}
+
+.markdown blockquote {
+  margin: 0 0 1.1rem;
+  padding: 1rem 1.1rem 0.05rem 1rem;
+  border-left: 1px solid gray;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.markdown blockquote, .markdown blockquote p {
+  color: #282828;
+  line-height: 1.6;
+}
+
+.markdown .md-image>.md-meta {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.markdown .md-image>img {
+  margin-top: 2px;
+}
+
+.markdown .md-image>.md-meta:first-of-type:before {
+  padding-left: 4px;
+}
+
+.markdown .file-list-item, .markdown .show-folder-name .file-list-item {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  line-height: 20px;
+}
+
+.markdown .file-list-item-summary {
+  height: 40px;
+  line-height: 20px;
+}
+
+.markdown code {
+  padding: 0.1em 0.3em;
+  margin: 0 0.2em;
+  color: #bd4147;
+  font-size: 0.85em;
+  line-height: 1.25em;
+  background-color: #f0f0f0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  font-family: 'Menlo', 'Consolas', 'Inconsolata', monospace;
+  font-weight: 700;
+  display: inline-flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.markdown pre.hljs {
+  padding: 1rem;
+}
+
+.markdown pre.hljs>code {
+  padding: 0;
+}
+
+.markdown pre>code {
+  border: none;
+}
+
+.markdown figure>table {
+  padding: 1em 2em;
+  background-color: #F5F8F9;
+}
+
+.title {
+  margin-top: 0;
+  color: black;
+}
+
+.article-item {
+  margin-bottom: 40px;
+}
+
+.article-item>a {
+  text-decoration: underline;
+}
+
+#embedded-music {
+  height: 86px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.meta-bar {
+  display: flex;
+}
+
+.meta-bar>.category {
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  padding: 0 0.2rem;
+  margin-right: 0.5rem;
+}
+
+/* @media print {
+  .classified-container {
+    display: none
+  }
+} */
+
+.classified-container {
+  -webkit-user-select: none;
+  user-select: none;
+}

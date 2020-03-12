@@ -1,0 +1,316 @@
+<html><style>
+    body {
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    a {
+        color: rgba(86, 150, 231, 100);
+    }
+</style><head><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><meta charset="utf-8"><link rel="stylesheet" href="/assets/base.css"></head><style>
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+        }
+
+        .meta-row {
+            height: 35px;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .meta-row > div {
+            margin-right: 10px;
+        }
+
+        .category {
+            font-weight: 600;
+        }
+
+        .eta {
+            color: rgba(0, 0, 0, 0.3);
+        }
+    </style><body><style>
+    .responsive-container {
+        margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+        .responsive-container {
+            max-width: 1200px;
+        }
+    }
+</style><div class="responsive-container" style="display:flex;flex-direction:column;"><style>
+    .nav-container {
+        width: calc(100%);
+        height: 60px;
+        padding: 20px 0;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .qin {
+        width: 50px;
+        height: 50px;
+
+        padding: 7px;
+
+        box-sizing: border-box;
+
+        border: 1px dashed rgba(0, 0, 0, 0.3);
+
+        position: relative;
+    }
+
+    .qin > img {
+        position: absolute;
+        width: 34px;
+        z-index: 1;
+    }
+
+    .qin:before {
+        width: 25px;
+        height: 25px;
+        border-right: 1px dashed rgba(0, 0, 0, 0.3);
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        content: "";
+
+        z-index: 0;
+    }
+
+    .qin:after {
+        width: 24px;
+        height: 24px;
+        border-top: 1px dashed rgba(0, 0, 0, 0.3);
+        border-left: 1px dashed rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        content: "";
+
+        z-index: 0;
+    }
+
+    .menu-item {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+
+        margin: 0 20px;
+        cursor: pointer;
+
+        transition: color 100ms linear;
+    }
+
+    .menu-item:hover {
+        color: rgba(86, 150, 231, 100);
+    }
+
+    .menu-item-active {
+        color: rgba(86, 150, 231, 100);
+    }
+
+    .icon {
+        width: 100px;
+        height: 50px;
+
+        padding: 7px;
+
+        box-sizing: border-box;
+
+        opacity: 0.8;
+    }
+
+    .icon > img {
+        width: 50px;
+    }
+</style><div class="nav-container" style="display:flex;align-items:center;justify-content:space-between;"><div class="qin" style="display:flex;"><img src="/assets/qin.svg"></div><div style="display:flex;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div></div><div class="icon" style="display:flex;justify-content:space-between;"><img src="/assets/twitter.svg"><img src="/assets/github.svg"></div></div><script>
+function onMenuItemClick(target) {
+    if (target === '/cv') window.open('/assets/yiqinzhao-cv.pdf')
+    else window.location.href = target
+}
+</script><div style="display:flex;flex-direction:column;"><div class="title">2015年开发学习总结</div><div class="meta-row" style="display:flex;align-items:center;"><div class="category">Review</div><div class="date">Feb 15, 2016</div><div class="eta">25min</div></div></div><div class="markdown"><p>2015年的技术探索主要集中在前端和少量的后端上，并且针对GNU/Linux还进行了一些研究。
+假期稀里糊涂的折腾了PHP、H5、CSS3之类的前端就技术，开学以后继续深究了前端，对于Unix家族的学习确实让我受益颇深。</p>
+<blockquote>
+<p>March 10, 2019 更新：修正了错误的 markdown 标记用法</p>
+</blockquote>
+<h1>开发环境搭建</h1>
+<p>因为我没有用过OS X，所以对OS X的开发环境搭建不敢多说，不过Xcode肯定是必备品。</p>
+<p>在工具方面Windows和Linux有一些工具是可以共用的，比如：Vargent，各种IDE</p>
+<p>IDE选择方面要针对开发项目选择，jetbrains公司的产品是非常不错的。但是体积相对大一些，windows上Visual Studio是万能的，Linux上百花齐放。</p>
+<h2>Windows</h2>
+<p>随着 Unix/Linux 系技术的进一步占领市场，微软系列技术的衰退，windows上的开发环境变得越来越不友好。但是功能大部分都是齐全的，比如Node.js的NPM管理工具，Python的PIP管理工具，在Windows上都是可以使用的，但是他们的思想完全是 Unix/Linux 思想，只是移植到Windows平台而已。所以用着总是感觉不舒服。</p>
+<p>但是Visual Studio宇宙第一IDE的地位是不可动摇的，Windows平台的开发工作本身也是十分顺畅的。在Windows上开发你只需要关心代码本身一样，工具选VS就行了。在Windows应用的开发工作这确实是极好的，WPF UWP开发都很顺畅。但是开发别的应用就很难受了，尤其是没有好用的Bash。</p>
+<p>所以，Windows上的开发工作依旧是可以进行的，但是如果想更深层次的学习，而不是仅仅接触项目和代码，还是建议使用Unix/Linux，加深自己的理解后再返回来用Windows也是可以的。</p>
+<h2>Linux</h2>
+<p>自古以来作为极客的玩具，Linux就不是一个稳定可靠的供个人使用的操作系统。尽管这些年商业化运行的十分迅速，Ubuntu发展的越来越好，也没法和完全商业化运作的系统比，比如OS X。</p>
+<p>想配置出一个稳定、舒心的Linux是一件非常有趣的事情，我的另一篇记录了我最近在折腾Linux上收获的经验。</p>
+<p>但是不得不说Linux是个学习编程的非常好的平台，在这里可以学到很多意想不到的知识，并且大大的加深你对操作系统、架构、计算机等等的理解。</p>
+<p>我个人在笔记本上使用的是RPM系的Linux发行版：Fedora，笔记本配置如下：</p>
+<ul>
+<li>Dell - XPS 13</li>
+<li>Fedora Workstation 23</li>
+<li>Linux Kernal 4.3.5</li>
+<li>DPI - 150%</li>
+<li>桌面环境 - GNOME 3.18</li>
+</ul>
+<p>这里为什么要强调DPI呢，因为基于Chromium内核的一些IDE会在高分屏上出现字体渲染模糊的问题，可能是以前旧版本的Chromium内核对DPI支持不好，现在的Chrome在我的Linux上是没有问题的。</p>
+<p>我使用的IDE是 Sublime Text 3， 因为它的字体渲染没有问题而且插件很多，方便操作。</p>
+<p>另外C++编译器我使用的是GCC，在Linux上没有Visual Studio这种软件，同时编译也不依赖Visual C++，而GCC是最好的选择，其实在实际生产的应用上，GCC也是应用更广的。</p>
+<h2>套件</h2>
+<p>不同的平台其实只能带来一些IDE上的差别和少量代码的差别，不会影响整体的开发环境。</p>
+<p>我现在的套件是这样的：</p>
+<ul>
+<li>平台：Linux</li>
+<li>C++开发： Sublime Text 3(IDE) + Bash(终端环境) + GCC(编译器)</li>
+<li>Web开发： Sublime Text 3(IDE) + Bash(终端环境) + npm(前端开发的包管理) + Virtual Box(虚拟机开服务器) + Vargent(服务器自动配置)</li>
+<li>Web开发中常用的工具有： npm(包管理器) browser-sync(本地同步调试服务器) gulp(构建工具) webpack(前端构建工具)</li>
+</ul>
+<h1>前端基础</h1>
+<h2>HTML5</h2>
+<p>知乎上有人对HTML5给出了这样的评价：</p>
+<blockquote>
+<p>优势很明显，入门简单，结构简单，平台适应性好。</p>
+</blockquote>
+<p>在开发中常用的是HTML5的一些API和标签，具体要在实践中进行探索。在实践方面，HTML5最大的一个特点就是有特别多的坑，浏览器的兼容性是必须考虑的一个问题。</p>
+<ul>
+<li>
+<p>Apple平台的Safari（不管是移动版还是桌面版）表现可以说都是最好的</p>
+</li>
+<li>
+<p>Chrome表现也很好，同样安卓和桌面版本都不错，但是Chrome最大的缺点就是版本不统一，有些特性不能很好的推广，在安卓上最为明显，这也和安卓版本碎片化有关。</p>
+<p>而另外一个要命的问题是基于Chromium和Webkit内核的浏览器性能参差不一而且大部分性能极差，国产软件尤为突出。性能差距主要体现在CSS动画上，这会在后面的章节里提到。</p>
+</li>
+<li>
+<p>在Windows平台上作为IE的替代，Microsoft Edge浏览器表现也非常良好，对大部分标签都兼容，但是有部分带Webkit前缀的标签不支持。另外Edge浏览器只能在Windows 10 平台上运行，目前Windows 10并不普及，所以想在Windows平台上优化用户体验的话依旧要考虑IE浏览器。</p>
+</li>
+</ul>
+<h2>CSS 3</h2>
+<blockquote>
+<p>CSS3 是浏览器兼容性差异的重灾区，主要体现在 专有标签 和 动画性能 上。</p>
+</blockquote>
+<p><strong>专有标签</strong> 主要指的是带特定前缀的标签，例如：-webkit-。我对这个印象最深的就是假期在做 班级地图 的时候需要重写浏览器滚动条的样式，而只有使用-webkit可以支持这一操作，这样导致在Edge浏览器上无效。</p>
+<p><strong>动画性能</strong> 是另一个让人抓狂的地方，在网页上实现动画效果可以采用以下几个办法：</p>
+<ul>
+<li>jQuery插件实现js动画</li>
+<li>Canvas + 手写js 实现动画</li>
+<li>CSS 3 使用 Transition实现
+<ul>
+<li>Transition 中直接调整 Height Top等样式</li>
+<li>Transition 中使用 Transform 调整</li>
+</ul>
+</li>
+</ul>
+<p>我们逐个进行分析：</p>
+<p><strong>jQuery插件实现js动画</strong></p>
+<p>开发难度不高，性能依赖于浏览器的js引擎效率，在桌面端表现一般，在移动端表现很差。并且这是一种比较老土的做法，是在CSS3没有出现之前大部分人采用的方法，现在不应该继续使用。</p>
+<p><strong>Canvas + 手写js 实现动画</strong></p>
+<p>开发难度十分高，Canvas是HTML5新增的标签，采用OpenGL直接进行像素渲染，操作方法是用JS获取一个Canvas的对象，然后对其修改。</p>
+<p>Canvas中可以调用的库不是很多，而且js提供的原生方法都比较简单，想实现动画的话要写大量的代码，并且获得的是2d对象，如果要做3D动画还要手动计算三位模型。</p>
+<p>但是这种方法的性能表现十分良好，在移动端上复杂动画也可以保持60fps，是动画的实现方式中性能最好的。Flipboard和Apple的网站就大量采用了canvas来助力前端开发。但是Canvas开发中有很多很多的坑，所以不太建议花太多时间学习。</p>
+<p><strong>CSS 3 使用Transition 中直接调整 Height Top等样式</strong></p>
+<p>Transition是CSS3中新加入的关键词，顾名思义，建立一个过渡效果，过渡效果控制的是具体的属性值，采用Height、Top等会直接改变元素样式。</p>
+<p>在桌面端表现良好，但是在移动端表现极其糟糕，掉帧明显，原因也很简单，手机性能不够，不能每秒渲染出那么多动画效果。所以不建议使用这种方法。</p>
+<p><strong>CSS 3 使用Transition 中使用 Transform 调整</strong></p>
+<p>Transform也是CSS3中新加入的标签，也可以对元素的位置、大小等进行调整，但是和修改普通样式不同，使用Transform性能良好，在移动端上也没问题，具体原理比较复杂，在这里不多赘述。</p>
+<p>综上，所以推荐使用Transition， Transform进行动画的实现。</p>
+<h2>JavaScript</h2>
+<p>JavaScript的发展劲头可谓越来越大，尤其是Node.js的出现使可以一统前端后端。在前端方面主要还是一些前端框架的使用，在后端方面主要是Node.js的应用，分别会在后面的章节提到。</p>
+<p>值得一提的是ES2015 即 ES 6的发布对JavaScript的语法环境产生了较大的影响，一定程度上方便了开发工作，但是也带来了学习成本，到目前为止我还没有开始学习ES 2015，开学后会抽出一些时间来看看。</p>
+<h1>前端框架</h1>
+<p>这里就不对各个框架进行介绍了，只说一些在工程中的坑和开发记录。</p>
+<h2>React</h2>
+<p>React的出现目前在我看来没有对我的开发工作产生什么实质性的效率提升或者影响，反而是加大了开发的难度。而且目前看来买账的公司并不多，但是组件化确实是开发工作的新思路。</p>
+<p>我对React哲学的理解是：</p>
+<blockquote>
+<p>利用组件化 高效 而且 不强求 的在多个项目中共用现有的代码。</p>
+</blockquote>
+<p>对于个人开发，如果不是特别追求技术上的时尚的话，普通的网页不要使用这种技术。并且组件化想利用到别的地方的话也不太现实，React-Native之类的框架也没有被广泛证实可用。</p>
+<p>现在虽然React - Canvas， React - Native， React - Desktop之类的东西非常多，但是大多处于娱乐阶段，投入不到生产。目前能看到的买账的公司除了Facebook就是Flipboard，Flipboard网页是HTML5+Canvas做的，而且还制作并开源了React - Canvas。整个网页从基础DOM树到Canvas结构都使用了React技术。</p>
+<p>说实话对于Flipboard的这种行为我表示不太理解，因为这样追求新技术的做法不太像一个企业的行为，更像一个社区的开发活动。</p>
+<h2>Angular</h2>
+<p>Angular也是助力前端开发的一个框架，由Google主导开发，还有微软TypeScript的支持，可用性也非常强，这主要得益于商业化运营的支持。</p>
+<p>Angular的开发工作相对React要友好的多，而且是一个完整的MVC框架，体系比较完整。</p>
+<h2>jQuery</h2>
+<p>传统、典型、实用、必备</p>
+<p>广泛证明可用，唯独缺点是比较臃肿。</p>
+<h2>Bootstrap</h2>
+<p>响应式必备，自带CSS特别好用，快速开发必备。</p>
+<p>广泛证明可用，也没什么问题。但是关于响应式布局要说一点我的感悟，响应式布局虽然可以适应很多情况，但是移动端和桌面端差距还是非常大的，不能把网站项目强求一定使用响应式，分两个版本构建网站项目很多时候是最优方案。</p>
+<h1>后端语言及框架</h1>
+<p>在后端方面我没有做过很多项目，框架也只是知道名字，工程方面具体的坑也没踩过，所以只能简单介绍。</p>
+<h2>PHP</h2>
+<p>世界上最好的编程语言，这句话还是有一定道理的。</p>
+<p>为什么这样说呢？原因很简单，PHP发展了这么多年，各种学习资料一大堆，网站成品项目一大堆，框架一大堆，稳定性也要好很多。</p>
+<p>而最最主要的原因是：</p>
+<blockquote>
+<p>代码量少，开发时间短。</p>
+</blockquote>
+<p><strong>ThinkPHP</strong></p>
+<p>最近实习的公司在网站开发商就是用的这个框架，很典型的HTML Components。 这个框架也是企业级框架，我相信稳定性很好，组件化也利于开发分工。</p>
+<h2>ASP.NET</h2>
+<p>和PHP差不多，一个非常传统的技术，不过一直不如PHP应用范围广。这可能和ASP.NET只能在Windows Server服务器上使用有关，毕竟大型的企业级服务器主要是Unix/Linux。</p>
+<p>但是现在随着微软拥抱开源的态度越来越开放，ASP.NET 5 也可以在Linux服务器上运行了，但是由于很多历史原因我相信短时间内不会得到大力发展的。而且Linux开源社区那帮人对微软的态度也超级偏激，这对ASP.NET的发展都是不利的。</p>
+<h2>Node.js</h2>
+<p>2015年红的发紫的后端技术，JavaScript一统服务器天下的重要支持。超级炫酷的非阻塞型结构也使其能够应用于高并发网站的开发，据阿里描述，在双十一期间Node.js发挥了很大的作用，在高并发的请求下能够良好的保障服务器不宕机。</p>
+<p>但是其开发工作是个让人头疼的事情，由于是单线程，所以大量采用JS回调函数，套个七八层是常事，这可不是想写随便就写出来的，要死很多脑细胞。</p>
+<h2>Python</h2>
+<p>Python独特的语法结构使其代码可读性非常好，而且语言环境也很好，社区支持也非常广泛。非常利于新手学习，而且做服务器也很友好。</p>
+<p><strong>Tornado</strong></p>
+<p>Openstack采用的框架之一，基于OpenStack修改的美团云当然也用了这个框架，比较简洁，开发也比较友好。</p>
+<p><strong>Django</strong></p>
+<p>Openstack采用的另一个框架，大而全，缺点是开发慢。</p>
+<p><strong>Flask</strong></p>
+<p>轻量级的web框架，没有更多的认识了。</p>
+<h2>Ruby</h2>
+<p><strong>Ruby on Rails</strong></p>
+<p>Ruby基本和Rails框架的命运绑到一起了，日本人写的这个语言语法非常神奇，但是很友好。尤其是调试的时候直接能在网页上找到终端，这让人十分欢喜。有很多网站也是用Ruby做的后端，可以学习。</p>
+<h1>云计算</h1>
+<p>这里简述一下几种云计算架构，具体的细节就不谈了。</p>
+<h2>IaaS</h2>
+<blockquote>
+<p>IaaS（Infrastructure as a Service），即基础设施即服务。</p>
+</blockquote>
+<p>具体谈实例的话也很简单，VPS就是一种IaaS，即提供给你硬件设施，剩下随便折腾。</p>
+<h2>PaaS</h2>
+<blockquote>
+<p>PaaS是Platform-as-a-Service的缩写，意思是平台即服务。</p>
+</blockquote>
+<p>举例，新浪云SAE应用托管，给你提供软件的运行平台，比如阿帕奇服务器。然后把编写好的代码上传就可以直接托管运行了。</p>
+<h2>SaaS</h2>
+<blockquote>
+<p>SaaS是Software-as-a-Service（软件即服务）的简称。</p>
+</blockquote>
+<p>举例，OFFICE 365提供软件订阅服务。</p>
+<h1>虚拟化</h1>
+<h2>桌面级虚拟机</h2>
+<p>这是个能研究一辈子的东西，我就简单说说两个桌面级虚拟机吧，Virtual Box 和 vMware WorkStation。</p>
+<p><strong>Virtual Box</strong></p>
+<p>开源、友好，Vargent等工具也是默认使用Virtual Box的，对各种操作系统支持情况都良好，但是唯一的弱点就是图形性能不好，显存最大128MB。</p>
+<p><strong>vMware WorkStartion</strong></p>
+<p>收费的虚拟机，性能各种好，最主要的是图形性能好。</p>
+<p>一般配置服务器的话用Virtual Box就好了，而要高性能图形界面的话叫要后者了，比如模拟OS X</p>
+</div><style>
+    .foot {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        padding: 20px 0;
+
+        color: rgba(0, 0, 0, 0.4);
+
+        font-size: 0.8rem;
+    }
+</style><div class="foot" style="display:flex;justify-content:center;">© Yiqin Zhao 2020. Last Updated: Mar 11, 2020</div></div></body></html>
