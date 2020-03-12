@@ -1,0 +1,213 @@
+<html><style>
+    body {
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    a {
+        color: rgba(86, 150, 231, 100);
+    }
+</style><head><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><meta charset="utf-8"><link rel="stylesheet" href="/assets/base.css"><title>Deep Spectrum | Yiqin Zhao</title></head><style>
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+        }
+
+        .meta-row {
+            height: 35px;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .meta-row > div {
+            margin-right: 10px;
+        }
+
+        .category {
+            font-weight: 600;
+        }
+
+        .eta {
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+        .markdown strong > img {
+            border: 1px solid rgba(0, 0, 0, 0.6);
+        }
+    </style><body><style>
+    .responsive-container {
+        margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+        .responsive-container {
+            max-width: 1200px;
+        }
+    }
+</style><div class="responsive-container" style="display:flex;flex-direction:column;"><style>
+    .nav-container {
+        width: calc(100%);
+        height: 60px;
+        padding: 20px 0;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .qin {
+        width: 50px;
+        height: 50px;
+
+        padding: 7px;
+
+        box-sizing: border-box;
+
+        border: 1px dashed rgba(0, 0, 0, 0.3);
+
+        position: relative;
+    }
+
+    .qin > img {
+        position: absolute;
+        width: 34px;
+        z-index: 1;
+    }
+
+    .qin:before {
+        width: 25px;
+        height: 25px;
+        border-right: 1px dashed rgba(0, 0, 0, 0.3);
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        content: "";
+
+        z-index: 0;
+    }
+
+    .qin:after {
+        width: 24px;
+        height: 24px;
+        border-top: 1px dashed rgba(0, 0, 0, 0.3);
+        border-left: 1px dashed rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        content: "";
+
+        z-index: 0;
+    }
+
+    .menu-item {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+
+        margin: 0 20px;
+        cursor: pointer;
+
+        transition: color 100ms linear;
+    }
+
+    .menu-item:hover {
+        color: rgba(86, 150, 231, 100);
+    }
+
+    .menu-item-active {
+        color: rgba(86, 150, 231, 100);
+    }
+
+    .icon {
+        width: 100px;
+        height: 50px;
+
+        padding: 7px;
+
+        box-sizing: border-box;
+
+        opacity: 0.8;
+    }
+
+    .icon > img {
+        width: 50px;
+    }
+</style><div class="nav-container" style="display:flex;align-items:center;justify-content:space-between;"><div class="qin" style="display:flex;"><img src="/assets/qin.svg"></div><div style="display:flex;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div></div><div class="icon" style="display:flex;justify-content:space-between;"><img src="/assets/twitter.svg"><img src="/assets/github.svg"></div></div><script>
+function onMenuItemClick(target) {
+    if (target === '/cv') window.open('/assets/yiqinzhao-cv.pdf')
+    else window.location.href = target
+}
+</script><div class="markdown"><h1>Deep Spectrum</h1>
+<p>Automatically detecting emotional state in human speech, which plays an effective role in areas of human machine interactions, has been a difficult task for machine learning algorithms. Previous work for emotion recognition have mostly focused on the extraction of carefully hand-crafted and tailored features. Recently, spectrogram representations of emotion speech have achieved competitive performance for automatic speech emotion recognition. In this work we propose a method to tackle the problem of deep features, herein denoted as deep spectrum features, extraction from the spectrogram by leveraging Attention-based Bidirectional Long Short-Term Memory Recurrent Neural Networks with fully convolutional networks. The learned deep spectrum features are then fed into a deep neural network (DNN) to predict the final emotion. The proposed model is then evaluated on the Interactive Emotional Dyadic Motion Capture (IEMOCAP) dataset to validate its effectiveness. Promising results indicate that our deep spectrum representations extracted from the proposed model perform the best, 65.2% for weighted accuracy and 68.0% for unweighted accuracy when compared to other existing methods. We then compare the performance of our deep spectrum features with two standard acoustic feature representations for speech-based emotion recognition. When combined with a support vector classifier, the performance of the deep feature representations extracted are comparable with the conventional features. Moreover, we also investigate the impact of different frequency resolutions of the input spectrogram on the performance of the system.</p>
+<h1>Paper</h1>
+<p>Zhao, Ziping and <strong>Zhao, Yiqin</strong> and Bao, Zhongtian and Wang, Haishuai and Zhang, Zixing and Li, Chao</p>
+<p><strong>Deep Spectrum Feature Representations for Speech Emotion Recognition</strong></p>
+<p>Proceedings of the Joint Workshop of the 4th Workshop on Affective Social Multimedia Computing and first Multi-Modal Affective Computing of Large-Scale Multimedia Data (<strong>ASMMC-MMAC'18</strong>)</p>
+<p><a href="https://dl.acm.org/doi/10.1145/3267935.3267948"><strong><img src="thumbnail-asmmc-18.png" alt=""></strong></a></p>
+<pre><code>@inproceedings{
+    Zhao:2018:DSF:3267935.3267948,
+    author = {Zhao, Ziping and Zhao, Yiqin and Bao, Zhongtian and Wang, Haishuai and Zhang, Zixing and Li, Chao},
+    title = {Deep Spectrum Feature Representations for Speech Emotion Recognition},
+    booktitle = {Proceedings of the Joint Workshop of the 4th Workshop on Affective Social Multimedia Computing and First Multi-Modal Affective Computing of Large-Scale Multimedia Data},
+    series = {ASMMC-MMAC'18},
+    year = {2018},
+    isbn = {978-1-4503-5985-6},
+    location = {Seoul, Republic of Korea},
+    pages = {27--33},
+    numpages = {7},
+    url = {http://doi.acm.org/10.1145/3267935.3267948},
+    doi = {10.1145/3267935.3267948},
+    acmid = {3267948},
+    publisher = {ACM},
+    address = {New York, NY, USA},
+    keywords = {attention mechanism, bidirectional long short-term memory, fully convolutional networks, spectrogram representation, speech emotion recognition},
+}
+</code></pre>
+<hr>
+<p>Ziping Zhao, Zhongtian Bao, <strong>Yiqin Zhao</strong>, Zixing Zhang, Nicholas Cummins, Zhao Ren, Björn Schuller</p>
+<p><strong>Exploring Deep Spectrum Representations via Attention-Based Recurrent and Convolutional Neural Networks for Speech Emotion Recognition</strong></p>
+<p><strong>IEEE Access 2019</strong></p>
+<p><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8762126"><strong><img src="thumbnail-ieee-19.png" alt=""></strong></a></p>
+<pre><code>@article{zhao2019exploring,
+  title={Exploring deep spectrum representations via attention-based recurrent and convolutional neural networks for speech emotion recognition},
+  author={Zhao, Ziping and Bao, Zhongtian and Zhao, Yiqin and Zhang, Zixing and Cummins, Nicholas and Ren, Zhao and Schuller, Bj{\&quot;o}rn},
+  journal={IEEE Access},
+  volume={7},
+  pages={97515--97525},
+  year={2019},
+  publisher={IEEE}
+}
+</code></pre>
+<hr>
+<p>Ziping Zhao, Yu Zheng, Zixing Zhang, Haishuai Wang, <strong>Yiqin Zhao</strong>, Chao Li.</p>
+<p><strong>Exploring Spatio-Temporal Representations by Integrating Attention-based Bidirectional-LSTM-RNNs and FCNs for Speech Emotion Recognition</strong></p>
+<p>Annual Conference of the International Speech Communication Association, <strong>INTERSPEECH 2018</strong></p>
+<p><a href="https://www.isca-speech.org/archive/Interspeech_2018/pdfs/1477.pdf"><strong><img src="thumbnail-interspeech-18.png" alt=""></strong></a></p>
+<pre><code>@article{zhao2018exploring,
+  title={Exploring spatio-temporal representations by integrating attention-based bidirectional-LSTM-RNNs and FCNs for speech emotion recognition},
+  author={Zhao, Ziping and Zheng, Yu and Zhang, Zixing and Wang, Haishuai and Zhao, Yiqin and Li, Chao},
+  year={2018}
+}
+</code></pre>
+<h1>Contact</h1>
+<p>If you have any questions, please feel free to contact <a href="mailto:yiqinzhao@outlook.com">Yiqin Zhao</a>.</p>
+</div><style>
+    .foot {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        padding: 20px 0;
+
+        color: rgba(0, 0, 0, 0.4);
+
+        font-size: 0.8rem;
+    }
+</style><div class="foot" style="display:flex;justify-content:center;">© Yiqin Zhao 2020. Last Updated: Mar 12, 2020</div></div></body></html>

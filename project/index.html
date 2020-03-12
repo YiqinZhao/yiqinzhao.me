@@ -11,28 +11,47 @@
         color: rgba(86, 150, 231, 100);
     }
 </style><head><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><meta charset="utf-8"><link rel="stylesheet" href="/assets/base.css"><title>Project | Yiqin Zhao</title></head><style>
-        .title {
-            font-size: 3rem;
-            font-weight: bold;
-            margin: 20px 0 10px 0;
+        h1 {
+            width: 100%;
         }
 
-        .meta-row {
-            height: 35px;
-            border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
-            margin-bottom: 20px;
+        .markdown {
+            flex-wrap: wrap;
         }
 
-        .meta-row > div {
-            margin-right: 10px;
+        .markdown p {
+            margin: 0;
         }
 
-        .category {
-            font-weight: 600;
+        .markdown > blockquote {
+            width: 18%;
+
+            padding: 0;
+            border: none;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+
+            box-sizing: border-box;
+
+            background: transparent;
+
+            cursor: pointer;
         }
 
-        .eta {
-            color: rgba(0, 0, 0, 0.3);
+        .markdown > blockquote:hover p {
+            color: rgba(86, 150, 231, 100);
+        }
+
+        .markdown > blockquote > p:nth-child(1) {
+            margin-bottom: 1rem;
+        }
+
+        .markdown > blockquote p {
+            width: 100%;
+            text-align: center;
         }
     </style><body><style>
     .responsive-container {
@@ -142,17 +161,19 @@ function onMenuItemClick(target) {
     if (target === '/cv') window.open('/assets/yiqinzhao-cv.pdf')
     else window.location.href = target
 }
-</script><div class="markdown"><h1>Introduction</h1>
-<p>Currently I'm a research student in Worcester Polytechnic Institute <a href="https://cake-lab.github.io">CakeLab</a>, my research interests include the broad area of computer system and machine learning. You can see the <a href="#System-and-Machine-Learning">projects</a> I'm working on now. Previously in my undergraduate study, I'm a student in the cognition and affective computing lab, Tianjin Normal University. In there, my research <a href="#-Affective-Computing">project</a> is focused on speech emotion recognition with deep learning.</p>
-<p>Besides my research, I'm also a geek and a developer. I love to explore and play with popular programming languages and frameworks. Specifically, I love JavaScript and Swift. And I also do creative artworks. <a href="##Hackathon-Projects">Here</a> are serval hackathon and open source projects I created.</p>
-<h2>System and Machine Learning</h2>
-<p>Still Working on it...</p>
-<h2>Affective Computing</h2>
-<h3><a href="/projects/deep-spectrum">Deep Spectrum Feature Representations for Speech Emotion Recognition</a></h3>
-<p>Automatically detecting emotional state in human speech, which plays an effective role in areas of human machine interactions, has been a difficult task for machine learning algorithms. Previous work for emotion recognition have mostly focused on the extraction of carefully hand-crafted and tailored features. Recently, spectrogram representations of emotion speech have achieved competitive per- formance for automatic speech emotion recognition. In this work we propose a method to tackle the problem of deep features, herein denoted as deep spectrum features, extraction from the spectrogram by leveraging Attention-based Bidirectional Long Short-Term Mem- ory Recurrent Neural Networks with fully convolutional networks. The learned deep spectrum features are then fed into a deep neural network (DNN) to predict the final emotion. The proposed model is then evaluated on the Interactive Emotional Dyadic Motion Cap- ture (IEMOCAP) dataset to validate its effectiveness. Promising results indicate that our deep spectrum representations extracted from the proposed model perform the best, 65.2% for weighted accuracy and 68.0% for unweighted accuracy when compared to other existing methods. We then compare the performance of our deep spectrum features with two standard acoustic feature repre- sentations for speech-based emotion recognition. When combined with a support vector classifier, the performance of the deep feature representations extracted are comparable with the conventional features. Moreover, we also investigate the impact of different fre- quency resolutions of the input spectrogram on the performance of the system.</p>
-<h2>Hackathon Projects</h2>
-<h3><a href="/projects/blog">My Personal Blog yiqinzhao.me</a></h3>
-<p><strong>TODO</strong></p>
+</script><div class="markdown" style="display:flex;"><h1>Mobile AR</h1>
+<blockquote>
+<p><img src="hotmobile-20.png" alt=""></p>
+<p><strong>PointAR</strong></p>
+<p>[HotMobile2020]</p>
+</blockquote>
+<h1>Affective Computing</h1>
+<blockquote>
+<p><img src="ieee-19.png" alt=""></p>
+<p><strong>Deep Spectrum</strong></p>
+<p>[IEEE Access 19, ASMMC-MMAC'18, INTERSPEECH 18]</p>
+</blockquote>
+<h1>Open Source</h1>
 </div><style>
     .foot {
         border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -163,4 +184,15 @@ function onMenuItemClick(target) {
 
         font-size: 0.8rem;
     }
-</style><div class="foot" style="display:flex;justify-content:center;">© Yiqin Zhao 2020. Last Updated: Mar 12, 2020</div></div></body></html>
+</style><div class="foot" style="display:flex;justify-content:center;">© Yiqin Zhao 2020. Last Updated: Mar 12, 2020</div></div></body><script>
+window.addEventListener('load', function () {
+    document.querySelectorAll('blockquote').forEach((v, i) => {
+        v.addEventListener('click', (() => {
+            let target = v.children[1].textContent
+            return function (e) {
+                window.open('/project/' + target)
+            }
+        })())
+    })
+})
+</script></html>
