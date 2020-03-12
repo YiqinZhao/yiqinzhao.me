@@ -11,28 +11,46 @@
         color: rgba(86, 150, 231, 100);
     }
 </style><head><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><meta charset="utf-8"><link rel="stylesheet" href="/assets/base.css"><title>Publication | Yiqin Zhao</title></head><style>
-        .title {
-            font-size: 3rem;
-            font-weight: bold;
-            margin: 20px 0 10px 0;
+        .markdown {
+            flex-wrap: wrap;
         }
 
-        .meta-row {
-            height: 35px;
-            border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
-            margin-bottom: 20px;
+        .markdown p {
+            margin: 0;
         }
 
-        .meta-row > div {
-            margin-right: 10px;
+        .markdown > blockquote {
+            padding: 0;
+            border: none;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+
+            box-sizing: border-box;
         }
 
-        .category {
-            font-weight: 600;
+        .markdown > blockquote:nth-child(n) {
+            width: 200px;
         }
 
-        .eta {
-            color: rgba(0, 0, 0, 0.3);
+        .markdown > blockquote:nth-child(2n) {
+            margin-left: 10px;
+            width: calc(100% - 200px - 10px);
+            padding: 20px;
+        }
+
+        .markdown > blockquote:nth-child(2n-1) {
+            background-color: #FFFFFF;
+        }
+
+        .markdown > blockquote:nth-child(4n) {
+            background-color: #FFFFFF;
+        }
+
+        .markdown > p > img {
+            width: 30%;
         }
     </style><body><style>
     .responsive-container {
@@ -142,11 +160,33 @@ function onMenuItemClick(target) {
     if (target === '/cv') window.open('/assets/yiqinzhao-cv.pdf')
     else window.location.href = target
 }
-</script><div class="markdown"><h1>2018</h1>
-<h2>Deep Spectrum Feature Representations for Speech Emotion Recognition</h2>
+</script><div class="markdown" style="display:flex;"><blockquote>
+<p><img src="hotmobile-20.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p><strong>Yiqin Zhao</strong> and Tian Guo</p>
+<p><strong>PointAR: Efficient Lighting Estimation for Mobile Augmented Reality</strong></p>
+<p>International Workshop on Mobile Computing Systems and Applications (<strong>ACM HotMobile 2020</strong>)</p>
+<p>Poster, <a href="https://hotmobile.org/2020/downloads/hotmobile20-Zhao.pdf">Paper</a></p>
+</blockquote>
+<blockquote>
+<p><img src="acmmm-18.png" alt=""></p>
+</blockquote>
+<blockquote>
 <p>Zhao, Ziping and <strong>Zhao, Yiqin</strong> and Bao, Zhongtian and Wang, Haishuai and Zhang, Zixing and Li, Chao</p>
-<p>Proceedings of the Joint Workshop of the 4th Workshop on Affective Social Multimedia Computing and first Multi-Modal Affective Computing of Large-Scale Multimedia Data (ASMMC-MMAC'18) Pages 27-33</p>
+<p><strong>Deep Spectrum Feature Representations for Speech Emotion Recognition</strong></p>
+<p>Proceedings of the Joint Workshop of the 4th Workshop on Affective Social Multimedia Computing and first Multi-Modal Affective Computing of Large-Scale Multimedia Data (<strong>ASMMC-MMAC'18</strong>)</p>
 <p><strong>Oral Presentation</strong>, <a href="https://dl.acm.org/citation.cfm?doid=3267935.3267948">Paper</a>, <a href="/projects/deep-spectrum">Project</a></p>
+</blockquote>
+<blockquote>
+<p><img src="interspeech-18.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Ziping Zhao, Yu Zheng, Zixing Zhang, Haishuai Wang, <strong>Yiqin Zhao</strong>, Chao Li.</p>
+<p><strong>Exploring Spatio-Temporal Representations by Integrating Attention-based Bidirectional-LSTM-RNNs and FCNs for Speech Emotion Recognition</strong></p>
+<p><strong>INTERSPEECH 2018</strong></p>
+<p><strong>Oral Presentation</strong>, <a href="https://www.isca-speech.org/archive/Interspeech_2018/pdfs/1477.pdf">Paper</a></p>
+</blockquote>
 </div><style>
     .foot {
         border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -157,4 +197,4 @@ function onMenuItemClick(target) {
 
         font-size: 0.8rem;
     }
-</style><div class="foot" style="display:flex;justify-content:center;">© Yiqin Zhao 2020. Last Updated: Mar 11, 2020</div></div></body></html>
+</style><div class="foot" style="display:flex;justify-content:center;">© Yiqin Zhao 2020. Last Updated: Mar 12, 2020</div></div></body></html>
