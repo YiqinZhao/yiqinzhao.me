@@ -1,0 +1,180 @@
+<html><style>
+    body {
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    a {
+        color: rgba(86, 150, 231, 100);
+    }
+</style><head><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><meta charset="utf-8"><link rel="stylesheet" href="/assets/base.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/default.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css"><script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script><title>Posts | Yiqin Zhao</title></head><style>
+        a {
+            color: black;
+        }
+
+        .article-item {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
+        }
+
+        .article-item:nth-last-child(1) {
+            border-bottom: none;
+        }
+
+        .article-item > a {
+            text-decoration: underline;
+        }
+
+        .article-item > .title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .article-item > .abstract {
+
+        }
+
+        .meta-row {
+            height: 35px;
+        }
+
+        .meta-row > div {
+            margin-right: 10px;
+        }
+
+        .category {
+            font-weight: 600;
+        }
+
+        .eta {
+            color: rgba(0, 0, 0, 0.3);
+        }
+    </style><body><style>
+    .responsive-container {
+        margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+        .responsive-container {
+            max-width: 1200px;
+        }
+    }
+</style><div class="responsive-container" style="display:flex;flex-direction:column;"><style>
+    .nav-container {
+        width: calc(100%);
+        height: 60px;
+        padding: 20px 0;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .qin {
+        width: 50px;
+        height: 50px;
+
+        padding: 7px;
+
+        box-sizing: border-box;
+
+        border: 1px dashed rgba(0, 0, 0, 0.3);
+
+        position: relative;
+    }
+
+    .qin > img {
+        position: absolute;
+        width: 34px;
+        z-index: 1;
+    }
+
+    .qin:before {
+        width: 25px;
+        height: 25px;
+        border-right: 1px dashed rgba(0, 0, 0, 0.3);
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        content: "";
+
+        z-index: 0;
+    }
+
+    .qin:after {
+        width: 24px;
+        height: 24px;
+        border-top: 1px dashed rgba(0, 0, 0, 0.3);
+        border-left: 1px dashed rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        content: "";
+
+        z-index: 0;
+    }
+
+    .menu-item {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+
+        margin: 0 20px;
+        cursor: pointer;
+
+        transition: color 100ms linear;
+    }
+
+    .menu-item:hover {
+        color: rgba(86, 150, 231, 100);
+    }
+
+    .menu-item-active {
+        color: rgba(86, 150, 231, 100);
+    }
+
+    .icon {
+        width: 100px;
+        height: 50px;
+
+        padding: 7px;
+
+        box-sizing: border-box;
+
+        opacity: 0.8;
+    }
+
+    .icon > a > img {
+        width: 36px;
+    }
+</style><div class="nav-container" style="display:flex;align-items:center;justify-content:space-between;"><div class="qin" style="display:flex;"><img src="/assets/qin.svg"></div><div style="display:flex;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div></div><div class="icon" style="display:flex;justify-content:space-between;"><a href="https://twitter.com/yiqin_zhao" target="blank"><img src="/assets/twitter.svg"></a><a href="https://github.com/YiqinZhao"><img src="/assets/github.svg"></a></div></div><script>
+function onMenuItemClick(target) {
+    if (target === '/cv') window.open('/assets/yiqinzhao-cv.pdf')
+    else window.location.href = target
+}
+</script><div style="display:flex;flex-direction:column;"><div class="article-item"><div class="title"><a href="/posts/About Me" target="blank">About Me</a></div><div class="markdown abstract"><p>Hi, I'm Yiqin, nice to meet you! This is my self introduction, written in both <a href="#who-am-i">English</a> and <a href="#%E6%88%91%E6%98%AF%E8%B0%81">中文</a>.</p>
+</div><div class="meta-row" style="display:flex;align-items:center;"><div class="category">About</div><div class="date">Mar 12, 2020</div><div class="eta">11min</div></div></div><div class="article-item"><div class="title"><a href="/posts/写于2018年末" target="blank">写于2018年末</a></div><div class="markdown abstract"><p>这半年来经历了太多，原本9月从百度离职之后就打算写一篇心路历程，但是实在太忙了。后来打算11月10号最后一场托福考完之后再写，但是后来还是各种各样的事情，一直拖到了现在。我希望通过这篇文章记录一下这半年来的我跑过的各个地方，经历过的事，接触过的人。</p>
+<p>本文起笔于<code>2018年10月9日</code>，结束于 <code>2018年12月30日</code></p>
+</div><div class="meta-row" style="display:flex;align-items:center;"><div class="category">Life</div><div class="date">Nov 12, 2018</div><div class="eta">8min</div></div></div><div class="article-item"><div class="title"><a href="/posts/2015年开发学习总结" target="blank">2015年开发学习总结</a></div><div class="markdown abstract"><p>2015年的技术探索主要集中在前端和少量的后端上，并且针对GNU/Linux还进行了一些研究。
+假期稀里糊涂的折腾了PHP、H5、CSS3之类的前端就技术，开学以后继续深究了前端，对于Unix家族的学习确实让我受益颇深。</p>
+</div><div class="meta-row" style="display:flex;align-items:center;"><div class="category">Review</div><div class="date">Feb 15, 2016</div><div class="eta">27min</div></div></div></div><style>
+    .foot {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        padding: 20px 0;
+
+        color: rgba(0, 0, 0, 0.4);
+
+        font-size: 0.8rem;
+    }
+</style><div class="foot" style="display:flex;justify-content:center;">© Yiqin Zhao 2020. Last Updated: Mar 12, 2020</div></div></body></html>

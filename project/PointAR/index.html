@@ -10,7 +10,7 @@
     a {
         color: rgba(86, 150, 231, 100);
     }
-</style><head><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><meta charset="utf-8"><link rel="stylesheet" href="/assets/base.css"><title>PointAR | Yiqin Zhao</title></head><style>
+</style><head><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><meta charset="utf-8"><link rel="stylesheet" href="/assets/base.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/default.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css"><script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script><title>PointAR | Yiqin Zhao</title></head><style>
         .title {
             font-size: 3rem;
             font-weight: bold;
@@ -138,20 +138,28 @@
         opacity: 0.8;
     }
 
-    .icon > img {
-        width: 50px;
+    .icon > a > img {
+        width: 36px;
     }
-</style><div class="nav-container" style="display:flex;align-items:center;justify-content:space-between;"><div class="qin" style="display:flex;"><img src="/assets/qin.svg"></div><div style="display:flex;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div></div><div class="icon" style="display:flex;justify-content:space-between;"><img src="/assets/twitter.svg"><img src="/assets/github.svg"></div></div><script>
+</style><div class="nav-container" style="display:flex;align-items:center;justify-content:space-between;"><div class="qin" style="display:flex;"><img src="/assets/qin.svg"></div><div style="display:flex;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div></div><div class="icon" style="display:flex;justify-content:space-between;"><a href="https://twitter.com/yiqin_zhao" target="blank"><img src="/assets/twitter.svg"></a><a href="https://github.com/YiqinZhao"><img src="/assets/github.svg"></a></div></div><script>
 function onMenuItemClick(target) {
     if (target === '/cv') window.open('/assets/yiqinzhao-cv.pdf')
     else window.location.href = target
 }
-</script><div class="markdown"><p>Automatically detecting emotional state in human speech, which plays an effective role in areas of human machine interactions, has been a difficult task for machine learning algorithms. Previous work for emotion recognition have mostly focused on the extraction of carefully hand-crafted and tailored features. Recently, spectrogram representations of emotion speech have achieved competitive performance for automatic speech emotion recognition. In this work we propose a method to tackle the problem of deep features, herein denoted as deep spectrum features, extraction from the spectrogram by leveraging Attention-based Bidirectional Long Short-Term Memory Recurrent Neural Networks with fully convolutional networks. The learned deep spectrum features are then fed into a deep neural network (DNN) to predict the final emotion. The proposed model is then evaluated on the Interactive Emotional Dyadic Motion Capture (IEMOCAP) dataset to validate its effectiveness. Promising results indicate that our deep spectrum representations extracted from the proposed model perform the best, 65.2% for weighted accuracy and 68.0% for unweighted accuracy when compared to other existing methods. We then compare the performance of our deep spectrum features with two standard acoustic feature representations for speech-based emotion recognition. When combined with a support vector classifier, the performance of the deep feature representations extracted are comparable with the conventional features. Moreover, we also investigate the impact of different frequency resolutions of the input spectrogram on the performance of the system.</p>
-<h1>Paper</h1>
-<p><strong>DOI</strong>: <a href="https://doi.org/10.1145/3267935.3267948">10.1145/3267935.3267948</a>. Download at <a href="https://dl.acm.org/citation.cfm?doid=3267935.3267948">here</a></p>
-<p>Accepted in proceedings of the Joint Workshop of the 4th Workshop on Affective Social Multimedia Computing and first Multi-Modal Affective Computing of Large-Scale Multimedia Data (ASMMC-MMAC'18) Pages 27-33</p>
-<h1>Cite</h1>
-<pre><code>@inproceedings{
+</script><div class="markdown"><h1 id="pointar%3A-efficient-lighting-estimation-for-mobile-augmented-reality">PointAR: Efficient Lighting Estimation for Mobile Augmented Reality</h1>
+<p>Coming soon....</p>
+<!-- We propose an efficient lighting estimation pipeline that is suitable to run on modern mobile devices, with comparable resource complexities to state-of-the-art on-device deep learning models. Our pipeline, referred to as PointAR, takes a single RGB-D image captured from the mobile camera and a 2D location in that image, and estimates a 2nd order spherical harmonics coefficients which can be directly utilized by rendering engines for indoor lighting in the context of augmented reality. Our key insight is to formulate the lighting estimation as a learning problem directly from point clouds, which is in part inspired by the Monte Carlo integration leveraged by real-time spherical harmonics lighting. While existing approaches estimate lighting information with complex deep learning pipelines, our method focuses on reducing the computational complexity. Through both quantitative and qualitative experiments, we demonstrate that PointAR achieves lower lighting estimation errors compared to state-of-the-art methods. Further, our method requires an order of magnitude lower resource, comparable to that of mobile-specific DNNs.
+
+# Paper
+
+**DOI**: [10.1145/3267935.3267948](https://doi.org/10.1145/3267935.3267948). Download at [here](https://dl.acm.org/citation.cfm?doid=3267935.3267948)
+
+Accepted in proceedings of the Joint Workshop of the 4th Workshop on Affective Social Multimedia Computing and first Multi-Modal Affective Computing of Large-Scale Multimedia Data (ASMMC-MMAC'18) Pages 27-33
+
+# Cite
+
+```
+@inproceedings{
     Zhao:2018:DSF:3267935.3267948,
     author = {Zhao, Ziping and Zhao, Yiqin and Bao, Zhongtian and Wang, Haishuai and Zhang, Zixing and Li, Chao},
     title = {Deep Spectrum Feature Representations for Speech Emotion Recognition},
@@ -169,7 +177,7 @@ function onMenuItemClick(target) {
     address = {New York, NY, USA},
     keywords = {attention mechanism, bidirectional long short-term memory, fully convolutional networks, spectrogram representation, speech emotion recognition},
 }
-</code></pre>
+``` -->
 </div><style>
     .foot {
         border-top: 1px solid rgba(0, 0, 0, 0.1);

@@ -210,11 +210,11 @@ img {
 }
 
 .markdown code {
-  width: 100%;
-  padding: 1rem 2rem;
+  /* width: 100%; */
+  /* padding: 1rem 2rem; */
   box-sizing: border-box;
   margin: 0 0.2em;
-  /* color: #bd4147; */
+  color: #bd4147;
   font-size: 0.85em;
   line-height: 1.25em;
   background-color: #f0f0f0;
@@ -246,14 +246,6 @@ img {
 .title {
   margin-top: 0;
   color: black;
-}
-
-.article-item {
-  margin-bottom: 40px;
-}
-
-.article-item>a {
-  text-decoration: underline;
 }
 
 #embedded-music {
