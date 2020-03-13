@@ -10,7 +10,7 @@
     a {
         color: rgba(86, 150, 231, 100);
     }
-</style><head><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><meta charset="utf-8"><link rel="stylesheet" href="/assets/base.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/default.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css"><script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script><title>About Me | Yiqin Zhao</title></head><style>
+</style><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta charset="utf-8"><link rel="stylesheet" href="/assets/base.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/default.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css"><script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script><title>About Me | Yiqin Zhao</title></head><style>
         .title {
             font-size: 3rem;
             font-weight: bold;
@@ -43,8 +43,15 @@
         margin: 0 auto;
     }
 
+    @media (min-width: 320px) {
+        .responsive-container {
+            width: calc(100% - 40px);
+        }
+    }
+
     @media (min-width: 768px) {
         .responsive-container {
+            width: 100%;
             max-width: 1200px;
         }
     }
@@ -127,7 +134,7 @@
         color: rgba(86, 150, 231, 100);
     }
 
-    .icon {
+    .social-icon {
         width: 100px;
         height: 50px;
 
@@ -138,13 +145,141 @@
         opacity: 0.8;
     }
 
-    .icon > a > img {
+    .social-icon > a > img {
         width: 36px;
     }
-</style><div class="nav-container" style="display:flex;align-items:center;justify-content:space-between;"><div class="qin" style="display:flex;"><img src="/assets/qin.svg"></div><div style="display:flex;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div></div><div class="icon" style="display:flex;justify-content:space-between;"><a href="https://twitter.com/yiqin_zhao" target="blank"><img src="/assets/twitter.svg"></a><a href="https://github.com/YiqinZhao"><img src="/assets/github.svg"></a></div></div><script>
-function onMenuItemClick(target) {
+
+    .yiqinzhao {
+        display: none;
+    }
+
+    .menu-icon {
+        width: 40px;
+        display: none;
+    }
+
+    .menu-row-mobile {
+        display: none !important;
+    }
+
+    @media (max-width: 480px) {
+        body {
+            padding-top: 100px;
+        }
+
+        .nav-container {
+            padding: 10px 0;
+            position: fixed;
+            left: 0;
+            top: 0;
+
+            width: calc(100% - 40px);
+            height: 80px;
+            padding: 0 20px;
+
+            background-color: #FFFFFF;
+
+            z-index: 10;
+
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .menu-row {
+            display: none !important;
+        }
+
+        .menu-row-mobile {
+            display: flex !important;
+
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+
+            top: 0;
+            left: 0;
+
+            z-index: 5;
+
+            padding-top: 100px;
+            box-sizing: border-box;
+
+            background: #FFFFFF;
+
+            transform: translateY(-100vh);
+            transition: all 900ms cubic-bezier(0.74, 0, 0.5, 1);
+        }
+
+        .menu-row-mobile-active {
+            transform: translateY(0vh);
+        }
+
+        .menu-row-mobile > div {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .qin {
+            width: 40px;
+            height: 40px;
+        }
+
+        .qin > img {
+            width: 26px;
+        }
+
+        .qin:before {
+            width: 20px;
+            height: 20px;
+        }
+
+        .qin:after {
+            width: 19px;
+            height: 19px;
+        }
+
+        .yiqinzhao {
+            display: flex;
+            width: 50%;
+        }
+
+        .social-icon {
+            display: none !important;
+        }
+
+        .menu-icon {
+            display: flex;
+        }
+    }
+</style><style>
+    .responsive-container {
+        margin: 0 auto;
+    }
+
+    @media (min-width: 320px) {
+        .responsive-container {
+            width: calc(100% - 40px);
+        }
+    }
+
+    @media (min-width: 768px) {
+        .responsive-container {
+            width: 100%;
+            max-width: 1200px;
+        }
+    }
+</style><div class="responsive-container" style="display:flex;flex-direction:column;"><div class="nav-container" style="display:flex;align-items:center;justify-content:space-between;"><div class="qin" style="display:flex;"><a href="/"><img src="/assets/qin.svg"></a></div><div class="yiqinzhao"><img src="/assets/slogan.svg"></div><div class="menu-row" style="display:flex;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div></div><div class="social-icon" style="display:flex;justify-content:space-between;"><a href="https://twitter.com/yiqin_zhao" target="blank"><img src="/assets/twitter.svg"></a><a href="https://github.com/YiqinZhao"><img src="/assets/github.svg"></a></div><div onclick="onMenuItemClick()" class="menu-icon"><img src="/assets/menu.svg"></div></div></div><div class="menu-row-mobile" style="display:flex;flex-direction:column;"><div class="menu-item" onclick="onSocialIconClick('/')">home</div><div class="menu-item" onclick="onSocialIconClick('/news')">news</div><div class="menu-item" onclick="onSocialIconClick('/project')">project</div><div class="menu-item" onclick="onSocialIconClick('/publication')">publication</div><div class="menu-item menu-item-active" onclick="onSocialIconClick('/posts')">posts</div><div class="menu-item" onclick="onSocialIconClick('/cv')">CV</div></div><script>
+function onSocialIconClick(target) {
     if (target === '/cv') window.open('/assets/yiqinzhao-cv.pdf')
     else window.location.href = target
+}
+
+function onMenuItemClick() {
+    var mobileMenu = document.querySelectorAll('.menu-row-mobile')[0]
+    if (mobileMenu.classList.contains('menu-row-mobile-active')) {
+        mobileMenu.classList.remove('menu-row-mobile-active')
+    } else {
+        mobileMenu.classList.add('menu-row-mobile-active')
+    }
 }
 </script><div style="display:flex;flex-direction:column;"><div class="title">About Me</div><div class="meta-row" style="display:flex;align-items:center;"><div class="category">About</div><div class="date">Mar 12, 2020</div><div class="eta">11min</div></div></div><div class="markdown"><p>Hi, I'm Yiqin, nice to meet you! This is my self introduction, written in both <a href="#who-am-i">English</a> and <a href="#%E6%88%91%E6%98%AF%E8%B0%81">中文</a>.</p>
 <!-- more -->
@@ -279,4 +414,4 @@ function onMenuItemClick(target) {
 
         font-size: 0.8rem;
     }
-</style><div class="foot" style="display:flex;justify-content:center;">© Yiqin Zhao 2020. Last Updated: Mar 12, 2020</div></div></body></html>
+</style><div class="foot" style="display:flex;justify-content:center;">© Yiqin Zhao 2020. Last Updated: Mar 13, 2020</div></div></body></html>
