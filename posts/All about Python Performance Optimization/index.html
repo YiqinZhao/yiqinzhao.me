@@ -308,7 +308,7 @@ function onMobileMenuOpenClick() {
 }
 </script><div style="display:flex;flex-direction:column;"><div class="title">All about Python Performance Optimization</div><div class="meta-row" style="display:flex;align-items:center;"><div class="category">Tech</div><div class="date">Mar 13, 2020</div><div class="eta">4min</div></div></div><div class="markdown"><p>Just like the title, this post is all about the <strong>Python performance optimization</strong>. For data science, handling large amount of data is inevitable. Although recently many tools have been developed for developers to accelerate their data science program, achieving good performance is still challenging. For one could easily fall into a performance rabbit hole by just writing one line inappropriately or troubling with squeeze out all the hardware performance. In this post, I will introduce a few handful tips to help you boost your Python data science programs and achieve 10X or more performance improvement.</p>
 <!-- more -->
-<h2 id="quick-boost-with-multi-threading">Quick Boost with Multi-threading</h2>
+<h2 id="%F0%9F%A7%B5-quick-boost-with-multi-threading">🧵 Quick Boost with Multi-threading</h2>
 <p>Modern computer CPU are build with multiple cores while Python program could only use <strong>one core</strong> by default. For some task, replace a <code>for</code> loop with multi-threading code will result in performance improvement. Let's take an example:</p>
 <pre class="hljs"><code><span class="hljs-keyword">import</span> glob
 
@@ -348,14 +348,14 @@ outputs = p.map(processor, files)
 <p>The above code removed the <code>for</code> loop and replaced it loop body with a function <code>processor</code>, then map all files into multi threads processing through the <code>map</code> function. Here you wanna maximize the utilization of your CPU resources by assign as many threads as your CPU cores. The <code>multiprocessing</code> is a built-in module that came with most python distribution, which means you are likely to use it without pip install.</p>
 <p>Apparently, you might want to ask a question: <strong>when should I use multi-threading?</strong> And it is an important question. To answer this question, we would best to understand why multi threading can improve performance. While if you are not interested in this part or hurry in time, please scroll down to the conclusion of this section.</p>
 <hr>
-<p><em>Boring part...</em></p>
+<p>😥<em>Boring part...</em></p>
 <p>For the first place, multi threading is like assigning a huge task to multiple person. <strong>How could the original task be broke down</strong> is an important factor to the feasibility of multi threading. If the original task can be break down into multiple <strong>small</strong> and <strong>independent</strong> subtasks, we are likely to use multi threading. Like the above example, the processing of each file is independent to each other and much more lightweight comparing to the whole task.</p>
 <p>I keep using the word <strong>likely</strong> because <strong>small and independent subtasks</strong> is just not enough to release the power of multi threading. You also need to know what takes most time of a single subtask, if the time is taken by CPU as doing some kind of calculation, e.g., do Fourier transform on a audio file, use multiple CPU will greatly improve the performance. While, if most time is consumed on I/O, e.g., reading a huge file, you might get even worse performance by using multi threading, because the psychical storage device need to schedule access order for multiple I/O jobs.</p>
 <p>But what if my task is <strong>not independent to each other</strong>. Fortunately it might not be the end of world to the multi threading. A very commonly seen example is stitching multiple images, in such case, your operation function might take multiple input and generate only one output. This is also a perfect use case for multi threading, because even you have dependencies in your data, the <strong>operation do not depend on other operation results</strong>. This is an important feature, because during multi threading execution, the order of execution to each subtask can not be predicted easily, because if you assign a specific order to your subtasks execution, you will certainly lost some performance, <strong>because some subtask need to wait others</strong>, or even convert your multi threading code into a single threading one. An appropriate example would be the calculation on time serial data, because your current calculation might depend on previous time step. In this case, you are likely going to move your focus from parallelize to parallelize the calculation on each time step, or optimize the calculation itself.</p>
 <hr>
 <p>A good way to monitor your multi threading program is using the command line tool <code>htop</code>. In the most ideal situation, you will see your CPU reaches 100% utilization and being occupied by your program!</p>
 <p><strong>Conclusion.</strong> If your task can be break down into <strong>small</strong>, <strong>independent</strong> and <strong>CPU bound</strong> subtasks, uses the multi threading feature. This method suits in most cases of doing CPU calculation, like <em>feature extraction</em>, <em>image processing</em>. As you can see, this method is easy to use, and can be applied to a lot of scenarios.</p>
-<h2 id="accelerating-matrix-operation">Accelerating Matrix Operation</h2>
+<h2 id="%F0%9F%94%A2-accelerating-matrix-operation">🔢 Accelerating Matrix Operation</h2>
 <p>Although multi threading boost your code easily, it is not the best way for accelerating matrix operation which is very common in linear algebra tasks. Here we use a intuitive example to explain the reason behind it:</p>
 <pre class="hljs"><code><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
 
@@ -367,8 +367,8 @@ m = np.ones((<span class="hljs-number">10000</span>, <span class="hljs-number">1
 </code></pre>
 <p>You may try to use multi threading for optimizing the above code, and you will get some performance improvement, but it might not be much even you used all your CPU cores.</p>
 <p><strong>To be continued...</strong></p>
-<h2 id="unleash-the-power-of-gpu">Unleash the Power of GPU</h2>
-<h2 id="nirvana-rebirth-in-c%2B%2B">Nirvana Rebirth in C++</h2>
+<h2 id="%F0%9F%90%8E-unleash-the-power-of-gpu">🐎 Unleash the Power of GPU</h2>
+<h2 id="%F0%9F%94%A5-nirvana-rebirth-in-c%2B%2B">🔥 Nirvana Rebirth in C++</h2>
 </div><style>
     .foot {
         border-top: 1px solid rgba(0, 0, 0, 0.1);
