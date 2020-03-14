@@ -195,6 +195,15 @@ img {
   line-height: 20px;
 }
 
+.markdown pre {
+  background: #F0F0F5;
+}
+
+.markdown .hljs > code {
+  display: block;
+  color: black;
+}
+
 .markdown code {
   /* width: 100%; */
   /* padding: 1rem 2rem; */
@@ -206,10 +215,15 @@ img {
   background-color: #f0f0f0;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 2px;
-  font-family: 'Menlo', 'Consolas', 'Inconsolata', monospace;
   font-weight: 700;
   display: inline-flex;
   overflow: scroll;
+  font-family: 'Menlo', 'Consolas', 'Inconsolata', monospace;
+}
+
+.markdown code * {
+  line-height: 1.25em;
+  font-family: 'Menlo', 'Consolas', 'Inconsolata', monospace;
 }
 
 .markdown pre.hljs {

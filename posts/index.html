@@ -10,7 +10,7 @@
     a {
         color: rgba(86, 150, 231, 100);
     }
-</style><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta charset="utf-8"><link rel="stylesheet" href="/assets/base.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/default.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css"><script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script><title>Posts | Yiqin Zhao</title></head><style>
+</style><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta charset="utf-8"><link rel="stylesheet" href="/assets/base.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/tomorrow.css"><script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script><title>Posts | Yiqin Zhao</title></head><style>
         a {
             color: black;
         }
@@ -66,6 +66,12 @@
     }
 
     @media (min-width: 768px) {
+        .responsive-container {
+            width: calc(100% - 40px);
+        }
+    }
+
+    @media (min-width: 1200px) {
         .responsive-container {
             width: 100%;
             max-width: 1200px;
@@ -178,6 +184,19 @@
         display: none !important;
     }
 
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .second-res {
+            width: 100% !important;
+            margin: 0 !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .menu-item {
+            margin: 0 10px;
+        }
+    }
+
     @media (max-width: 480px) {
         body {
             padding-top: 100px;
@@ -279,11 +298,17 @@
 
     @media (min-width: 768px) {
         .responsive-container {
+            width: calc(100% - 40px);
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .responsive-container {
             width: 100%;
             max-width: 1200px;
         }
     }
-</style><div class="responsive-container" style="display:flex;flex-direction:column;"><div class="nav-container" style="display:flex;align-items:center;justify-content:space-between;"><div class="qin" style="display:flex;"><a href="/"><img src="/assets/qin.svg"></a></div><div class="yiqinzhao"><img src="/assets/slogan.svg"></div><div class="menu-row" style="display:flex;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div></div><div class="social-icon" style="display:flex;justify-content:space-between;"><a href="https://twitter.com/yiqin_zhao" target="blank"><img src="/assets/twitter.svg"></a><a href="https://github.com/YiqinZhao"><img src="/assets/github.svg"></a></div><div onclick="onMobileMenuOpenClick()" class="menu-icon"><img src="/assets/menu.svg"></div></div></div><div class="menu-row-mobile" style="display:flex;flex-direction:column;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div></div><script>
+</style><div class="responsive-container second-res" style="display:flex;flex-direction:column;"><div class="nav-container" style="display:flex;align-items:center;justify-content:space-between;"><div class="qin" style="display:flex;"><a href="/"><img src="/assets/qin.svg"></a></div><div class="yiqinzhao"><img src="/assets/slogan.svg"></div><div class="menu-row" style="display:flex;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div></div><div class="social-icon" style="display:flex;justify-content:space-between;"><a href="https://twitter.com/yiqin_zhao" target="blank"><img src="/assets/twitter.svg"></a><a href="https://github.com/YiqinZhao"><img src="/assets/github.svg"></a></div><div onclick="onMobileMenuOpenClick()" class="menu-icon"><img src="/assets/menu.svg"></div></div></div><div class="menu-row-mobile" style="display:flex;flex-direction:column;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div></div><script>
 function onMenuItemClick(target) {
     if (target === '/cv') window.open('/assets/yiqinzhao-cv.pdf')
     else window.location.href = target
@@ -298,9 +323,8 @@ function onMobileMenuOpenClick() {
     }
 }
 </script><div style="display:flex;flex-direction:column;"><div class="article-item"><div class="title"><a href="/posts/About Me" target="blank">About Me</a></div><div class="markdown abstract"><p>Hi, I'm Yiqin, nice to meet you! This is my self introduction, written in both <a href="#who-am-i">English</a> and <a href="#%E6%88%91%E6%98%AF%E8%B0%81">中文</a>.</p>
-</div><div class="meta-row" style="display:flex;align-items:center;"><div class="category">About</div><div class="date">Mar 12, 2020</div><div class="eta">11min</div></div></div><div class="article-item"><div class="title"><a href="/posts/写于2018年末" target="blank">写于2018年末</a></div><div class="markdown abstract"><p>这半年来经历了太多，原本9月从百度离职之后就打算写一篇心路历程，但是实在太忙了。后来打算11月10号最后一场托福考完之后再写，但是后来还是各种各样的事情，一直拖到了现在。我希望通过这篇文章记录一下这半年来的我跑过的各个地方，经历过的事，接触过的人。</p>
-<p>本文起笔于<code>2018年10月9日</code>，结束于 <code>2018年12月30日</code></p>
-</div><div class="meta-row" style="display:flex;align-items:center;"><div class="category">Life</div><div class="date">Nov 12, 2018</div><div class="eta">8min</div></div></div></div><style>
+</div><div class="meta-row" style="display:flex;align-items:center;"><div class="category">About</div><div class="date">Mar 12, 2020</div><div class="eta">2min</div></div></div><div class="article-item"><div class="title"><a href="/posts/All about Python Performance Optimization" target="blank">All about Python Performance Optimization</a></div><div class="markdown abstract"><p>Just like the title, this post is all about the <strong>Python performance optimization</strong>. For data science, handling large amount of data is inevitable. Although recently many tools have been developed for developers to accelerate their data science program, achieving good performance is still challenging. For one could easily fall into a performance rabbit hole by just writing one line inappropriately or troubling with squeeze out all the hardware performance. In this post, I will introduce a few handful tips to help you boost your Python data science programs and achieve 10X or more performance improvement.</p>
+</div><div class="meta-row" style="display:flex;align-items:center;"><div class="category">Tech</div><div class="date">Mar 13, 2020</div><div class="eta">4min</div></div></div></div><style>
     .foot {
         border-top: 1px solid rgba(0, 0, 0, 0.1);
         margin-top: 20px;

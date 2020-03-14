@@ -1,0 +1,378 @@
+<html><style>
+    body {
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    a {
+        color: rgba(86, 150, 231, 100);
+    }
+</style><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta charset="utf-8"><link rel="stylesheet" href="/assets/base.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/tomorrow.css"><script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script><title>All about Python Performance Optimization | Yiqin Zhao</title></head><style>
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+        }
+
+        .meta-row {
+            height: 35px;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .meta-row > div {
+            margin-right: 10px;
+        }
+
+        .category {
+            font-weight: 600;
+        }
+
+        .eta {
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+        .markdown strong > img {
+            border: 1px solid rgba(0, 0, 0, 0.6);
+        }
+    </style><body><style>
+    .responsive-container {
+        margin: 0 auto;
+    }
+
+    @media (min-width: 320px) {
+        .responsive-container {
+            width: calc(100% - 40px);
+        }
+    }
+
+    @media (min-width: 768px) {
+        .responsive-container {
+            width: calc(100% - 40px);
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .responsive-container {
+            width: 100%;
+            max-width: 1200px;
+        }
+    }
+</style><div class="responsive-container" style="display:flex;flex-direction:column;"><style>
+    .nav-container {
+        width: calc(100%);
+        height: 60px;
+        padding: 20px 0;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .qin {
+        width: 50px;
+        height: 50px;
+
+        padding: 7px;
+
+        box-sizing: border-box;
+
+        border: 1px dashed rgba(0, 0, 0, 0.3);
+
+        position: relative;
+    }
+
+    .qin > img {
+        position: absolute;
+        width: 34px;
+        z-index: 1;
+    }
+
+    .qin:before {
+        width: 25px;
+        height: 25px;
+        border-right: 1px dashed rgba(0, 0, 0, 0.3);
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        content: "";
+
+        z-index: 0;
+    }
+
+    .qin:after {
+        width: 24px;
+        height: 24px;
+        border-top: 1px dashed rgba(0, 0, 0, 0.3);
+        border-left: 1px dashed rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        content: "";
+
+        z-index: 0;
+    }
+
+    .menu-item {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+
+        margin: 0 20px;
+        cursor: pointer;
+
+        transition: color 100ms linear;
+    }
+
+    .menu-item:hover {
+        color: rgba(86, 150, 231, 100);
+    }
+
+    .menu-item-active {
+        color: rgba(86, 150, 231, 100);
+    }
+
+    .social-icon {
+        width: 100px;
+        height: 50px;
+
+        padding: 7px;
+
+        box-sizing: border-box;
+
+        opacity: 0.8;
+    }
+
+    .social-icon > a > img {
+        width: 36px;
+    }
+
+    .yiqinzhao {
+        display: none;
+    }
+
+    .menu-icon {
+        width: 40px;
+        display: none;
+    }
+
+    .menu-row-mobile {
+        display: none !important;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .second-res {
+            width: 100% !important;
+            margin: 0 !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .menu-item {
+            margin: 0 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        body {
+            padding-top: 100px;
+        }
+
+        .nav-container {
+            padding: 10px 0;
+            position: fixed;
+            left: 0;
+            top: 0;
+
+            width: calc(100% - 40px);
+            height: 80px;
+            padding: 0 20px;
+
+            background-color: #FFFFFF;
+
+            z-index: 10;
+
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .menu-row {
+            display: none !important;
+        }
+
+        .menu-row-mobile {
+            display: flex !important;
+
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+
+            top: 0;
+            left: 0;
+
+            z-index: 5;
+
+            padding-top: 100px;
+            box-sizing: border-box;
+
+            background: #FFFFFF;
+
+            transform: translateY(-100vh);
+            transition: all 900ms cubic-bezier(0.74, 0, 0.5, 1);
+        }
+
+        .menu-row-mobile-active {
+            transform: translateY(0vh);
+        }
+
+        .menu-row-mobile > div {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .qin {
+            width: 40px;
+            height: 40px;
+        }
+
+        .qin > img {
+            width: 26px;
+        }
+
+        .qin:before {
+            width: 20px;
+            height: 20px;
+        }
+
+        .qin:after {
+            width: 19px;
+            height: 19px;
+        }
+
+        .yiqinzhao {
+            display: flex;
+            width: 50%;
+        }
+
+        .social-icon {
+            display: none !important;
+        }
+
+        .menu-icon {
+            display: flex;
+        }
+    }
+</style><style>
+    .responsive-container {
+        margin: 0 auto;
+    }
+
+    @media (min-width: 320px) {
+        .responsive-container {
+            width: calc(100% - 40px);
+        }
+    }
+
+    @media (min-width: 768px) {
+        .responsive-container {
+            width: calc(100% - 40px);
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .responsive-container {
+            width: 100%;
+            max-width: 1200px;
+        }
+    }
+</style><div class="responsive-container second-res" style="display:flex;flex-direction:column;"><div class="nav-container" style="display:flex;align-items:center;justify-content:space-between;"><div class="qin" style="display:flex;"><a href="/"><img src="/assets/qin.svg"></a></div><div class="yiqinzhao"><img src="/assets/slogan.svg"></div><div class="menu-row" style="display:flex;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div></div><div class="social-icon" style="display:flex;justify-content:space-between;"><a href="https://twitter.com/yiqin_zhao" target="blank"><img src="/assets/twitter.svg"></a><a href="https://github.com/YiqinZhao"><img src="/assets/github.svg"></a></div><div onclick="onMobileMenuOpenClick()" class="menu-icon"><img src="/assets/menu.svg"></div></div></div><div class="menu-row-mobile" style="display:flex;flex-direction:column;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div></div><script>
+function onMenuItemClick(target) {
+    if (target === '/cv') window.open('/assets/yiqinzhao-cv.pdf')
+    else window.location.href = target
+}
+
+function onMobileMenuOpenClick() {
+    var mobileMenu = document.querySelectorAll('.menu-row-mobile')[0]
+    if (mobileMenu.classList.contains('menu-row-mobile-active')) {
+        mobileMenu.classList.remove('menu-row-mobile-active')
+    } else {
+        mobileMenu.classList.add('menu-row-mobile-active')
+    }
+}
+</script><div style="display:flex;flex-direction:column;"><div class="title">All about Python Performance Optimization</div><div class="meta-row" style="display:flex;align-items:center;"><div class="category">Tech</div><div class="date">Mar 13, 2020</div><div class="eta">4min</div></div></div><div class="markdown"><p>Just like the title, this post is all about the <strong>Python performance optimization</strong>. For data science, handling large amount of data is inevitable. Although recently many tools have been developed for developers to accelerate their data science program, achieving good performance is still challenging. For one could easily fall into a performance rabbit hole by just writing one line inappropriately or troubling with squeeze out all the hardware performance. In this post, I will introduce a few handful tips to help you boost your Python data science programs and achieve 10X or more performance improvement.</p>
+<!-- more -->
+<h2 id="quick-boost-with-multi-threading">Quick Boost with Multi-threading</h2>
+<p>Modern computer CPU are build with multiple cores while Python program could only use <strong>one core</strong> by default. For some task, replace a <code>for</code> loop with multi-threading code will result in performance improvement. Let's take an example:</p>
+<pre class="hljs"><code><span class="hljs-keyword">import</span> glob
+
+files = glob.glob(<span class="hljs-string">'./data/*/*.npy'</span>)
+<span class="hljs-comment"># files = [</span>
+<span class="hljs-comment">#   './data/0/train.npy',</span>
+<span class="hljs-comment">#   './data/0/label.npy',</span>
+<span class="hljs-comment">#   './data/1/train.npy',</span>
+<span class="hljs-comment">#   './data/1/label.npy',</span>
+<span class="hljs-comment">#   ...</span>
+<span class="hljs-comment"># ]</span>
+
+<span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> files:
+    output = some_operation(f)
+    <span class="hljs-comment"># ...</span>
+</code></pre>
+<p>The above code apply a function <code>some_operation</code> to some files. While, if you have a large amount of files need to be process, the above code could be slow, a very likely performance bottleneck is the single thread Python feature. While, to apply multi threading to improve your code performance, it requires a little bit change on the original code:</p>
+<pre class="hljs"><code><span class="hljs-keyword">import</span> glob
+<span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Pool
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">processor</span><span class="hljs-params">(f)</span>:</span>
+    output = some_operation(f)
+
+    <span class="hljs-comment"># ...</span>
+
+    <span class="hljs-comment"># If you need the output, you can return it.</span>
+    <span class="hljs-comment"># And the returned output will be ordered</span>
+    <span class="hljs-comment"># as the input.</span>
+    <span class="hljs-keyword">return</span> output
+
+files = glob.glob(<span class="hljs-string">'./data/*/*.npy'</span>)
+
+p = Pool(<span class="hljs-number">8</span>) <span class="hljs-comment"># Number of CPU cores</span>
+outputs = p.map(processor, files)
+</code></pre>
+<p>The above code removed the <code>for</code> loop and replaced it loop body with a function <code>processor</code>, then map all files into multi threads processing through the <code>map</code> function. Here you wanna maximize the utilization of your CPU resources by assign as many threads as your CPU cores. The <code>multiprocessing</code> is a built-in module that came with most python distribution, which means you are likely to use it without pip install.</p>
+<p>Apparently, you might want to ask a question: when should I use multi-threading? And it is an important question. To answer this question, we would best to understand why multi threading can improve performance. While if you are not interested in this part or hurry in time, please scroll down to the conclusion of this section.</p>
+<p>For the first place, multi threading is like assigning a huge task to multiple person. <strong>How could the original task be broke down</strong> is an important factor to the feasibility of multi threading. If the original task can be break down into multiple <strong>small</strong> and <strong>independent</strong> subtasks, we are likely to use multi threading. Like the above example, the processing of each file is independent to each other and much more lightweight comparing to the whole task.</p>
+<p>I keep using the word <strong>likely</strong> because <strong>small and independent subtasks</strong> is just not enough to release the power of multi threading. You also need to know what takes most time of a single subtask, if the time is taken by CPU as doing some kind of calculation, e.g., do Fourier transform on a audio file, use multiple CPU will greatly improve the performance. While, if most time is consumed on I/O, e.g., reading a huge file, you might get even worse performance by using multi threading, because the psychical storage device need to schedule access order for multiple I/O jobs.</p>
+<p>But what if my task is <strong>not independent to each other</strong>. Fortunately it might not be the end of world to the multi threading. A very commonly seen example is stitching multiple images, in such case, your operation function might take multiple input and generate only one output. This is also a perfect use case for multi threading, because even you have dependencies in your data, the <strong>operation do not depend on other operation results</strong>. This is an important feature, because during multi threading execution, the order of execution to each subtask can not be predicted easily, because if you assign a specific order to your subtasks execution, you will certainly lost some performance, <strong>because some subtask need to wait others</strong>, or even convert your multi threading code into a single threading one. An appropriate example would be the calculation on time serial data, because your current calculation might depend on previous time step. In this case, you are likely going to move your focus from parallelize to parallelize the calculation on each time step, or optimize the calculation itself.</p>
+<p>A good way to monitor your multi threading task is using the command line tool <code>htop</code>. In the most ideal situation, you will see your CPU reaches 100% utilization and being occupied by your program!</p>
+<p><strong>Conclusion.</strong> If your task can be break down into <strong>small</strong>, <strong>independent</strong> and <strong>CPU bound</strong> subtasks, uses the multi threading feature. This method suits in most cases of doing CPU calculation, like <em>feature extraction</em>, <em>image processing</em>. As you can see, this method is easy to use, and can be applied to a lot of scenarios.</p>
+<h2 id="accelerating-matrix-operation">Accelerating Matrix Operation</h2>
+<p>Although multi threading boost your code easily, it is not the best way for accelerating matrix operation which is very common in linear algebra tasks. Here we use a intuitive example to explain the reason behind it:</p>
+<pre class="hljs"><code><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+m = np.ones((<span class="hljs-number">10000</span>, <span class="hljs-number">10000</span>))
+
+<span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> range(len(m.shape[<span class="hljs-number">0</span>])):
+    <span class="hljs-keyword">for</span> u <span class="hljs-keyword">in</span> range(len(m.shape[<span class="hljs-number">1</span>])):
+        m[v, u] = some_operation(m[v, u])
+</code></pre>
+<p>You may try to use multi threading for optimizing the above code, and you will get some performance improvement, but it might not be much even you used all your CPU cores.</p>
+<h2 id="unleash-the-power-of-gpu">Unleash the Power of GPU</h2>
+<h2 id="nirvana-rebirth-in-c%2B%2B">Nirvana Rebirth in C++</h2>
+</div><style>
+    .foot {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        padding: 20px 0;
+
+        color: rgba(0, 0, 0, 0.4);
+
+        font-size: 0.8rem;
+    }
+</style><div class="foot" style="display:flex;justify-content:center;">© Yiqin Zhao 2020. Last Updated: Mar 13, 2020</div></div></body></html>
