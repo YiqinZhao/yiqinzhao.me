@@ -3,10 +3,8 @@
   letter-spacing: -.01em;
   line-height: 1.33337;
   -webkit-font-smoothing: antialiased;
-
   -webkit-tap-highlight-color: transparent;
 }
-
 
 .main-container {
   display: flex;
@@ -201,7 +199,7 @@ img {
   background: #F0F0F5;
 }
 
-.markdown .hljs > code {
+.markdown .hljs>code {
   display: block;
   color: black;
 }
@@ -281,6 +279,5 @@ img {
 .markdown hr {
   border: transparent;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
-
   margin: 2rem 0;
 }
