@@ -145,7 +145,6 @@ img {
 .markdown .task-list-item input:checked:before, .markdown .task-list-item input[checked]:before {
   margin-top: -1rem;
   content: '\25FC';
-  /*◘*/
   font-size: 0.8125rem;
   line-height: 0.9375rem;
 }
@@ -237,6 +236,7 @@ img {
 
 .markdown pre>code {
   border: none;
+  background: transparent;
 }
 
 .markdown figure>table {

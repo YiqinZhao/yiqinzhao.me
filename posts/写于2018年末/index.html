@@ -148,6 +148,12 @@
 
         box-sizing: border-box;
 
+        opacity: 0.4;
+
+        transition: opacity 100ms linear;
+    }
+
+    .social-icon-active {
         opacity: 0.8;
     }
 
@@ -174,7 +180,7 @@
         display: none !important;
     }
 
-    .soical-float {
+    .social-float {
         width: 400px;
 
         background: #FFFFFF;
@@ -192,20 +198,20 @@
         transition: opacity 300ms linear;
     }
 
-    .soical-float-active {
+    .social-float-active {
         transform: translateY(0);
         opacity: 1;
     }
 
-    .soical-float-remove {
+    .social-float-remove {
         transform: translateY(-500px);
     }
 
-    .soical-float > div {
+    .social-float > div {
         width: 100%;
     }
 
-    .soical-float > div > a {
+    .social-float > div > a {
         width: 33%;
         padding: 10px;
         box-sizing: border-box;
@@ -215,12 +221,12 @@
         align-items: center;
     }
 
-    .soical-float > div > a > img {
+    .social-float > div > a > img {
         width: 50px;
         height: 50px;
     }
 
-    .soical-float > div > a > p {
+    .social-float > div > a > p {
         color: black;
         margin-bottom: 0;
         text-align: center;
@@ -241,6 +247,27 @@
         width: 15vw;
         opacity: 0.8;
         color: black;
+    }
+
+    .bg-mask {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 4;
+        opacity: 0;
+
+        transition: opacity 500ms linear;
+    }
+
+    .bg-mask-hide {
+        opacity: 1;
+    }
+
+    .remove {
+        display: none;
     }
 
     @media (min-width: 768px) and (max-width: 1024px) {
@@ -368,7 +395,7 @@
             max-width: 1200px;
         }
     }
-</style><div class="responsive-container second-res" style="display:flex;flex-direction:column;"><div class="nav-container" style="display:flex;align-items:center;justify-content:space-between;"><a href="/"><div class="qin" style="display:flex;"><img src="/assets/img/qin.svg"></div></a><div class="yiqinzhao"><img src="/assets/img/slogan.svg"></div><div class="menu-row" style="display:flex;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div></div><div class="social-icon" style="display:flex;justify-content:flex-end;"><a href="https://twitter.com/yiqin_zhao" target="blank"><img src="/assets/social-icon/twitter.svg"></a><a href="https://github.com/YiqinZhao"><img src="/assets/social-icon/github.svg"></a><a href="https://www.instagram.com/yiqinzhao1996"><img src="/assets/social-icon/instagram.svg"></a></div><div class="soical-float soical-float-remove"><div style="display:flex;"><a href="https://twitter.com/yiqin_zhao" target="_blank"><img src="/assets/social-icon/twitter.svg"><p>Twitter</p></a><a href="https://github.com/YiqinZhao" target="_blank"><img src="/assets/social-icon/github.svg"><p>GitHub</p></a><a href="https://www.instagram.com/yiqinzhao1996" target="_blank"><img src="/assets/social-icon/instagram.svg"><p>Instagram</p></a></div></div><div onclick="onMobileMenuOpenClick()" class="menu-icon"><img src="/assets/img/menu.svg"></div></div></div><div class="menu-row-mobile" style="display:flex;flex-direction:column;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div><div class="social-icons-mobile" style="display:flex;"><div style="display:flex;justify-content:space-between;"><a href="https://twitter.com/yiqin_zhao" target="_blank"><img src="/assets/social-icon/twitter.svg"><p>Twitter</p></a><a href="https://github.com/YiqinZhao" target="_blank"><img src="/assets/social-icon/github.svg"><p>GitHub</p></a><a href="https://www.instagram.com/yiqinzhao1996" target="_blank"><img src="/assets/social-icon/instagram.svg"><p>Instagram</p></a></div></div></div><script>
+</style><div class="responsive-container second-res" style="display:flex;flex-direction:column;"><div class="nav-container" style="display:flex;align-items:center;justify-content:space-between;"><a href="/"><div class="qin" style="display:flex;"><img src="/assets/img/qin.svg"></div></a><div class="yiqinzhao"><img src="/assets/img/slogan.svg"></div><div class="menu-row" style="display:flex;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div></div><div class="social-icon" style="display:flex;justify-content:flex-end;"><a href="https://twitter.com/yiqin_zhao" target="blank"><img src="/assets/social-icon/twitter.svg"></a><a href="https://github.com/YiqinZhao"><img src="/assets/social-icon/github.svg"></a><a href="https://www.instagram.com/yiqinzhao1996"><img src="/assets/social-icon/instagram.svg"></a></div><div class="social-float social-float-remove"><div style="display:flex;"><a href="https://twitter.com/yiqin_zhao" target="_blank"><img src="/assets/social-icon/twitter.svg"><p>Twitter</p></a><a href="https://github.com/YiqinZhao" target="_blank"><img src="/assets/social-icon/github.svg"><p>GitHub</p></a><a href="https://www.instagram.com/yiqinzhao1996" target="_blank"><img src="/assets/social-icon/instagram.svg"><p>Instagram</p></a></div></div><div onclick="onMobileMenuOpenClick()" class="menu-icon"><img src="/assets/img/menu.svg"></div></div></div><div class="bg-mask remove"></div><div class="menu-row-mobile" style="display:flex;flex-direction:column;"><div class="menu-item" onclick="onMenuItemClick('/')">home</div><div class="menu-item" onclick="onMenuItemClick('/news')">news</div><div class="menu-item" onclick="onMenuItemClick('/project')">project</div><div class="menu-item" onclick="onMenuItemClick('/publication')">publication</div><div class="menu-item menu-item-active" onclick="onMenuItemClick('/posts')">posts</div><div class="menu-item" onclick="onMenuItemClick('/cv')">CV</div><div class="social-icons-mobile" style="display:flex;"><div style="display:flex;justify-content:space-between;"><a href="https://twitter.com/yiqin_zhao" target="_blank"><img src="/assets/social-icon/twitter.svg"><p>Twitter</p></a><a href="https://github.com/YiqinZhao" target="_blank"><img src="/assets/social-icon/github.svg"><p>GitHub</p></a><a href="https://www.instagram.com/yiqinzhao1996" target="_blank"><img src="/assets/social-icon/instagram.svg"><p>Instagram</p></a></div></div></div><script>
 function onMenuItemClick(target) {
     if (target === '/cv') window.open('/assets/yiqinzhao-cv.pdf')
     else window.location.href = target
@@ -376,9 +403,18 @@ function onMenuItemClick(target) {
 
 function onMobileMenuOpenClick() {
     var mobileMenu = document.querySelectorAll('.menu-row-mobile')[0]
+    var menuBgMask = document.querySelectorAll('.bg-mask')[0]
     if (mobileMenu.classList.contains('menu-row-mobile-active')) {
+        menuBgMask.classList.remove('bg-mask-hide')
+        setTimeout(() => {
+            menuBgMask.classList.add('remove')
+        }, 500)
         mobileMenu.classList.remove('menu-row-mobile-active')
     } else {
+        menuBgMask.classList.remove('remove')
+        setTimeout(() => {
+            menuBgMask.classList.add('bg-mask-hide')
+        }, 10)
         mobileMenu.classList.add('menu-row-mobile-active')
     }
 }
@@ -386,30 +422,34 @@ function onMobileMenuOpenClick() {
 var timerHideSocialFloat
 
 document.querySelectorAll('.social-icon')[0].addEventListener('mouseenter', function () {
-    document.querySelectorAll('.soical-float')[0].classList.remove('soical-float-remove')
-    document.querySelectorAll('.soical-float')[0].classList.add('soical-float-active')
+    var socialFloat = document.querySelectorAll('.social-float')[0]
+    socialFloat.classList.remove('social-float-remove')
+    socialFloat.classList.add('social-float-active')
+    document.querySelectorAll('.social-icon')[0].classList.add('social-icon-active')
 })
 
 document.querySelectorAll('.social-icon')[0].addEventListener('mouseleave', function () {
     timerHideSocialFloat = setTimeout(() => {
-        document.querySelectorAll('.soical-float-active')[0].classList.remove('soical-float-active')
+        document.querySelectorAll('.social-float-active')[0].classList.remove('social-float-active')
         setTimeout(() => {
-            document.querySelectorAll('.soical-float')[0].classList.add('soical-float-remove')
+            document.querySelectorAll('.social-float')[0].classList.add('social-float-remove')
+            document.querySelectorAll('.social-icon')[0].classList.remove('social-icon-active')
         }, 100)
-    }, 200)
+    }, 50)
 })
 
-document.querySelectorAll('.soical-float')[0].addEventListener('mouseenter', function () {
+document.querySelectorAll('.social-float')[0].addEventListener('mouseenter', function () {
     clearTimeout(timerHideSocialFloat)
 })
 
-document.querySelectorAll('.soical-float')[0].addEventListener('mouseleave', function () {
+document.querySelectorAll('.social-float')[0].addEventListener('mouseleave', function () {
     timerHideSocialFloat = setTimeout(() => {
-        document.querySelectorAll('.soical-float-active')[0].classList.remove('soical-float-active')
+        document.querySelectorAll('.social-float-active')[0].classList.remove('social-float-active')
         setTimeout(() => {
-            document.querySelectorAll('.soical-float')[0].classList.add('soical-float-remove')
+            document.querySelectorAll('.social-float')[0].classList.add('social-float-remove')
+            document.querySelectorAll('.social-icon')[0].classList.remove('social-icon-active')
         }, 100)
-    }, 200)
+    }, 50)
 })
 </script><div style="display:flex;flex-direction:column;"><div class="title">写于2018年末</div><div class="meta-row" style="display:flex;align-items:center;"><div class="category">Life</div><div class="date">Nov 12, 2018</div><div class="eta">2min</div></div></div><div class="markdown"><p>这半年来经历了太多，原本9月从百度离职之后就打算写一篇心路历程，但是实在太忙了。后来打算11月10号最后一场托福考完之后再写，但是后来还是各种各样的事情，一直拖到了现在。我希望通过这篇文章记录一下这半年来的我跑过的各个地方，经历过的事，接触过的人。</p>
 <p>本文起笔于<code>2018年10月9日</code>，结束于 <code>2018年12月30日</code></p>
@@ -437,4 +477,4 @@ document.querySelectorAll('.soical-float')[0].addEventListener('mouseleave', fun
 
         font-size: 0.8rem;
     }
-</style><div class="foot" style="display:flex;justify-content:center;">© Yiqin Zhao 2020. Last Updated: Mar 14, 2020</div></div></body></html>
+</style><div class="foot" style="display:flex;justify-content:center;">© Yiqin Zhao 2020. Last Updated: Mar 17, 2020</div></div></body></html>
