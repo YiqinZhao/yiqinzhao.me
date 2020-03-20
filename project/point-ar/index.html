@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/tomorrow.css">
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
 
-    <title>Posts | Yiqin Zhao</title>
+    <title>Point-ar | Yiqin Zhao</title>
 </head>
 
 
-    <style>.title a{color:#000}.article-item{padding-bottom:20px;margin-bottom:20px;border-bottom:1px dashed rgba(0,0,0,.4)}.article-item:nth-last-child(1){border-bottom:none}.article-item>a{text-decoration:underline}.article-item>.title{font-size:2rem;margin-bottom:1rem;font-weight:700}.meta-row{height:35px}.meta-row>div{margin-right:10px}.category{font-weight:600}.eta{color:rgba(0,0,0,.3)}</style>
+    <style>.title{font-size:3rem;font-weight:700;margin:20px 0 10px 0}.meta-row{height:35px;border-bottom:1px dashed rgba(0,0,0,.4);margin-bottom:20px}.meta-row>div{margin-right:10px}.category{font-weight:600}.eta{color:rgba(0,0,0,.3)}.markdown strong>img{border:1px solid rgba(0,0,0,.6)}</style>
 <body>
-    <div class="stack responsive-container" direction="column">
+    <div class="responsive-container stack" direction="column">
         <style>.nav-container{width:calc(100%);height:60px;padding:20px 0;display:flex;align-items:center}.qin{width:50px;height:50px;padding:7px;box-sizing:border-box;border:1px dashed rgba(0,0,0,.3);position:relative}.qin>img{position:absolute;width:34px;z-index:1}.qin:before{width:25px;height:25px;border-right:1px dashed rgba(0,0,0,.15);border-bottom:1px dashed rgba(0,0,0,.15);box-sizing:border-box;position:absolute;top:0;left:0;content:"";z-index:0}.qin:after{width:24px;height:24px;border-top:1px dashed rgba(0,0,0,.15);border-left:1px dashed rgba(0,0,0,.15);box-sizing:border-box;position:absolute;right:0;bottom:0;content:"";z-index:0}.menu-item{font-size:1.2rem;text-transform:uppercase;margin:0 20px;cursor:pointer;transition:color .1s linear}.menu-item:hover{color:#5696e7}.menu-item-active{color:#5696e7}.social-icon{width:80px;height:50px;padding:7px;box-sizing:border-box;opacity:.4;transition:opacity .1s linear}.social-icon-active{opacity:.8}.social-icon>a{margin-left:-20px;background-color:#f9f9f9;border-radius:16px}.social-icon>a>img{width:36px}.yiqinzhao{display:none}.menu-icon{width:40px;display:none}.menu-row-mobile{display:none!important}.social-float{width:400px;background:#fff;box-shadow:0 0 20px rgba(0,0,0,.1);padding:20px 30px;box-sizing:border-box;position:absolute;top:90px;right:max(calc(10px),calc((100vw - 1200px)/ 2 - 20px));z-index:11;opacity:0;transition:opacity .3s linear}.social-float-active{transform:translateY(0);opacity:1}.social-float-remove{transform:translateY(-500px)}.social-float>div{width:100%}.social-float>div>a{width:33%;padding:10px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center}.social-float>div>a>img{width:50px;height:50px}.social-float>div>a>p{color:#000;margin-bottom:0;text-align:center;font-size:.9rem}.social-icons-mobile{width:80%;margin:0 auto!important}.social-icons-mobile>div{width:100%;margin:20px 0}.social-icons-mobile>div>a{width:15vw;opacity:.8;color:#000}.bg-mask{width:100vw;height:100vh;position:fixed;left:0;top:0;background:rgba(0,0,0,.4);z-index:4;opacity:0;transition:opacity .5s linear}.bg-mask-hide{opacity:1}.remove{display:none}@media (min-width:768px) and (max-width:1024px){.second-res{width:100%!important;margin:0!important}}@media (max-width:768px){.menu-item{margin:0 10px}}@media (max-width:480px){body{padding-top:100px}.nav-container{padding:10px 0;position:fixed;left:0;top:0;width:calc(100% - 40px);height:80px;padding:0 20px;background-color:#fff;z-index:10;box-shadow:0 10px 10px rgba(0,0,0,.05)}.menu-row{display:none!important}.menu-row-mobile{display:flex!important;position:fixed;width:100vw;top:0;left:0;z-index:5;padding-top:100px;padding-bottom:20px;box-sizing:border-box;box-shadow:0 0 30px rgba(0,0,0,.2);background:#fff;transform:translateY(-100vh);transition:all .5s cubic-bezier(.74,0,.5,1)}.menu-row-mobile-active{transform:translateY(0)}.menu-row-mobile>div{margin:10px 0;text-align:center}.qin{width:40px;height:40px}.qin>img{width:26px}.qin:before{width:20px;height:20px}.qin:after{width:19px;height:19px}.yiqinzhao{display:flex;width:50%}.social-icon{display:none!important}.menu-icon{display:flex}}</style>
 
 <div class="responsive-container second-res">
@@ -36,9 +36,9 @@
         <div class="stack menu-row">
             <div class="menu-item" onclick='onMenuItemClick("/")'>home</div>
             <div class="menu-item" onclick='onMenuItemClick("/news")'>news</div>
-            <div class="menu-item" onclick='onMenuItemClick("/project")'>project</div>
+            <div class="menu-item menu-item-active" onclick='onMenuItemClick("/project")'>project</div>
             <div class="menu-item" onclick='onMenuItemClick("/publication")'>publication</div>
-            <div class="menu-item menu-item-active" onclick='onMenuItemClick("/posts")'>posts</div>
+            <div class="menu-item" onclick='onMenuItemClick("/posts")'>posts</div>
             <div class="menu-item" onclick='onMenuItemClick("/cv")'>CV</div>
         </div>
 
@@ -97,11 +97,11 @@
         home</div>
     <div class="menu-item" onclick='onMenuItemClick("/news")'>
         news</div>
-    <div class="menu-item" onclick='onMenuItemClick("/project")'>
+    <div class="menu-item menu-item-active" onclick='onMenuItemClick("/project")'>
         project</div>
     <div class="menu-item" onclick='onMenuItemClick("/publication")'>
         publication</div>
-    <div class="menu-item menu-item-active" onclick='onMenuItemClick("/posts")'>
+    <div class="menu-item" onclick='onMenuItemClick("/posts")'>
         posts</div>
     <div class="menu-item" onclick='onMenuItemClick("/cv")'>CV
     </div>
@@ -184,56 +184,42 @@
 </script>
 
 
-        <div class="stack" direction="column">
-            
-                
-                    <div class="article-item">
-                        <div class="title">
-                            <a href="about-me" target="blank">
-                                About Me
-                            </a>
-                        </div>
+        
 
-                        <div class="markdown abstract">
-                            <p>Hi, I'm Yiqin, nice to meet you! This is my self introduction, written in both <a href="#who-am-i">English</a> and <a href="#%E6%88%91%E6%98%AF%E8%B0%81">中文</a>.</p>
+        <div class="markdown">
+            <h1 id="pointar%3A-efficient-lighting-estimation-for-mobile-augmented-reality">PointAR: Efficient Lighting Estimation for Mobile Augmented Reality</h1>
+<p>Coming soon....</p>
+<!-- We propose an efficient lighting estimation pipeline that is suitable to run on modern mobile devices, with comparable resource complexities to state-of-the-art on-device deep learning models. Our pipeline, referred to as PointAR, takes a single RGB-D image captured from the mobile camera and a 2D location in that image, and estimates a 2nd order spherical harmonics coefficients which can be directly utilized by rendering engines for indoor lighting in the context of augmented reality. Our key insight is to formulate the lighting estimation as a learning problem directly from point clouds, which is in part inspired by the Monte Carlo integration leveraged by real-time spherical harmonics lighting. While existing approaches estimate lighting information with complex deep learning pipelines, our method focuses on reducing the computational complexity. Through both quantitative and qualitative experiments, we demonstrate that PointAR achieves lower lighting estimation errors compared to state-of-the-art methods. Further, our method requires an order of magnitude lower resource, comparable to that of mobile-specific DNNs.
 
-                        </div>
-                        <!-- ${index}: ${JSON.stringify(child)} -->
+# Paper
 
-                        <div class="stack meta-row" vertical-layout="center">
-                            <div class="category">About</div>
-                            <div class="date">
-                                Mar 12, 2020
-                            </div>
-                            <div class="eta">2 min</div>
-                        </div>
-                    </div>
-                
-            
-                
-                    <div class="article-item">
-                        <div class="title">
-                            <a href="all-about-python-performance-optimization" target="blank">
-                                All about Python Performance Optimization
-                            </a>
-                        </div>
+**DOI**: [10.1145/3267935.3267948](https://doi.org/10.1145/3267935.3267948). Download at [here](https://dl.acm.org/citation.cfm?doid=3267935.3267948)
 
-                        <div class="markdown abstract">
-                            <p>Just like the title, this post is all about the <strong>Python performance optimization</strong>. For data science, handling large amount of data is inevitable. Although recently many tools have been developed for developers to accelerate their data science program, achieving good performance is still challenging. For one could easily fall into a performance rabbit hole by just writing one line inappropriately or troubling with squeeze out all the hardware performance. In this post, I will introduce a few handful tips to help you boost your Python data science programs and achieve 10X or more performance improvement.</p>
+Accepted in proceedings of the Joint Workshop of the 4th Workshop on Affective Social Multimedia Computing and first Multi-Modal Affective Computing of Large-Scale Multimedia Data (ASMMC-MMAC'18) Pages 27-33
 
-                        </div>
-                        <!-- ${index}: ${JSON.stringify(child)} -->
+# Cite
 
-                        <div class="stack meta-row" vertical-layout="center">
-                            <div class="category">Tech</div>
-                            <div class="date">
-                                Mar 13, 2020
-                            </div>
-                            <div class="eta">4 min</div>
-                        </div>
-                    </div>
-                
-            
+```
+@inproceedings{
+    Zhao:2018:DSF:3267935.3267948,
+    author = {Zhao, Ziping and Zhao, Yiqin and Bao, Zhongtian and Wang, Haishuai and Zhang, Zixing and Li, Chao},
+    title = {Deep Spectrum Feature Representations for Speech Emotion Recognition},
+    booktitle = {Proceedings of the Joint Workshop of the 4th Workshop on Affective Social Multimedia Computing and First Multi-Modal Affective Computing of Large-Scale Multimedia Data},
+    series = {ASMMC-MMAC'18},
+    year = {2018},
+    isbn = {978-1-4503-5985-6},
+    location = {Seoul, Republic of Korea},
+    pages = {27--33},
+    numpages = {7},
+    url = {http://doi.acm.org/10.1145/3267935.3267948},
+    doi = {10.1145/3267935.3267948},
+    acmid = {3267948},
+    publisher = {ACM},
+    address = {New York, NY, USA},
+    keywords = {attention mechanism, bidirectional long short-term memory, fully convolutional networks, spectrogram representation, speech emotion recognition},
+}
+``` -->
+
         </div>
 
         <style>.foot{border-top:1px solid rgba(0,0,0,.1);margin-top:20px;padding:20px 0;color:rgba(0,0,0,.4);font-size:.8rem}</style>
