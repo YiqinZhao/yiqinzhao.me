@@ -1,73 +1,557 @@
 <html>
 
-<style>body{margin:0}img{width:100%}a{color:#5696e7}</style>
+<style>
+    body {
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    a {
+        color: rgba(86, 150, 231, 100);
+    }
+</style>
 
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta charset="utf-8">
 
-    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/base.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/tomorrow.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/tomorrow.css" />
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
 
     <title>Home | Yiqin Zhao</title>
 </head>
 
 
-<style>.hero-wrapper{background-color:#f9f9f9;padding:0 0 40px 0}.hero-container{height:50vw;max-height:600px;position:relative}.hero-img{width:50%;max-width:600px;position:absolute;right:75px}.slogan{width:100%;height:22.5vw;max-height:270px;background:#fff;margin-top:125px;padding:30px;box-sizing:border-box;box-shadow:0 0 40px rgba(0,0,0,.1);position:relative}.slogan-text{width:45%;max-width:540px;position:absolute;left:50px;top:175px}.slogan-des{position:absolute;left:min(75px,calc(50px + 1.5vw));top:min(290px,calc(180px + 9vw));font-size:min(2.6rem,3vw);font-weight:700}.main{background-color:#fff;padding:50px 0 0 0}.body-title{font-weight:700;margin-top:30px}.body-title>.title{font-size:2rem}.about>p{line-height:1.5rem}.friends{flex-wrap:wrap;margin:16px 0}.friend-item{height:50px;cursor:pointer;margin-right:5px;margin-bottom:5px}.friend-item>img{width:50px;height:100%;margin-right:5px}.friend-name{background:rgba(0,0,0,.05);padding:0 15px;font-size:1.1rem}@media (max-width:480px){body{padding-top:80px!important}.friend-item{width:100%}.friend-name{flex-grow:1}.hero-res{width:100%!important}.hero-wrapper{padding:0}.hero-container{height:100vw}.hero-img{width:100%;position:unset}.slogan{position:absolute;width:84vw;left:5vw;top:calc(100vw - 30px);margin-top:0;height:2rem}.slogan-text{display:none}.slogan-des{top:calc(100vw - 15px);font-size:1.3rem;left:10vw}}@media (min-width:768px) and (max-width:1024px){.nav-container{width:calc(100% - 40px)!important;margin:0 20px!important}}</style>
+<style>
+    .hero-wrapper {
+        background-color: #F9F9F9;
+
+        padding: 0 0 40px 0;
+    }
+
+    .hero-container {
+        height: 50vw;
+        max-height: 600px;
+
+        position: relative;
+    }
+
+    .hero-img {
+        width: 50%;
+        max-width: 600px;
+
+        position: absolute;
+        right: 75px;
+    }
+
+    .slogan {
+        width: 100%;
+        height: 22.5vw;
+        max-height: 270px;
+
+        background: #FFFFFF;
+
+        margin-top: 125px;
+
+        padding: 30px;
+        box-sizing: border-box;
+
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+
+        position: relative;
+    }
+
+    .slogan-text {
+        width: 45%;
+        max-width: 540px;
+
+        position: absolute;
+        left: 50px;
+        top: 175px;
+    }
+
+    .slogan-des {
+        position: absolute;
+        left: min(75px, calc(50px + 1.5vw));
+        top: min(290px, calc(180px + 9vw));
+
+        font-size: min(2.6rem, 3vw);
+        font-weight: bold;
+    }
+
+    .main {
+        background-color: #FFFFFF;
+        padding: 50px 0 0 0;
+    }
+
+    .body-title {
+        font-weight: bold;
+        margin-top: 30px;
+    }
+
+    .body-title>.title {
+        font-size: 2rem;
+    }
+
+    .about>p {
+        line-height: 1.5rem;
+    }
+
+    .friends {
+        flex-wrap: wrap;
+        margin: 16px 0;
+    }
+
+    .friend-item {
+        height: 50px;
+        cursor: pointer;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+
+    .friend-item>img {
+        width: 50px;
+        height: 100%;
+        margin-right: 5px;
+    }
+
+    .friend-name {
+        background: rgba(0, 0, 0, 0.05);
+        padding: 0 15px;
+        font-size: 1.1rem;
+    }
+
+    @media (max-width: 480px) {
+        body {
+            padding-top: 80px !important;
+        }
+
+        .friend-item {
+            width: 100%;
+        }
+
+        .friend-name {
+            flex-grow: 1;
+        }
+
+        .hero-res {
+            width: 100% !important;
+        }
+
+        .hero-wrapper {
+            padding: 0;
+        }
+
+        .hero-container {
+            height: 100vw;
+        }
+
+        .hero-img {
+            width: 100%;
+            position: unset;
+        }
+
+        .slogan {
+            position: absolute;
+            width: 84vw;
+            left: 5vw;
+            top: calc(100vw - 30px);
+            margin-top: 0;
+            height: 2rem;
+        }
+
+        .slogan-text {
+            display: none;
+        }
+
+        .slogan-des {
+            top: calc(100vw - 15px);
+            font-size: 1.3rem;
+            left: 10vw;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .nav-container {
+            width: calc(100% - 40px) !important;
+            margin: 0 20px !important;
+        }
+    }
+</style>
 
 <body>
     <div class="hero-wrapper">
-        <style>.nav-container{width:calc(100%);height:60px;padding:20px 0;display:flex;align-items:center}.qin{width:50px;height:50px;padding:7px;box-sizing:border-box;border:1px dashed rgba(0,0,0,.3);position:relative}.qin>img{position:absolute;width:34px;z-index:1}.qin:before{width:25px;height:25px;border-right:1px dashed rgba(0,0,0,.15);border-bottom:1px dashed rgba(0,0,0,.15);box-sizing:border-box;position:absolute;top:0;left:0;content:"";z-index:0}.qin:after{width:24px;height:24px;border-top:1px dashed rgba(0,0,0,.15);border-left:1px dashed rgba(0,0,0,.15);box-sizing:border-box;position:absolute;right:0;bottom:0;content:"";z-index:0}.menu-item{font-size:1.2rem;text-transform:uppercase;margin:0 20px;cursor:pointer;transition:color .1s linear}.menu-item:hover{color:#5696e7}.menu-item-active{color:#5696e7}.social-icon{width:80px;height:50px;padding:7px;box-sizing:border-box;opacity:.4;transition:opacity .1s linear}.social-icon-active{opacity:.8}.social-icon>a{margin-left:-20px;background-color:#f9f9f9;border-radius:16px}.social-icon>a>img{width:36px}.yiqinzhao{display:none}.menu-icon{width:40px;display:none}.menu-row-mobile{display:none!important}.social-float{width:400px;background:#fff;box-shadow:0 0 20px rgba(0,0,0,.1);padding:20px 30px;box-sizing:border-box;position:absolute;top:90px;right:max(calc(10px),calc((100vw - 1200px)/ 2 - 20px));z-index:11;opacity:0;transition:opacity .3s linear}.social-float-active{transform:translateY(0);opacity:1}.social-float-remove{transform:translateY(-500px)}.social-float>div{width:100%}.social-float>div>a{width:33%;padding:10px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center}.social-float>div>a>img{width:50px;height:50px}.social-float>div>a>p{color:#000;margin-bottom:0;text-align:center;font-size:.9rem}.social-icons-mobile{width:80%;margin:0 auto!important}.social-icons-mobile>div{width:100%;margin:20px 0}.social-icons-mobile>div>a{width:15vw;opacity:.8;color:#000}.bg-mask{width:100vw;height:100vh;position:fixed;left:0;top:0;background:rgba(0,0,0,.4);z-index:4;opacity:0;transition:opacity .5s linear}.bg-mask-hide{opacity:1}.remove{display:none}@media (min-width:768px) and (max-width:1024px){.second-res{width:100%!important;margin:0!important}}@media (max-width:768px){.menu-item{margin:0 10px}}@media (max-width:480px){body{padding-top:100px}.nav-container{padding:10px 0;position:fixed;left:0;top:0;width:calc(100% - 40px);height:80px;padding:0 20px;background-color:#fff;z-index:10;box-shadow:0 10px 10px rgba(0,0,0,.05)}.menu-row{display:none!important}.menu-row-mobile{display:flex!important;position:fixed;width:100vw;top:0;left:0;z-index:5;padding-top:100px;padding-bottom:20px;box-sizing:border-box;box-shadow:0 0 30px rgba(0,0,0,.2);background:#fff;transform:translateY(-100vh);transition:all .5s cubic-bezier(.74,0,.5,1)}.menu-row-mobile-active{transform:translateY(0)}.menu-row-mobile>div{margin:10px 0;text-align:center}.qin{width:40px;height:40px}.qin>img{width:26px}.qin:before{width:20px;height:20px}.qin:after{width:19px;height:19px}.yiqinzhao{display:flex;width:50%}.social-icon{display:none!important}.menu-icon{display:flex}}</style>
+        <style>
+    .nav-container {
+        width: calc(100%);
+        height: 60px;
+        padding: 20px 0;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .qin {
+        width: 50px;
+        height: 50px;
+
+        padding: 7px;
+
+        box-sizing: border-box;
+
+        border: 1px dashed rgba(0, 0, 0, 0.3);
+
+        position: relative;
+    }
+
+    .qin>img {
+        position: absolute;
+        width: 34px;
+        z-index: 1;
+    }
+
+    .qin:before {
+        width: 25px;
+        height: 25px;
+        border-right: 1px dashed rgba(0, 0, 0, 0.15);
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.15);
+        box-sizing: border-box;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        content: "";
+
+        z-index: 0;
+    }
+
+    .qin:after {
+        width: 24px;
+        height: 24px;
+        border-top: 1px dashed rgba(0, 0, 0, 0.15);
+        border-left: 1px dashed rgba(0, 0, 0, 0.15);
+        box-sizing: border-box;
+
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        content: "";
+
+        z-index: 0;
+    }
+
+    .menu-item {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+
+        margin: 0 20px;
+        cursor: pointer;
+
+        transition: color 100ms linear;
+    }
+
+    .menu-item:hover {
+        color: rgba(86, 150, 231, 100);
+    }
+
+    .menu-item-active {
+        color: rgba(86, 150, 231, 100);
+    }
+
+    .social-icon {
+        width: 80px;
+        height: 50px;
+
+        padding: 7px;
+
+        box-sizing: border-box;
+
+        opacity: 0.4;
+
+        transition: opacity 100ms linear;
+    }
+
+    .social-icon-active {
+        opacity: 0.8;
+    }
+
+    .social-icon>a {
+        margin-left: -20px;
+        background-color: #F9F9F9;
+        border-radius: 16px;
+    }
+
+    .social-icon>a>img {
+        width: 36px;
+    }
+
+    .yiqinzhao {
+        display: none;
+    }
+
+    .menu-icon {
+        width: 40px;
+        display: none;
+    }
+
+    .menu-row-mobile {
+        display: none !important;
+    }
+
+    .social-float {
+        width: 400px;
+
+        background: #FFFFFF;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+        padding: 20px 30px;
+        box-sizing: border-box;
+
+        position: absolute;
+        top: 90px;
+        right: max(calc(10px), calc((100vw - 1200px) / 2 - 20px));
+        z-index: 11;
+
+        opacity: 0;
+        transition: opacity 300ms linear;
+    }
+
+    .social-float-active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .social-float-remove {
+        transform: translateY(-500px);
+    }
+
+    .social-float>div {
+        width: 100%;
+    }
+
+    .social-float>div>a {
+        width: 33%;
+        padding: 10px;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-float>div>a>img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-float>div>a>p {
+        color: black;
+        margin-bottom: 0;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .social-icons-mobile {
+        width: 80%;
+        margin: 0 auto !important;
+    }
+
+    .social-icons-mobile>div {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .social-icons-mobile>div>a {
+        width: 15vw;
+        opacity: 0.8;
+        color: black;
+    }
+
+    .bg-mask {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 4;
+        opacity: 0;
+
+        transition: opacity 500ms linear;
+    }
+
+    .bg-mask-hide {
+        opacity: 1;
+    }
+
+    .remove {
+        display: none;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .second-res {
+            width: 100% !important;
+            margin: 0 !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .menu-item {
+            margin: 0 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        body {
+            padding-top: 100px;
+        }
+
+        .nav-container {
+            padding: 10px 0;
+            position: fixed;
+            left: 0;
+            top: 0;
+
+            width: calc(100% - 40px);
+            height: 80px;
+            padding: 0 20px;
+
+            background-color: #FFFFFF;
+
+            z-index: 10;
+
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .menu-row {
+            display: none !important;
+        }
+
+        .menu-row-mobile {
+            display: flex !important;
+
+            position: fixed;
+            width: 100vw;
+
+            top: 0;
+            left: 0;
+
+            z-index: 5;
+
+            padding-top: 100px;
+            padding-bottom: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+
+            background: #FFFFFF;
+
+            transform: translateY(-100vh);
+            transition: all 500ms cubic-bezier(0.74, 0, 0.5, 1);
+        }
+
+        .menu-row-mobile-active {
+            transform: translateY(0vh);
+        }
+
+        .menu-row-mobile>div {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .qin {
+            width: 40px;
+            height: 40px;
+        }
+
+        .qin>img {
+            width: 26px;
+        }
+
+        .qin:before {
+            width: 20px;
+            height: 20px;
+        }
+
+        .qin:after {
+            width: 19px;
+            height: 19px;
+        }
+
+        .yiqinzhao {
+            display: flex;
+            width: 50%;
+        }
+
+        .social-icon {
+            display: none !important;
+        }
+
+        .menu-icon {
+            display: flex;
+        }
+    }
+</style>
 
 <div class="responsive-container second-res">
     <div class="stack nav-container" vertical-layout="center" horizontal-layout="space-between">
         <a href="/">
             <div class="stack qin">
-                <img src="/assets/img/qin.svg">
+                <img src="/assets/img/qin.svg" />
             </div>
         </a>
 
 
         <div class="yiqinzhao">
-            <img src="/assets/img/slogan.svg">
+            <img src="/assets/img/slogan.svg" />
         </div>
 
         <div class="stack menu-row">
-            <div class="menu-item menu-item-active" onclick='onMenuItemClick("/")'>home</div>
-            <div class="menu-item" onclick='onMenuItemClick("/news")'>news</div>
-            <div class="menu-item" onclick='onMenuItemClick("/project")'>project</div>
-            <div class="menu-item" onclick='onMenuItemClick("/publication")'>publication</div>
-            <div class="menu-item" onclick='onMenuItemClick("/posts")'>posts</div>
-            <div class="menu-item" onclick='onMenuItemClick("/cv")'>CV</div>
+            <div class="menu-item menu-item-active"
+                onclick="onMenuItemClick('/')">home</div>
+            <div class="menu-item "
+                onclick="onMenuItemClick('/news')">news</div>
+            <div class="menu-item "
+                onclick="onMenuItemClick('/project')">project</div>
+            <div class="menu-item "
+                onclick="onMenuItemClick('/publication')">publication</div>
+            <div class="menu-item "
+                onclick="onMenuItemClick('/posts')">posts</div>
+            <div class="menu-item "
+                onclick="onMenuItemClick('/cv')">CV</div>
         </div>
 
         <div class="stack social-icon" horizontal-layout="flex-end">
             <a href="https://twitter.com/yiqin_zhao" target="blank">
-                <img src="/assets/social-icon/twitter.svg">
+                <img src="/assets/social-icon/twitter.svg" />
             </a>
             <a href="https://github.com/YiqinZhao">
-                <img src="/assets/social-icon/github.svg">
+                <img src="/assets/social-icon/github.svg" />
             </a>
             <a href="https://www.instagram.com/yiqinzhao1996">
-                <img src="/assets/social-icon/instagram.svg">
+                <img src="/assets/social-icon/instagram.svg" />
             </a>
         </div>
 
         <div class="social-float social-float-remove">
             <div class="stack">
                 <a href="https://twitter.com/yiqin_zhao" target="_blank">
-                    <img src="/assets/social-icon/twitter.svg">
+                    <img src="/assets/social-icon/twitter.svg" />
                     <p>Twitter</p>
                 </a>
                 <a href="https://github.com/YiqinZhao" target="_blank">
-                    <img src="/assets/social-icon/github.svg">
+                    <img src="/assets/social-icon/github.svg" />
                     <p>GitHub</p>
                 </a>
                 <a href="https://www.instagram.com/yiqinzhao1996" target="_blank">
-                    <img src="/assets/social-icon/instagram.svg">
+                    <img src="/assets/social-icon/instagram.svg" />
                     <p>Instagram</p>
                 </a>
             </div>
@@ -88,38 +572,44 @@
         </div>
 
         <div class="menu-icon" onclick="onMobileMenuOpenClick()">
-            <img src="/assets/img/menu.svg">
+            <img src="/assets/img/menu.svg" />
         </div>
     </div>
 </div>
 
 <div class="bg-mask remove"></div>
 <div class="stack menu-row-mobile" direction="column">
-    <div class="menu-item menu-item-active" onclick='onMenuItemClick("/")'>
+    <div class="menu-item menu-item-active"
+        onclick="onMenuItemClick('/')">
         home</div>
-    <div class="menu-item" onclick='onMenuItemClick("/news")'>
+    <div class="menu-item "
+        onclick="onMenuItemClick('/news')">
         news</div>
-    <div class="menu-item" onclick='onMenuItemClick("/project")'>
+    <div class="menu-item "
+        onclick="onMenuItemClick('/project')">
         project</div>
-    <div class="menu-item" onclick='onMenuItemClick("/publication")'>
+    <div class="menu-item "
+        onclick="onMenuItemClick('/publication')">
         publication</div>
-    <div class="menu-item" onclick='onMenuItemClick("/posts")'>
+    <div class="menu-item "
+        onclick="onMenuItemClick('/posts')">
         posts</div>
-    <div class="menu-item" onclick='onMenuItemClick("/cv")'>CV
+    <div class="menu-item "
+        onclick="onMenuItemClick('/cv')">CV
     </div>
 
     <div class="social-icons-mobile">
         <div class="stack" horizontal-layout="space-between">
             <a href="https://twitter.com/yiqin_zhao" target="_blank">
-                <img src="/assets/social-icon/twitter.svg">
+                <img src="/assets/social-icon/twitter.svg" />
                 <p>Twitter</p>
             </a>
             <a href="https://github.com/YiqinZhao" target="_blank">
-                <img src="/assets/social-icon/github.svg">
+                <img src="/assets/social-icon/github.svg" />
                 <p>GitHub</p>
             </a>
             <a href="https://www.instagram.com/yiqinzhao1996" target="_blank">
-                <img src="/assets/social-icon/instagram.svg">
+                <img src="/assets/social-icon/instagram.svg" />
                 <p>Instagram</p>
             </a>
         </div>
@@ -189,8 +679,8 @@
         <div class="stack responsive-container hero-res" direction="column">
             <div class="stack hero-container" direction="column">
                 <div class="slogan"></div>
-                <img class="hero-img" src="/assets/img/hero.png">
-                <img class="slogan-text" src="/assets/img/slogan.svg">
+                <img class="hero-img" src="/assets/img/hero.png" />
+                <img class="slogan-text" src="/assets/img/slogan.svg" />
                 <div class="slogan-des">To work hard, to be diligent.</div>
             </div>
         </div>
@@ -214,17 +704,7 @@
 
         <div class="markdown news">
             <ul>
-<li><strong>03/03/2020</strong> Attended the HotMobile 2020 conference.</li>
-<li><strong>08/26/2019</strong> Joint Worcester Polytechnic Institute CakeLab</li>
-<li><strong>10/26/2018</strong> Presented my paper at ASMMC-MMAC 2018 workshop.</li>
-<li><strong>10/15/2018</strong> Won Wang Kechang Technology innovation scholarship (&lt;1%)</li>
-<li><strong>10/13/2018</strong> Won annual special scholarship at TJNU (top 5%)</li>
-<li><strong>09/03/2018</strong> Resigned from Baidu. I will continue my journey on computer science study.</li>
-
-
-
-
-</ul>
+<li><strong>03/03/2020</strong> Attended the HotMobile 2020 conference.</li><li><strong>08/26/2019</strong> Joint Worcester Polytechnic Institute CakeLab</li><li><strong>10/26/2018</strong> Presented my paper at ASMMC-MMAC 2018 workshop.</li><li><strong>10/15/2018</strong> Won Wang Kechang Technology innovation scholarship (&lt;1%)</li><li><strong>10/13/2018</strong> Won annual special scholarship at TJNU (top 5%)</li><li><strong>09/03/2018</strong> Resigned from Baidu. I will continue my journey on computer science study.</li></ul>
             <a href="/news">More News >>></a>
         </div>
 
@@ -234,47 +714,59 @@
 
         <div class="stack friends">
             
-            <div class="stack friend-item" onclick='onLinkClick("https://tianguo.info")'>
-                <img src="/assets/friends/tian.png">
-                <div class="stack friend-name" horizontal-layout="center" vertical-layout="center">Tian Guo</div>
-            </div>
+                <div class="stack friend-item" onclick="onLinkClick('https://tianguo.info')">
+                    <img src="/assets/friends/tian.png">
+                    <div class="stack friend-name" horizontal-layout="center" vertical-layout="center">Tian Guo</div>
+                </div>
             
-            <div class="stack friend-item" onclick='onLinkClick("https://cake-lab.github.io")'>
-                <img src="/assets/friends/cakelab.png">
-                <div class="stack friend-name" horizontal-layout="center" vertical-layout="center">CakeLab</div>
-            </div>
+                <div class="stack friend-item" onclick="onLinkClick('https://cake-lab.github.io')">
+                    <img src="/assets/friends/cakelab.png">
+                    <div class="stack friend-name" horizontal-layout="center" vertical-layout="center">CakeLab</div>
+                </div>
             
-            <div class="stack friend-item" onclick='onLinkClick("https://c422.github.io")'>
-                <img src="/assets/friends/c422.jpg">
-                <div class="stack friend-name" horizontal-layout="center" vertical-layout="center">C422 Studio</div>
-            </div>
+                <div class="stack friend-item" onclick="onLinkClick('https://c422.github.io')">
+                    <img src="/assets/friends/c422.jpg">
+                    <div class="stack friend-name" horizontal-layout="center" vertical-layout="center">C422 Studio</div>
+                </div>
             
-            <div class="stack friend-item" onclick='onLinkClick("https://fix.moe")'>
-                <img src="/assets/friends/arabaku.png">
-                <div class="stack friend-name" horizontal-layout="center" vertical-layout="center">Arabaku</div>
-            </div>
+                <div class="stack friend-item" onclick="onLinkClick('https://fix.moe')">
+                    <img src="/assets/friends/arabaku.png">
+                    <div class="stack friend-name" horizontal-layout="center" vertical-layout="center">Arabaku</div>
+                </div>
             
-            <div class="stack friend-item" onclick='onLinkClick("https://kimyang.cn")'>
-                <img src="/assets/friends/yangjin.png">
-                <div class="stack friend-name" horizontal-layout="center" vertical-layout="center">Kim Yang</div>
-            </div>
+                <div class="stack friend-item" onclick="onLinkClick('https://kimyang.cn')">
+                    <img src="/assets/friends/yangjin.png">
+                    <div class="stack friend-name" horizontal-layout="center" vertical-layout="center">Kim Yang</div>
+                </div>
             
-            <div class="stack friend-item" onclick='onLinkClick("https://cyberjiao.top")'>
-                <img src="/assets/friends/jiaojinlong.jpg">
-                <div class="stack friend-name" horizontal-layout="center" vertical-layout="center">Cyber Jiao</div>
-            </div>
+                <div class="stack friend-item" onclick="onLinkClick('https://cyberjiao.top')">
+                    <img src="/assets/friends/jiaojinlong.jpg">
+                    <div class="stack friend-name" horizontal-layout="center" vertical-layout="center">Cyber Jiao</div>
+                </div>
             
         </div>
 
-        <style>.foot{border-top:1px solid rgba(0,0,0,.1);margin-top:20px;padding:20px 0;color:rgba(0,0,0,.4);font-size:.8rem}</style>
+        <style>
+    .foot {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        padding: 20px 0;
+
+        color: rgba(0, 0, 0, 0.4);
+
+        font-size: 0.8rem;
+    }
+</style>
 
 <div class="stack foot" horizontal-layout="center">
-    © Yiqin Zhao 2020. Last Updated: Mar 20, 2020
-
+    © Yiqin Zhao 2020. Last Updated: Mar 22, 2020
+</stack>
 
 
     </div>
-</div></body>
-<script>function onLinkClick(n){window.open(n)}</script>
+</body>
+<script>
+    function onLinkClick(url) { window.open(url) }
+</script>
 
 </html>
