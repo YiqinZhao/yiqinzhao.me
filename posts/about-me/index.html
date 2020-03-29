@@ -569,6 +569,7 @@
 
 <span class="hljs-keyword">class</span> YiqinZhao <span class="hljs-keyword">extends</span> Human <span class="hljs-keyword">implements</span> GraduateStudent, ComputerMagician {
     name: <span class="hljs-string">'Yiqin Zhao'</span>
+    nameInUnicode: <span class="hljs-string">'赵一勤'</span>
     gender: Gender.Male
     starSign: StarSign.Cancer
     bloodType: BloodType.B
@@ -577,36 +578,44 @@
 
     sexualIdentity: SexualIdentity.Male
     sexualOrientation: Gender = Gender.Female
-    relationshipStatus: <span class="hljs-built_in">Array</span> = [
+    relationshipStatus: RelationshipStatus[] = [
         RelationshipStatus.Single,
         RelationshipStatus.Available
     ]
 
-    languages: <span class="hljs-built_in">Array</span> = [
-        <span class="hljs-keyword">new</span> Language({ name: <span class="hljs-string">'Chinese'</span>, proficiency: <span class="hljs-string">'native'</span> }),
-        <span class="hljs-keyword">new</span> Language({ name: <span class="hljs-string">'English'</span>, proficiency: <span class="hljs-string">'proficient'</span> }),
-        <span class="hljs-keyword">new</span> Language({ name: <span class="hljs-string">'Japanese'</span>, proficiency: <span class="hljs-string">'newbie'</span> }),
-        <span class="hljs-keyword">new</span> Language({ name: <span class="hljs-string">'Korean'</span>, proficiency: <span class="hljs-string">'newbie'</span> }),
+    ideology: Ideology[] = [
+        PoliticalSpectrum.CentreLeft,
+        GenderRelationship.GenderEquality
     ]
 
-    hobbies: <span class="hljs-built_in">Array</span> = [
+    languages: Language[] = [
+        <span class="hljs-keyword">new</span> Language({ name: <span class="hljs-string">'Chinese'</span>, isNative: <span class="hljs-literal">true</span> }),
+        <span class="hljs-keyword">new</span> Language({ name: <span class="hljs-string">'English'</span>, progress: <span class="hljs-number">0.75</span> }),
+        <span class="hljs-keyword">new</span> Language({ name: <span class="hljs-string">'Japanese'</span>, progress: <span class="hljs-number">0.05</span> }),
+        <span class="hljs-keyword">new</span> Language({ name: <span class="hljs-string">'Korean'</span>, progress: <span class="hljs-number">1</span> / <span class="hljs-built_in">Math</span>.Infinity }),
+    ]
+
+    hobbies: <span class="hljs-built_in">string</span>[] = [
         <span class="hljs-string">'cook'</span>, <span class="hljs-string">'video-game'</span>, <span class="hljs-string">'guitar'</span>, <span class="hljs-string">'sci-fi'</span>
     ]
 
-    booksInProgress: <span class="hljs-built_in">Array</span> = [<span class="hljs-string">"L'Ancien Régime et la Révolution"</span>]
+    booksInProgress: <span class="hljs-built_in">string</span>[] = [<span class="hljs-string">"L'Ancien Régime et la Révolution"</span>]
 
     <span class="hljs-comment">// Implementation for GraduateStudent</span>
     degreeInProgress: Degrees.Master
     school: Universities.WorcesterPolytechnicInstitute
     advisor: Human = Universities.WorcesterPolytechnicInstitute.ComputerScience.Faculties.TianGuo
-    researchInterests: <span class="hljs-built_in">Array</span> = [
+    researchInterests: <span class="hljs-built_in">string</span>[] = [
         <span class="hljs-string">'mobile augmented reality'</span>, <span class="hljs-string">'mobile deep learning'</span>
     ]
 
     <span class="hljs-comment">// Implementation for ComputerMagician</span>
     isGeek: <span class="hljs-built_in">boolean</span> = <span class="hljs-literal">true</span>
     keyboard: HHKB.HYBRID.White
-    mainLanguages: <span class="hljs-built_in">Array</span> = [<span class="hljs-string">'Python'</span>, <span class="hljs-string">'TypeScript/JavaScript'</span>]
+    mainLanguages: ProgrammingLanguage[] = [
+        <span class="hljs-keyword">new</span> ProgrammingLanguage({ name: <span class="hljs-string">'Python'</span>, proficiency: <span class="hljs-string">'excellent'</span> }),
+        <span class="hljs-keyword">new</span> ProgrammingLanguage({ name: <span class="hljs-string">'TypeScript/JavaScript'</span>, proficiency: <span class="hljs-string">'excellent'</span> })
+    ]
     mainIDE: IDE.VisualStudioCode
     computer: Apple.MacBookPro15.Year2019
 }
@@ -627,7 +636,7 @@
 </style>
 
 <div class="stack foot" horizontal-layout="center">
-    © Yiqin Zhao 2020. Last Updated: Mar 25, 2020
+    © Yiqin Zhao 2020. Last Updated: Mar 29, 2020
 </stack>
 
     </div>
