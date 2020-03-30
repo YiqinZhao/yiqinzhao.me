@@ -70,6 +70,9 @@
     .title a {
         color: #FFFFFF;
     }
+    .article-item {
+        border-color: rgba(255, 255, 255, 0.4);
+    }
     .meta-row {
         border-color: rgba(255, 255, 255, 0.4);
     }
