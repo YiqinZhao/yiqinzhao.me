@@ -96,7 +96,6 @@
 }
 
 /* Page */
-
 .main-container {
   display: flex;
   flex-direction: column;
@@ -333,7 +332,6 @@ img {
 
 .title {
   margin-top: 0;
-  color: black;
 }
 
 #embedded-music {

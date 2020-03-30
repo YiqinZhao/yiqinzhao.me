@@ -1,17 +1,5 @@
 <html>
-    <style>
-    body {
-        margin: 0;
-    }
-
-    img {
-        width: 100%;
-    }
-
-    a {
-        color: rgba(86, 150, 231, 100);
-    }
-</style>
+    
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -20,7 +8,8 @@
     <link rel="stylesheet" href="/assets/css/base.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/tomorrow.css" />
+    <link rel="stylesheet" media="(prefers-color-scheme: light)" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/tomorrow.css" />
+    <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/atom-one-dark.css" />
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
 
     <title>All about Python Performance Optimization | Yiqin Zhao</title>
@@ -36,10 +25,20 @@
     <link rel="shortcut icon" href="/assets/site-icons/favicon.ico" type="image/x-icon" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="theme-color" content="#ffffff" />
-</head>
-
 
     <style>
+    body {
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    a {
+        color: rgba(86, 150, 231, 100);
+    }
+</style><style>
         .title {
             font-size: 3rem;
             font-weight: bold;
@@ -67,10 +66,7 @@
         .markdown strong > img {
             border: 1px solid rgba(0, 0, 0, 0.6);
         }
-    </style>
-<body>
-    <div class="responsive-container stack" direction="column">
-        <style>
+    </style><style>
     .nav-container {
         width: calc(100%);
         height: 60px;
@@ -159,6 +155,8 @@
 
         opacity: 0.4;
 
+        position: relative;
+
         transition: opacity 100ms linear;
     }
 
@@ -167,9 +165,17 @@
     }
 
     .social-icon>a {
-        margin-left: -20px;
+        position: absolute;
         background-color: #F9F9F9;
         border-radius: 16px;
+    }
+
+    .social-icon>a:nth-child(1) {
+        left: 0;
+    }
+
+    .social-icon>a:nth-child(2) {
+        left: 16px;
     }
 
     .social-icon>a>img {
@@ -229,7 +235,7 @@
     }
 
     .social-float>div>a:hover {
-        background-color:rgba(0, 0, 0, 0.05);
+        background-color: rgba(0, 0, 0, 0.05);
     }
 
     .social-float>div>a>img {
@@ -253,13 +259,17 @@
 
     .social-icons-mobile>div {
         width: 100%;
-        margin: 20px 0;
+        margin: 40px 0 20px 0;
     }
 
     .social-icons-mobile>div>a {
         width: 15vw;
         opacity: 0.8;
         color: black;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .bg-mask {
@@ -333,7 +343,7 @@
 
             z-index: 5;
 
-            padding-top: 100px;
+            padding-top: 130px;
             padding-bottom: 20px;
             box-sizing: border-box;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
@@ -385,7 +395,26 @@
             display: flex;
         }
     }
+</style><style>
+    .foot {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        padding: 20px 0;
+
+        color: rgba(0, 0, 0, 0.4);
+
+        font-size: 0.8rem;
+    }
 </style>
+
+    <link rel="stylesheet" href="/assets/css/dark-mode.css" />
+</head>
+
+
+    
+<body>
+    <div class="responsive-container stack" direction="column">
+        
 
 <div class="responsive-container second-res">
     <div class="stack nav-container" vertical-layout="center" horizontal-layout="space-between">
@@ -431,27 +460,27 @@
             <div class="stack" direction="column">
                 <a href="https://twitter.com/yiqin_zhao" target="_blank">
                     <img src="/assets/social-icon/twitter.svg" />
-                    <p><strong>Twitter</strong><br/>yiqin_zhao</p>
+                    <p><strong>Twitter</strong><br />yiqin_zhao</p>
                 </a>
                 <a href="https://github.com/YiqinZhao" target="_blank">
                     <img src="/assets/social-icon/github.svg" />
-                    <p><strong>GitHub</strong><br/>YiqinZhao</p>
+                    <p><strong>GitHub</strong><br />YiqinZhao</p>
                 </a>
                 <a href="https://www.instagram.com/yiqinzhao1996" target="_blank">
                     <img src="/assets/social-icon/instagram.svg" />
-                    <p><strong>Instagram</strong><br/>yiqinzhao1996</p>
+                    <p><strong>Instagram</strong><br />yiqinzhao1996</p>
                 </a>
                 <a href="https://account.xbox.com/Profile?Gamertag=YiqinZhao" target="blank">
-                    <img src="/assets/social-icon/xbox.svg"/>
-                    <p><strong>XBox Live</strong><br/>YiqinZhao</p>
+                    <img src="/assets/social-icon/xbox.svg" />
+                    <p><strong>XBox Live</strong><br />YiqinZhao</p>
                 </a>
                 <a>
-                    <img src="/assets/social-icon/playstation.svg"/>
-                    <p><strong>Play Station</strong><br/>HawkinsZhao</p>
+                    <img src="/assets/social-icon/playstation.svg" />
+                    <p><strong>Play Station</strong><br />HawkinsZhao</p>
                 </a>
                 <a>
-                    <img src="/assets/social-icon/battle-net.svg"/>
-                    <p><strong>Battle.net</strong><br/>SpartanHawk#1103</p>
+                    <img src="/assets/social-icon/battle-net.svg" />
+                    <p><strong>Battle.net</strong><br />SpartanHawk#1103</p>
                 </a>
             </div>
         </div>
@@ -641,20 +670,10 @@ m = np.ones((<span class="hljs-number">10000</span>, <span class="hljs-number">1
 
         </div>
 
-        <style>
-    .foot {
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        margin-top: 20px;
-        padding: 20px 0;
-
-        color: rgba(0, 0, 0, 0.4);
-
-        font-size: 0.8rem;
-    }
-</style>
+        
 
 <div class="stack foot" horizontal-layout="center">
-    © Yiqin Zhao 2020. Last Updated: Mar 29, 2020
+    © Yiqin Zhao 2020. Last Updated: Mar 30, 2020
 </stack>
 
     </div>
