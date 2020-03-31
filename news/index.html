@@ -186,9 +186,39 @@
         display: none;
     }
 
+    .yiqinzhao > a {
+        margin-top: 5px;
+    }
+
     .menu-icon {
         width: 40px;
+        height: 40px;
         display: none;
+
+        position: relative;
+    }
+
+    .menu-icon > img {
+        transition: transform 100ms linear, opacity 100ms linear;
+    }
+
+    .menu-icon > .burger-button {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .menu-icon > .close-button {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .menu-icon > .fade {
+        transform: scale(0.8);
+        opacity: 0;
     }
 
     .menu-row-mobile {
@@ -351,7 +381,7 @@
             background: #FFFFFF;
 
             transform: translateY(-100vh);
-            transition: all 500ms cubic-bezier(0.74, 0, 0.5, 1);
+            transition: all 400ms cubic-bezier(0.74, 0, 0.5, 1);
         }
 
         .menu-row-mobile-active {
@@ -426,7 +456,8 @@
 
 
         <div class="yiqinzhao">
-            <img src="/assets/img/slogan.svg" />
+            <a href="/">
+                <img src="/assets/img/slogan.svg" /></a>
         </div>
 
         <div class="stack menu-row">
@@ -486,12 +517,13 @@
         </div>
 
         <div class="menu-icon" onclick="onMobileMenuOpenClick()">
-            <img src="/assets/img/menu.svg" />
+            <img class="burger-button" src="/assets/img/menu.svg" />
+            <img class="close-button fade" src="/assets/img/close.svg" />
         </div>
     </div>
 </div>
 
-<div class="bg-mask remove"></div>
+<div class="bg-mask remove" onclick="onMobileMenuOpenClick()"></div>
 <div class="stack menu-row-mobile" direction="column">
     <div class="menu-item "
         onclick="onMenuItemClick('/')">
@@ -538,15 +570,25 @@
     }
 
     function onMobileMenuOpenClick() {
-        var mobileMenu = document.querySelectorAll('.menu-row-mobile')[0]
-        var menuBgMask = document.querySelectorAll('.bg-mask')[0]
+        const mobileMenu = document.querySelectorAll('.menu-row-mobile')[0]
+        const menuBgMask = document.querySelectorAll('.bg-mask')[0]
+
+        const burgerButton = document.querySelectorAll('.burger-button')[0]
+        const closeButton = document.querySelectorAll('.close-button')[0]
+
         if (mobileMenu.classList.contains('menu-row-mobile-active')) {
+            burgerButton.classList.remove('fade')
+            closeButton.classList.add('fade')
+
             menuBgMask.classList.remove('bg-mask-hide')
             setTimeout(() => {
                 menuBgMask.classList.add('remove')
             }, 500)
             mobileMenu.classList.remove('menu-row-mobile-active')
         } else {
+            burgerButton.classList.add('fade')
+            closeButton.classList.remove('fade')
+
             menuBgMask.classList.remove('remove')
             setTimeout(() => {
                 menuBgMask.classList.add('bg-mask-hide')
@@ -594,24 +636,25 @@
 
         <div class="markdown">
             <ul>
-<li><strong>03/03/2020</strong> Attended the HotMobile 2020 conference.</li>
-<li><strong>08/26/2019</strong> Joint Worcester Polytechnic Institute CakeLab</li>
-<li><strong>10/26/2018</strong> Presented my paper at ASMMC-MMAC 2018 workshop.</li>
-<li><strong>10/15/2018</strong> Won Wang Kechang Technology innovation scholarship (&lt;1%)</li>
-<li><strong>10/13/2018</strong> Won annual special scholarship at TJNU (top 5%)</li>
-<li><strong>09/03/2018</strong> Resigned from Baidu. I will continue my journey on computer science study.</li>
-<li><strong>08/15/2018</strong> My paper about Human Speech Emotion in Spectrogram Representation has submitted to ACM Multimedia 2018 ASMMC-MMAC workshop!</li>
-<li><strong>07/04/2018</strong> Joined DuerOS department at Baidu, Inc as a software engineer inter.</li>
-<li><strong>09/30/2017</strong> Won the national third prize of the 2017 Mobile Innovation Contest (top 6%)</li>
-<li><strong>09/30/2016</strong> Won the national third prize of the 2016 Mobile Innovation Contest (top 10%)</li>
+<li><strong>03/03/2020</strong> Presented my poster at the HotMobile 2020 conference in Austin, TX.</li>
+<li><strong>02/01/2020</strong> 🔥 Our poster on mobile AR lighting estimation has been accepted in HotMobile 2020 conference.</li>
+<li><strong>08/26/2019</strong> Joined Worcester Polytechnic Institute CakeLab</li>
+<li><strong>10/26/2018</strong> Presented my paper on ASMMC-MMAC 2018 workshop.</li>
+<li><strong>10/15/2018</strong> Received Wang Kechang Technology innovation scholarship (&lt;1%)</li>
+<li><strong>10/13/2018</strong> Received annual special scholarship at Tianjin Normal University (top 5%)</li>
+<li><strong>08/15/2018</strong> Our paper about human speech emotion in spectrogram representation has submitted to ACM Multimedia 2018 ASMMC-MMAC workshop!</li>
+<li><strong>07/04/2018</strong> Joined DuerOS department at Baidu, Inc as a frontend software engineer intern.</li>
+<li><strong>09/30/2017</strong> Received third prize of the 2017 China national Mobile Innovation Contest (top 6%)</li>
+<li><strong>09/30/2016</strong> Received third prize of the 2016 China national Mobile Innovation Contest (top 10%)</li>
 </ul>
 
         </div>
 
         
 
-<div class="stack foot" horizontal-layout="center">
+<div class="stack foot" direction="column" horizontal-layout="center">
     © Yiqin Zhao 2020. Last Updated: Mar 30, 2020
+    <br/><span>Proudly Powered by <a href="https://github.com/YiqinZhao/Ploceus">Ploceus</a></span>
 </stack>
 
     </div>

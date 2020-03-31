@@ -135,6 +135,21 @@
         background: rgba(0, 0, 0, 0.05);
         padding: 0 15px;
         font-size: 1.1rem;
+        transition: background-color 100ms linear;
+    }
+
+    .friend-item:hover > .friend-name {
+        background-color: rgb(206, 206, 206);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .friend-name {
+            background-color: #2d2d2d;
+        }
+
+        .friend-item:hover > .friend-name {
+            background-color: #141414;
+        }
     }
 
     @media (max-width: 480px) {
@@ -313,9 +328,39 @@
         display: none;
     }
 
+    .yiqinzhao > a {
+        margin-top: 5px;
+    }
+
     .menu-icon {
         width: 40px;
+        height: 40px;
         display: none;
+
+        position: relative;
+    }
+
+    .menu-icon > img {
+        transition: transform 100ms linear, opacity 100ms linear;
+    }
+
+    .menu-icon > .burger-button {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .menu-icon > .close-button {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .menu-icon > .fade {
+        transform: scale(0.8);
+        opacity: 0;
     }
 
     .menu-row-mobile {
@@ -478,7 +523,7 @@
             background: #FFFFFF;
 
             transform: translateY(-100vh);
-            transition: all 500ms cubic-bezier(0.74, 0, 0.5, 1);
+            transition: all 400ms cubic-bezier(0.74, 0, 0.5, 1);
         }
 
         .menu-row-mobile-active {
@@ -554,7 +599,8 @@
 
 
         <div class="yiqinzhao">
-            <img src="/assets/img/slogan.svg" />
+            <a href="/">
+                <img src="/assets/img/slogan.svg" /></a>
         </div>
 
         <div class="stack menu-row">
@@ -614,12 +660,13 @@
         </div>
 
         <div class="menu-icon" onclick="onMobileMenuOpenClick()">
-            <img src="/assets/img/menu.svg" />
+            <img class="burger-button" src="/assets/img/menu.svg" />
+            <img class="close-button fade" src="/assets/img/close.svg" />
         </div>
     </div>
 </div>
 
-<div class="bg-mask remove"></div>
+<div class="bg-mask remove" onclick="onMobileMenuOpenClick()"></div>
 <div class="stack menu-row-mobile" direction="column">
     <div class="menu-item menu-item-active"
         onclick="onMenuItemClick('/')">
@@ -666,15 +713,25 @@
     }
 
     function onMobileMenuOpenClick() {
-        var mobileMenu = document.querySelectorAll('.menu-row-mobile')[0]
-        var menuBgMask = document.querySelectorAll('.bg-mask')[0]
+        const mobileMenu = document.querySelectorAll('.menu-row-mobile')[0]
+        const menuBgMask = document.querySelectorAll('.bg-mask')[0]
+
+        const burgerButton = document.querySelectorAll('.burger-button')[0]
+        const closeButton = document.querySelectorAll('.close-button')[0]
+
         if (mobileMenu.classList.contains('menu-row-mobile-active')) {
+            burgerButton.classList.remove('fade')
+            closeButton.classList.add('fade')
+
             menuBgMask.classList.remove('bg-mask-hide')
             setTimeout(() => {
                 menuBgMask.classList.add('remove')
             }, 500)
             mobileMenu.classList.remove('menu-row-mobile-active')
         } else {
+            burgerButton.classList.add('fade')
+            closeButton.classList.remove('fade')
+
             menuBgMask.classList.remove('remove')
             setTimeout(() => {
                 menuBgMask.classList.add('bg-mask-hide')
@@ -736,7 +793,7 @@
         </div>
 
         <div class="about">
-            <p>My name is Yiqin Zhao (赵一勤 in Chinese), I love my name since it always tells me an important lesson: to work hard, to be diligent. Which is the meaning of the Chinese character 勤 (qin). I am a first-year Computer Science master student in <a href="https://wpi.edu">Worcester Polytechnic Institute (WPI)</a>, I'm also a member of the <a href="https://cake-lab.github.io">CakeLab</a> fortunately advised by <a href="https://tianguo.info">Prof. Tian Guo</a>. My research interests lie in the board area of mobile system, computer vision and computer graphics. Recently, I am working on building new types of efficient mobile augmented reality (AR) systems that leverage the power of deep learning to produce immersive AR user experience. Prior to WPI, I obtained my Bachelor's degree in Software Engineering from <a href="https://tjnu.edu.cn">Tianjin Normal University (TJNU)</a> in 2019. I love everything about the computers, I'm also a tech guy, a sci-fi guy. Besides my research, I love cooking a lot and play guitar sometime.</p>
+            <p>My name is Yiqin Zhao (赵一勤 in Chinese), I love my name since it is an important lesson for me: to work hard, to be diligent. Which comes from the meaning of the Chinese character 勤 (qin). Currently, I am a first-year Computer Science master student at <a href="https://wpi.edu">Worcester Polytechnic Institute (WPI)</a>. I'm also a member of the <a href="https://cake-lab.github.io">CakeLab</a> research group fortunately advised by <a href="https://tianguo.info">Prof. Tian Guo</a>. My research interests lie in the board area of mobile system, computer vision and computer graphics. Recently, I'm working on building new types of efficient mobile augmented reality (AR) systems that leverage the power of deep learning to support immersive AR user experience. Prior to WPI, I obtained my Bachelor's degree in Software Engineering from <a href="https://tjnu.edu.cn">Tianjin Normal University (TJNU)</a>, Tianjin, China in 2019. Besides my research, I love cooking a lot and play guitar sometime. I'm also a tech guy, a sci-fi guy. Check more of myself at <a href="/posts/about-me">here</a>.</p>
 
         </div>
 
@@ -746,7 +803,7 @@
 
         <div class="markdown news">
             <ul>
-<li><strong>03/03/2020</strong> Attended the HotMobile 2020 conference.</li><li><strong>08/26/2019</strong> Joint Worcester Polytechnic Institute CakeLab</li><li><strong>10/26/2018</strong> Presented my paper at ASMMC-MMAC 2018 workshop.</li><li><strong>10/15/2018</strong> Won Wang Kechang Technology innovation scholarship (&lt;1%)</li><li><strong>10/13/2018</strong> Won annual special scholarship at TJNU (top 5%)</li><li><strong>09/03/2018</strong> Resigned from Baidu. I will continue my journey on computer science study.</li></ul>
+<li><strong>03/03/2020</strong> Presented my poster at the HotMobile 2020 conference in Austin, TX.</li><li><strong>02/01/2020</strong> &#x1F525; Our poster on mobile AR lighting estimation has been accepted in HotMobile 2020 conference.</li><li><strong>08/26/2019</strong> Joined Worcester Polytechnic Institute CakeLab</li><li><strong>10/26/2018</strong> Presented my paper on ASMMC-MMAC 2018 workshop.</li><li><strong>10/15/2018</strong> Received Wang Kechang Technology innovation scholarship (&lt;1%)</li><li><strong>10/13/2018</strong> Received annual special scholarship at Tianjin Normal University (top 5%)</li></ul>
             <a href="/news">More News >>></a>
         </div>
 
@@ -790,8 +847,9 @@
 
         
 
-<div class="stack foot" horizontal-layout="center">
+<div class="stack foot" direction="column" horizontal-layout="center">
     © Yiqin Zhao 2020. Last Updated: Mar 30, 2020
+    <br/><span>Proudly Powered by <a href="https://github.com/YiqinZhao/Ploceus">Ploceus</a></span>
 </stack>
 
 

@@ -186,9 +186,39 @@
         display: none;
     }
 
+    .yiqinzhao > a {
+        margin-top: 5px;
+    }
+
     .menu-icon {
         width: 40px;
+        height: 40px;
         display: none;
+
+        position: relative;
+    }
+
+    .menu-icon > img {
+        transition: transform 100ms linear, opacity 100ms linear;
+    }
+
+    .menu-icon > .burger-button {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .menu-icon > .close-button {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .menu-icon > .fade {
+        transform: scale(0.8);
+        opacity: 0;
     }
 
     .menu-row-mobile {
@@ -351,7 +381,7 @@
             background: #FFFFFF;
 
             transform: translateY(-100vh);
-            transition: all 500ms cubic-bezier(0.74, 0, 0.5, 1);
+            transition: all 400ms cubic-bezier(0.74, 0, 0.5, 1);
         }
 
         .menu-row-mobile-active {
@@ -426,7 +456,8 @@
 
 
         <div class="yiqinzhao">
-            <img src="/assets/img/slogan.svg" />
+            <a href="/">
+                <img src="/assets/img/slogan.svg" /></a>
         </div>
 
         <div class="stack menu-row">
@@ -486,12 +517,13 @@
         </div>
 
         <div class="menu-icon" onclick="onMobileMenuOpenClick()">
-            <img src="/assets/img/menu.svg" />
+            <img class="burger-button" src="/assets/img/menu.svg" />
+            <img class="close-button fade" src="/assets/img/close.svg" />
         </div>
     </div>
 </div>
 
-<div class="bg-mask remove"></div>
+<div class="bg-mask remove" onclick="onMobileMenuOpenClick()"></div>
 <div class="stack menu-row-mobile" direction="column">
     <div class="menu-item "
         onclick="onMenuItemClick('/')">
@@ -538,15 +570,25 @@
     }
 
     function onMobileMenuOpenClick() {
-        var mobileMenu = document.querySelectorAll('.menu-row-mobile')[0]
-        var menuBgMask = document.querySelectorAll('.bg-mask')[0]
+        const mobileMenu = document.querySelectorAll('.menu-row-mobile')[0]
+        const menuBgMask = document.querySelectorAll('.bg-mask')[0]
+
+        const burgerButton = document.querySelectorAll('.burger-button')[0]
+        const closeButton = document.querySelectorAll('.close-button')[0]
+
         if (mobileMenu.classList.contains('menu-row-mobile-active')) {
+            burgerButton.classList.remove('fade')
+            closeButton.classList.add('fade')
+
             menuBgMask.classList.remove('bg-mask-hide')
             setTimeout(() => {
                 menuBgMask.classList.add('remove')
             }, 500)
             mobileMenu.classList.remove('menu-row-mobile-active')
         } else {
+            burgerButton.classList.add('fade')
+            closeButton.classList.remove('fade')
+
             menuBgMask.classList.remove('remove')
             setTimeout(() => {
                 menuBgMask.classList.add('bg-mask-hide')
@@ -630,8 +672,9 @@ Accepted in proceedings of the Joint Workshop of the 4th Workshop on Affective S
 
         
 
-<div class="stack foot" horizontal-layout="center">
+<div class="stack foot" direction="column" horizontal-layout="center">
     © Yiqin Zhao 2020. Last Updated: Mar 30, 2020
+    <br/><span>Proudly Powered by <a href="https://github.com/YiqinZhao/Ploceus">Ploceus</a></span>
 </stack>
 
     </div>

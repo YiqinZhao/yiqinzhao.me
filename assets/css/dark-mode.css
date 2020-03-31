@@ -48,9 +48,6 @@
     .social-float>div>a:hover {
         background-color: #2d2d2d;
     }
-    .friend-name {
-        background-color: #2d2d2d;
-    }
     .foot {
         border-color: rgba(255, 255, 255, 0.4);
         color: rgba(255, 255, 255, 0.6);
@@ -91,7 +88,7 @@
         background-color: #2d2d2d;
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
     }
-    .yiqinzhao>img {
+    .yiqinzhao img {
         filter: invert(1);
     }
     .menu-icon>img {

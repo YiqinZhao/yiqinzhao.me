@@ -186,9 +186,39 @@
         display: none;
     }
 
+    .yiqinzhao > a {
+        margin-top: 5px;
+    }
+
     .menu-icon {
         width: 40px;
+        height: 40px;
         display: none;
+
+        position: relative;
+    }
+
+    .menu-icon > img {
+        transition: transform 100ms linear, opacity 100ms linear;
+    }
+
+    .menu-icon > .burger-button {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .menu-icon > .close-button {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .menu-icon > .fade {
+        transform: scale(0.8);
+        opacity: 0;
     }
 
     .menu-row-mobile {
@@ -351,7 +381,7 @@
             background: #FFFFFF;
 
             transform: translateY(-100vh);
-            transition: all 500ms cubic-bezier(0.74, 0, 0.5, 1);
+            transition: all 400ms cubic-bezier(0.74, 0, 0.5, 1);
         }
 
         .menu-row-mobile-active {
@@ -426,7 +456,8 @@
 
 
         <div class="yiqinzhao">
-            <img src="/assets/img/slogan.svg" />
+            <a href="/">
+                <img src="/assets/img/slogan.svg" /></a>
         </div>
 
         <div class="stack menu-row">
@@ -486,12 +517,13 @@
         </div>
 
         <div class="menu-icon" onclick="onMobileMenuOpenClick()">
-            <img src="/assets/img/menu.svg" />
+            <img class="burger-button" src="/assets/img/menu.svg" />
+            <img class="close-button fade" src="/assets/img/close.svg" />
         </div>
     </div>
 </div>
 
-<div class="bg-mask remove"></div>
+<div class="bg-mask remove" onclick="onMobileMenuOpenClick()"></div>
 <div class="stack menu-row-mobile" direction="column">
     <div class="menu-item "
         onclick="onMenuItemClick('/')">
@@ -538,15 +570,25 @@
     }
 
     function onMobileMenuOpenClick() {
-        var mobileMenu = document.querySelectorAll('.menu-row-mobile')[0]
-        var menuBgMask = document.querySelectorAll('.bg-mask')[0]
+        const mobileMenu = document.querySelectorAll('.menu-row-mobile')[0]
+        const menuBgMask = document.querySelectorAll('.bg-mask')[0]
+
+        const burgerButton = document.querySelectorAll('.burger-button')[0]
+        const closeButton = document.querySelectorAll('.close-button')[0]
+
         if (mobileMenu.classList.contains('menu-row-mobile-active')) {
+            burgerButton.classList.remove('fade')
+            closeButton.classList.add('fade')
+
             menuBgMask.classList.remove('bg-mask-hide')
             setTimeout(() => {
                 menuBgMask.classList.add('remove')
             }, 500)
             mobileMenu.classList.remove('menu-row-mobile-active')
         } else {
+            burgerButton.classList.add('fade')
+            closeButton.classList.remove('fade')
+
             menuBgMask.classList.remove('remove')
             setTimeout(() => {
                 menuBgMask.classList.add('bg-mask-hide')
@@ -598,7 +640,7 @@
                     <div class="date">
                         Mar 13, 2020
                     </div>
-                    <div class="eta">4 min</div>
+                    <div class="eta">5 min</div>
                 </div>
             </div>
         
@@ -663,17 +705,38 @@ m = np.ones((<span class="hljs-number">10000</span>, <span class="hljs-number">1
     <span class="hljs-keyword">for</span> u <span class="hljs-keyword">in</span> range(len(m.shape[<span class="hljs-number">1</span>])):
         m[v, u] = some_operation(m[v, u])
 </code></pre>
-<p>You may try to use multi threading for optimizing the above code, and you will get some performance improvement, but it might not be much even you used all your CPU cores.</p>
-<p><strong>To be continued...</strong></p>
+<p>You may try to use multi threading for optimizing the above code, and you will get some performance improvement, but it might not be much even you used all your CPU cores. This is because the major performance bottleneck here is the array access time. Every array access was triggered in the Python environment and reached data with low-level C++ code.</p>
+<p>So, is there any good way to speed up the access? Unfortunately, this could be very difficult if you don't want to do lots of modifications on your existing Python code. But if we rethink the problem, instead of trying to eliminate the performance bottleneck between Python and C++, we can turn everything into fast binary code!</p>
+<p>This idea sounds super crazy, but could be super simple if we use right tools. For example, <a href="http://numba.pydata.org">Numba</a> provides JIT (just-in-time compilation) to turn Python code into compiled binary code. And it has deeply integrated with Numpy ecosystem, that could automatically optimize array access during compilation. Let's look at an example:</p>
+<pre class="hljs"><code><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">from</span> numba <span class="hljs-keyword">import</span> njit
+
+<span class="hljs-meta">@njit</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">optimized_func</span><span class="hljs-params">(m)</span>:</span>
+    <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> range(len(m.shape[<span class="hljs-number">0</span>])):
+        <span class="hljs-keyword">for</span> u <span class="hljs-keyword">in</span> range(len(m.shape[<span class="hljs-number">1</span>])):
+            m[v, u] = some_operation(m[v, u])
+
+arr = np.ones((<span class="hljs-number">10000</span>, <span class="hljs-number">10000</span>))
+optimized_func(arr)
+</code></pre>
+<p>This example turns the above python code into an optimized Numba code. As you can see, we use the <code>@njit</code> decorator to optimize a function, and the <code>optimized_func</code> will be complied into binary code before execution.</p>
+<p>There is always a &quot;but&quot;. But since JIT compilation require strict and strong variable type, optimize a large Python program will not be easy. On the other hand, you shouldn't have bottle neck everywhere in your program, they should mostly located in some heavy computation functions. And every external function in <code>njit</code> decorated function should also be decorated.</p>
+<p>We will not go into details of <strong>Numba</strong> optimization in this article, please refer to its documents for more comprehensive explanations. Besides Numba, Cython is also a choice. But personally I would not recommend Cython since it provide less IDE support.</p>
 <h2 id="%F0%9F%90%8E-unleash-the-power-of-gpu">🐎 Unleash the Power of GPU</h2>
+<p>For most time, you should be satisfied after using Numba in your code. However, there might be chance that your program has huge amount of linear algebra computation, e.g., a neural network. In this scenario, you could use GPU to boost your performance.</p>
+<p>Before talking about GPU, we should take a look back to our existing optimization skills. A obvious technique that plays an important part is parallel, and it is also the most important feature of GPU. Unlike CPU have few but strong cores, GPU has many but week cores. If you can break down your task into small pieces that can be executed in parallel, execute them on GPU would be much faster than CPU. And this kind of task break can often happens on linear algebra programs that widely used in computer graphics and machine learning.</p>
+<p>Fortunately, you can still use <strong>Numbda</strong> to compile your Python code into CUDA GPU code. And another choice is <a href="https://cupy.chainer.org">CuPy</a>.</p>
 <h2 id="%F0%9F%94%A5-nirvana-rebirth-in-c%2B%2B">🔥 Nirvana Rebirth in C++</h2>
+<p><strong>To be continued....</strong></p>
 
         </div>
 
         
 
-<div class="stack foot" horizontal-layout="center">
+<div class="stack foot" direction="column" horizontal-layout="center">
     © Yiqin Zhao 2020. Last Updated: Mar 30, 2020
+    <br/><span>Proudly Powered by <a href="https://github.com/YiqinZhao/Ploceus">Ploceus</a></span>
 </stack>
 
     </div>
