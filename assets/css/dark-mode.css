@@ -79,6 +79,9 @@
     .markdown code {
         background: #2d2d2d;
     }
+    .markdown hr {
+        border-color: rgba(255, 255, 255, 0.6);
+    }
 }
 
 /* Mobile */

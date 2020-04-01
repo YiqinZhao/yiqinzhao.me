@@ -1,5 +1,5 @@
 <html>
-    
+
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -12,7 +12,7 @@
     <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/atom-one-dark.css" />
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
 
-    <title>About Me | Yiqin Zhao</title>
+    <title>Life | Yiqin Zhao</title>
 
     <meta name="apple-mobile-web-app-capable" content="yes"></meta>
     <meta name="apple-mobile-web-app-status-bar-style" content="default"></meta>
@@ -39,34 +39,70 @@
         color: rgba(86, 150, 231, 100);
     }
 </style><style>
-        .title {
-            font-size: 3rem;
-            font-weight: bold;
-            margin: 20px 0 10px 0;
-        }
+    h1 {
+        width: 100%;
+    }
 
-        .meta-row {
-            height: 35px;
-            border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
-            margin-bottom: 20px;
-        }
+    .markdown {
+        flex-wrap: wrap;
+    }
 
-        .meta-row > div {
-            margin-right: 10px;
-        }
+    .markdown>blockquote {
+        width: 18%;
 
-        .category {
-            font-weight: 600;
-        }
+        padding: 0;
+        border: none;
 
-        .eta {
-            color: rgba(0, 0, 0, 0.3);
-        }
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
 
-        .markdown strong > img {
-            border: 1px solid rgba(0, 0, 0, 0.6);
+        box-sizing: border-box;
+
+        background: transparent;
+
+        cursor: pointer;
+    }
+
+    .markdown>blockquote p:nth-child(2) {
+        color: rgba(86, 150, 231, 100);
+    }
+
+    .markdown>blockquote:hover p {
+        color: rgba(86, 150, 231, 100);
+    }
+
+    .markdown>blockquote>p:nth-child(1) {
+        margin-bottom: 1rem;
+    }
+
+    .markdown>blockquote img {
+        transition: filter 100ms linear;
+    }
+
+    .markdown>blockquote:hover img {
+        filter: brightness(1.1);
+    }
+
+    .markdown>blockquote p {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    @media (max-width: 480px) {
+        .markdown>blockquote {
+            width: 100%;
         }
-    </style><style>
+    }
+
+    @media (prefers-color-scheme: dark) {
+        blockquote {
+            background-color: transparent !important;
+        }
+    }
+</style><style>
     .nav-container {
         width: calc(100%);
         height: 60px;
@@ -441,9 +477,10 @@
 </head>
 
 
-    
+
+
 <body>
-    <div class="responsive-container stack" direction="column">
+    <div class="stack responsive-container" direction="column">
         
 
 <div class="responsive-container second-res">
@@ -469,9 +506,9 @@
                 onclick="onMenuItemClick('/project')">project</div>
             <div class="menu-item "
                 onclick="onMenuItemClick('/publication')">publication</div>
-            <div class="menu-item "
-                onclick="onMenuItemClick('/life')">life</div>
             <div class="menu-item menu-item-active"
+                onclick="onMenuItemClick('/life')">life</div>
+            <div class="menu-item "
                 onclick="onMenuItemClick('/posts')">posts</div>
             <div class="menu-item "
                 onclick="onMenuItemClick('/cv')">CV</div>
@@ -539,10 +576,10 @@
     <div class="menu-item "
         onclick="onMenuItemClick('/publication')">
         publication</div>
-    <div class="menu-item "
+    <div class="menu-item menu-item-active"
         onclick="onMenuItemClick('/life')">
         life</div>
-    <div class="menu-item menu-item-active"
+    <div class="menu-item "
         onclick="onMenuItemClick('/posts')">
         posts</div>
     <div class="menu-item "
@@ -637,79 +674,13 @@
 </script>
 
 
-        
-            <div class="stack" direction="column">
-                <div class="title">About Me</div>
-                <div class="stack meta-row" vertical-layout="center">
-                    <div class="category">About</div>
-                    <div class="date">
-                        Mar 12, 2020
-                    </div>
-                    <div class="eta">1 min</div>
-                </div>
-            </div>
-        
-
-        <div class="markdown">
-            <p>Hi, I'm Yiqin, nice to meet you! Please let me introduce myself! ❤️❤️❤️</p>
-<!-- more -->
-<pre class="hljs"><code><span class="hljs-comment">// file - yiqinzhao.ts</span>
-
-<span class="hljs-keyword">class</span> YiqinZhao <span class="hljs-keyword">extends</span> Human <span class="hljs-keyword">implements</span> GraduateStudent, ComputerMagician {
-    name: <span class="hljs-string">'Yiqin Zhao'</span>
-    nameInUnicode: <span class="hljs-string">'赵一勤'</span>
-    gender: Gender.Male
-    bloodType: BloodType.B
-    birthDay: <span class="hljs-built_in">Date</span> = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">836248200</span> * <span class="hljs-number">1000</span>),
-    starSign: StarSign.Cancer
-    citizenship: EarthNations.PeoplesRepublicOfChina
-
-    sexualIdentity: SexualIdentity.Male
-    sexualOrientation: Gender = Gender.Female
-    genderPronouns: <span class="hljs-built_in">string</span> = <span class="hljs-string">'He/Him/His'</span>
-
-    maritalStatus: maritalStatus[] = [
-        maritalStatus.Single,
-        maritalStatus.Available
-    ]
-
-    ideology: Ideology[] = [
-        PoliticalSpectrum.CentreLeft,
-        GenderRelationship.GenderEquality
-    ]
-
-    languages: Language[] = [
-        <span class="hljs-keyword">new</span> Language({ name: <span class="hljs-string">'Chinese'</span>, isNative: <span class="hljs-literal">true</span> }),
-        <span class="hljs-keyword">new</span> Language({ name: <span class="hljs-string">'English'</span>, progress: <span class="hljs-number">0.75</span> }),
-        <span class="hljs-keyword">new</span> Language({ name: <span class="hljs-string">'Japanese'</span>, progress: <span class="hljs-number">0.05</span> }),
-        <span class="hljs-keyword">new</span> Language({ name: <span class="hljs-string">'Korean'</span>, progress: <span class="hljs-number">1</span> / <span class="hljs-built_in">Math</span>.Infinity }),
-    ]
-
-    hobbies: <span class="hljs-built_in">string</span>[] = [
-        <span class="hljs-string">'cook'</span>, <span class="hljs-string">'video-game'</span>, <span class="hljs-string">'guitar'</span>, <span class="hljs-string">'sci-fi'</span>
-    ]
-
-    booksInProgress: <span class="hljs-built_in">string</span>[] = [<span class="hljs-string">"L'Ancien Régime et la Révolution"</span>]
-
-    <span class="hljs-comment">// Implementation for GraduateStudent interface</span>
-    degreeInProgress: Degrees.Master
-    school: Universities.WorcesterPolytechnicInstitute
-    advisor: Human = Universities.WorcesterPolytechnicInstitute.ComputerScience.Faculties.TianGuo
-    researchInterests: <span class="hljs-built_in">string</span>[] = [
-        <span class="hljs-string">'mobile augmented reality'</span>, <span class="hljs-string">'mobile deep learning'</span>
-    ]
-
-    <span class="hljs-comment">// Implementation for ComputerMagician interface</span>
-    isGeek: <span class="hljs-built_in">boolean</span> = <span class="hljs-literal">true</span>
-    keyboard: HHKB.HYBRID.White
-    mainLanguages: ProgrammingLanguage[] = [
-        <span class="hljs-keyword">new</span> ProgrammingLanguage({ name: <span class="hljs-string">'Python'</span>, proficiency: <span class="hljs-string">'excellent'</span> }),
-        <span class="hljs-keyword">new</span> ProgrammingLanguage({ name: <span class="hljs-string">'TypeScript/JavaScript'</span>, proficiency: <span class="hljs-string">'excellent'</span> })
-    ]
-    mainIDE: IDE.VisualStudioCode
-    computer: Apple.MacBookPro15.Year2019
-}
-</code></pre>
+        <div class="stack markdown">
+            <h1 id="cooking">Cooking</h1>
+<p>I love cooking, I enjoy making delicious food and sharing my beloved recipes. Since I grow up in China 🇨🇳 with the amazing Chinese food culture, the majority of my recipes are Chinese food. I'm writing all recipes in both Chinese and English, which should be recognizable by most people on this planet, hope you will also enjoy them!</p>
+<blockquote>
+<p><img src="cooking/roasted-chicken-thigh/hero.jpg" alt=""></p>
+<p><a href="cooking/roasted-chicken-thigh"><strong>Roasted Chicken Thigh/<br/>香烤鸡腿</strong></a></p>
+</blockquote>
 
         </div>
 
@@ -722,4 +693,18 @@
 
     </div>
 </body>
+
+<script>
+    window.addEventListener('load', function () {
+        document.querySelectorAll('blockquote').forEach((v, i) => {
+            v.addEventListener('click', (() => {
+                let target = v.children[1].children[0].href
+                return function (e) {
+                    window.location.href = target
+                }
+            })())
+        })
+    })
+</script>
+
 </html>
