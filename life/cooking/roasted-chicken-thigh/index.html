@@ -1,5 +1,6 @@
 <html>
     
+    
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -39,8 +40,62 @@
         color: rgba(86, 150, 231, 100);
     }
 </style><style>
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+        }
+
+        .meta-row {
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .meta-row > .stack {
+            margin-bottom: 5px;
+        }
+
+        .meta-row > .stack > div {
+            margin-right: 10px;
+        }
+
+        .meta-row > .stack > div:nth-last-child(1) {
+            margin-right: 0;
+        }
+
+        .multi-lang {
+            padding: 10px 15px;
+            box-sizing: border-box;
+            background-color: #f4f5f7;
+        }
+
+        .available-lang {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .category {
+            font-weight: 600;
+        }
+
+        .eta {
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+        .multi-lang > .label-icon {
+            width: 1.5rem;
+        }
+
+        *[data-lang] {
+            display: none;
+        }
+
+        .markdown strong > img {
+            border: 1px solid rgba(0, 0, 0, 0.6);
+        }
+
         .hero-wrapper {
-            background-color: #F9F9F9;
+            background-color: #f4f5f7;
 
             padding: 0 0 40px 0;
         }
@@ -74,10 +129,6 @@
             box-shadow: 0 0 100px rgba(0, 0, 0, 0.05);
         }
 
-        .markdown {
-            padding: 30px 0;
-        }
-
         .markdown strong > img {
             border: 1px solid rgba(0, 0, 0, 0.6);
         }
@@ -97,12 +148,33 @@
                 width: 100%;
                 border-radius: 0;
             }
+            .meta-row {
+                flex-wrap: wrap;
+            }
+            .meta-row > .stack {
+                width: 100%;
+            }
         }
 
         @media (prefers-color-scheme: dark) {
             .hero-img {
                 box-shadow: 0 0 100px rgba(0, 0, 0, 0.6);
             }
+
+            .label-icon {
+                filter: invert(1);
+            }
+
+            .multi-lang {
+                background: #2d2d2d;
+            }
+        }
+
+        *.show[data-lang] {
+            display: block;
+        }
+        .hide {
+            display: none !important;
         }
     </style><style>
     .nav-container {
@@ -204,7 +276,7 @@
 
     .social-icon>a {
         position: absolute;
-        background-color: #F9F9F9;
+        background-color: #f4f5f7;
         border-radius: 16px;
     }
 
@@ -482,8 +554,10 @@
 
     
 <body>
-    <div class="hero-wrapper">
+    
         
+        <div class="hero-wrapper">
+            
 
 <div class="responsive-container second-res">
     <div class="stack nav-container" vertical-layout="center" horizontal-layout="space-between">
@@ -676,25 +750,65 @@
 </script>
 
 
-        <div class="stack responsive-container hero-res" direction="column">
-            <div class="stack hero-container" horizontal-layout="center">
-                <div class="slogan"></div>
-                <img class="hero-img" src="hero.jpg" />
+            <div class="stack responsive-container hero-res" direction="column">
+                <div class="stack hero-container" horizontal-layout="center">
+                    <div class="slogan"></div>
+                    <img class="hero-img" src="hero.jpg" />
+                </div>
             </div>
         </div>
-    </div>
+    
+
+    
 
     <div class="responsive-container stack" direction="column">
-
         
 
-        <div class="markdown">
-            <h1 id="roasted-chicken-thigh%2F%E9%A6%99%E7%83%A4%E9%B8%A1%E8%85%BF"><center>Roasted Chicken Thigh/香烤鸡腿</center></h1>
-<br/>
-<blockquote>
-<p>English version starts now following by Chinese version. 本文由中英文两部分，英文在前，中文在后。</p>
-</blockquote>
-<h2 id="introduction">Introduction</h2>
+        
+            <div class="stack" direction="column">
+                
+                
+                    <div class="title" data-lang="en-us">Roasted Chicken Thigh</div>
+                
+                    <div class="title" data-lang="zh-cn">烤鸡腿</div>
+                
+
+
+                <div class="stack meta-row" vertical-layout="center" horizontal-layout="space-between">
+                    <div class="stack meta-attributes">
+                        <div class="category">roast</div>
+                        <div class="date">
+                            Apr 4, 2020
+                        </div>
+
+                        
+                            <div class="eta" data-lang="en-us">2 min</div>
+                        
+                            <div class="eta" data-lang="zh-cn">1 min</div>
+                        
+                    </div>
+
+                    <div class="stack multi-lang  ">
+                        <div class="label-icon">
+                            <img src="/assets/img/language.svg" alt="">
+                        </div>
+                        
+                            <div class="available-lang" onclick="onSelectLanguage('en-us')">
+                                English
+                            </div>
+                        
+                            <div class="available-lang" onclick="onSelectLanguage('zh-cn')">
+                                中文
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+        
+
+        
+            <div class="markdown" data-lang="en-us">
+                <h2 id="introduction">Introduction</h2>
 <p>This recipe is a combination of Chinese and Western cooking technique. The final roasted chicken thigh is crispy on the skin side and super tender for the meat. Most importantly, <strong>this dish is very easy to cook!</strong></p>
 <h2 id="ingredients">Ingredients</h2>
 <p>I'm giving ingredients based on 1 piece chicken thigh, scale the numbers based on how many pieces are you going to cook.</p>
@@ -722,8 +836,11 @@
 <p>The above herb/wine solution is widely used in Chinese style marinating. The solution removes stink taste that common exists in meat, especially frozen meat, and replace it with a mixed fragrant smell of herbs and wine. Try it on your next chicken, fish or other meat dish!</p>
 <p>Cumin powder is also a commonly used spice in Chinese style grill/roast, especially with lamb dishes. You can find it in most asian grocery stores.</p>
 <p>This dish do not need long time marinate, don't worry if you are in hurry! The key point of marinating is salt, I'm giving the salt amount based on my experience and personal taste, you can totally change it to your preference.</p>
-<hr>
-<h2 id="%E7%AE%80%E4%BB%8B">简介</h2>
+
+            </div>
+        
+            <div class="markdown" data-lang="zh-cn">
+                <h2 id="%E7%AE%80%E4%BB%8B">简介</h2>
 <p>此菜结合了中西烹饪技巧，烤好的鸡腿鸡皮酥脆，肉质鲜嫩。并且，<strong>制作过程非常简单！</strong></p>
 <h2 id="%E5%8E%9F%E6%9D%90%E6%96%99">原材料</h2>
 <p>注：此处采用西式烹饪中常用的使用勺子的的单位计量法，即 1 tablespoon = 3 teaspoon，1大勺 = 3小勺。所有的用量按照一片鸡腿肉的分量给出，你可以根据鸡肉的多少来调整其他原料的用量。</p>
@@ -752,15 +869,51 @@
 <p>烟熏红椒粉是西式烤肉中常见的香料，尤其是家庭制作使用烤箱烤制的食物。通常烤箱都是电力加热的，这样虽然好控制，但是不如炭烤的肉有风味。在美国德克萨斯州的传统烤肉做法中，通常不会选用电烤箱，而是选择使用木材为燃料进行长时间的低温烟熏烤制，这样的烤法有种非常独特的香味。但是在家庭中很难复现，因为燃料不好取得，而且烟熏烤法时间都较长（牛胸肉 brisket 通常要 6-8 小时）。因此，想简单快速的增加烟熏风味，使用烟熏红椒粉是个很好的方法。</p>
 <p>鸡肉不需要长时间腌制也可以获得很好的风味，腌制的关键是盐的用量。我在此按照我的个人喜好和口味给出用量，你也可以尝试过后按照你的想法调整。</p>
 
-        </div>
+            </div>
+        
 
         
 
 <div class="stack foot" direction="column" horizontal-layout="center">
-    © Yiqin Zhao 2020. Last Updated: Apr 1, 2020
+    © Yiqin Zhao 2020. Last Updated: Apr 4, 2020
     <br/><span>Proudly Powered by <a href="https://github.com/YiqinZhao/Ploceus">Ploceus</a></span>
-</stack>
+</div>
 
     </div>
 </body>
+<script>
+    window.onload = function () {
+        const langAvailable = Array.from(document.querySelectorAll('.markdown'))
+            .map(v => v.attributes['data-lang'].value)
+
+        const lang = navigator.language.toLowerCase()
+        const showingLang = langAvailable.includes(lang)
+            ? lang
+            : 'en-us'
+
+        if (showingLang) {
+            Array.from(
+                document.querySelectorAll(`*[data-lang=${lang}]`)
+            ).forEach(v => {
+                console.log(v)
+                v.classList.add('show')
+            })
+        }
+    }
+
+    function onSelectLanguage (lang) {
+        Array.from(
+                document.querySelectorAll(`*[data-lang]`)
+        ).forEach(v => {
+            if (v.attributes['data-lang'].value === lang) {
+                v.classList.add('show')
+            } else {
+                v.classList.remove('show')
+            }
+        })
+
+        const titleText = document.querySelector(`.title[data-lang=${lang}]`).textContent
+        document.title = document.title.replace(/.+ \|/g, `${titleText} |`)
+    }
+</script>
 </html>

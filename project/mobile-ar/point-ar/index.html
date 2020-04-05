@@ -1,5 +1,6 @@
 <html>
     
+    
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -12,7 +13,7 @@
     <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/atom-one-dark.css" />
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
 
-    <title>Kitchen Setup | Yiqin Zhao</title>
+    <title>PointAR | Yiqin Zhao</title>
 
     <meta name="apple-mobile-web-app-capable" content="yes"></meta>
     <meta name="apple-mobile-web-app-status-bar-style" content="default"></meta>
@@ -46,13 +47,31 @@
         }
 
         .meta-row {
-            height: 35px;
             border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
             margin-bottom: 20px;
         }
 
-        .meta-row > div {
+        .meta-row > .stack {
+            margin-bottom: 5px;
+        }
+
+        .meta-row > .stack > div {
             margin-right: 10px;
+        }
+
+        .meta-row > .stack > div:nth-last-child(1) {
+            margin-right: 0;
+        }
+
+        .multi-lang {
+            padding: 10px 15px;
+            box-sizing: border-box;
+            background-color: #f4f5f7;
+        }
+
+        .available-lang {
+            text-decoration: underline;
+            cursor: pointer;
         }
 
         .category {
@@ -63,8 +82,99 @@
             color: rgba(0, 0, 0, 0.3);
         }
 
+        .multi-lang > .label-icon {
+            width: 1.5rem;
+        }
+
+        *[data-lang] {
+            display: none;
+        }
+
         .markdown strong > img {
             border: 1px solid rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-wrapper {
+            background-color: #f4f5f7;
+
+            padding: 0 0 40px 0;
+        }
+
+        .hero-container {
+            padding: 20px 0;
+
+            position: relative;
+
+            /* A fix for Safari image stretch */
+            align-items: flex-start;
+        }
+
+        .hero-img {
+            width: 50%;
+            z-index: 1;
+
+            border-radius: 3px;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+        }
+
+        .slogan {
+            width: 100%;
+            height: 40%;
+
+            position: absolute;
+            top: 30%;
+            z-index: 0;
+
+            background-color: #FFFFFF;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.05);
+        }
+
+        .markdown strong > img {
+            border: 1px solid rgba(0, 0, 0, 0.6);
+        }
+
+        @media (max-width: 480px) {
+            .hero-wrapper {
+                padding: 0;
+                margin-top: -20px;
+            }
+            .hero-res {
+                width: 100%;
+            }
+            .hero-container {
+                padding: 0;
+            }
+            .hero-img {
+                width: 100%;
+                border-radius: 0;
+            }
+            .meta-row {
+                flex-wrap: wrap;
+            }
+            .meta-row > .stack {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .hero-img {
+                box-shadow: 0 0 100px rgba(0, 0, 0, 0.6);
+            }
+
+            .label-icon {
+                filter: invert(1);
+            }
+
+            .multi-lang {
+                background: #2d2d2d;
+            }
+        }
+
+        *.show[data-lang] {
+            display: block;
+        }
+        .hide {
+            display: none !important;
         }
     </style><style>
     .nav-container {
@@ -166,7 +276,7 @@
 
     .social-icon>a {
         position: absolute;
-        background-color: #F9F9F9;
+        background-color: #f4f5f7;
         border-radius: 16px;
     }
 
@@ -444,8 +554,13 @@
 
     
 <body>
+    
+
+    
+
     <div class="responsive-container stack" direction="column">
         
+            
 
 <div class="responsive-container second-res">
     <div class="stack nav-container" vertical-layout="center" horizontal-layout="space-between">
@@ -466,11 +581,11 @@
                 onclick="onMenuItemClick('/')">home</div>
             <div class="menu-item "
                 onclick="onMenuItemClick('/news')">news</div>
-            <div class="menu-item "
+            <div class="menu-item menu-item-active"
                 onclick="onMenuItemClick('/project')">project</div>
             <div class="menu-item "
                 onclick="onMenuItemClick('/publication')">publication</div>
-            <div class="menu-item menu-item-active"
+            <div class="menu-item "
                 onclick="onMenuItemClick('/life')">life</div>
             <div class="menu-item "
                 onclick="onMenuItemClick('/posts')">posts</div>
@@ -534,13 +649,13 @@
     <div class="menu-item "
         onclick="onMenuItemClick('/news')">
         news</div>
-    <div class="menu-item "
+    <div class="menu-item menu-item-active"
         onclick="onMenuItemClick('/project')">
         project</div>
     <div class="menu-item "
         onclick="onMenuItemClick('/publication')">
         publication</div>
-    <div class="menu-item menu-item-active"
+    <div class="menu-item "
         onclick="onMenuItemClick('/life')">
         life</div>
     <div class="menu-item "
@@ -637,22 +752,90 @@
     })
 </script>
 
+        
 
         
 
-        <div class="markdown">
-            <h1 id="kitchen-setup">Kitchen Setup</h1>
-<p>Cooking is a kind of manufacturing,</p>
+        
+            <div class="markdown" data-lang="en-us">
+                <h1 id="pointar%3A-efficient-lighting-estimation-for-mobile-augmented-reality">PointAR: Efficient Lighting Estimation for Mobile Augmented Reality</h1>
+<p>Coming soon....</p>
+<!-- We propose an efficient lighting estimation pipeline that is suitable to run on modern mobile devices, with comparable resource complexities to state-of-the-art on-device deep learning models. Our pipeline, referred to as PointAR, takes a single RGB-D image captured from the mobile camera and a 2D location in that image, and estimates a 2nd order spherical harmonics coefficients which can be directly utilized by rendering engines for indoor lighting in the context of augmented reality. Our key insight is to formulate the lighting estimation as a learning problem directly from point clouds, which is in part inspired by the Monte Carlo integration leveraged by real-time spherical harmonics lighting. While existing approaches estimate lighting information with complex deep learning pipelines, our method focuses on reducing the computational complexity. Through both quantitative and qualitative experiments, we demonstrate that PointAR achieves lower lighting estimation errors compared to state-of-the-art methods. Further, our method requires an order of magnitude lower resource, comparable to that of mobile-specific DNNs.
 
-        </div>
+# Paper
+
+**DOI**: [10.1145/3267935.3267948](https://doi.org/10.1145/3267935.3267948). Download at [here](https://dl.acm.org/citation.cfm?doid=3267935.3267948)
+
+Accepted in proceedings of the Joint Workshop of the 4th Workshop on Affective Social Multimedia Computing and first Multi-Modal Affective Computing of Large-Scale Multimedia Data (ASMMC-MMAC'18) Pages 27-33
+
+# Cite
+
+```
+@inproceedings{
+    Zhao:2018:DSF:3267935.3267948,
+    author = {Zhao, Ziping and Zhao, Yiqin and Bao, Zhongtian and Wang, Haishuai and Zhang, Zixing and Li, Chao},
+    title = {Deep Spectrum Feature Representations for Speech Emotion Recognition},
+    booktitle = {Proceedings of the Joint Workshop of the 4th Workshop on Affective Social Multimedia Computing and First Multi-Modal Affective Computing of Large-Scale Multimedia Data},
+    series = {ASMMC-MMAC'18},
+    year = {2018},
+    isbn = {978-1-4503-5985-6},
+    location = {Seoul, Republic of Korea},
+    pages = {27--33},
+    numpages = {7},
+    url = {http://doi.acm.org/10.1145/3267935.3267948},
+    doi = {10.1145/3267935.3267948},
+    acmid = {3267948},
+    publisher = {ACM},
+    address = {New York, NY, USA},
+    keywords = {attention mechanism, bidirectional long short-term memory, fully convolutional networks, spectrogram representation, speech emotion recognition},
+}
+``` -->
+
+            </div>
+        
 
         
 
 <div class="stack foot" direction="column" horizontal-layout="center">
-    © Yiqin Zhao 2020. Last Updated: Apr 1, 2020
+    © Yiqin Zhao 2020. Last Updated: Apr 4, 2020
     <br/><span>Proudly Powered by <a href="https://github.com/YiqinZhao/Ploceus">Ploceus</a></span>
-</stack>
+</div>
 
     </div>
 </body>
+<script>
+    window.onload = function () {
+        const langAvailable = Array.from(document.querySelectorAll('.markdown'))
+            .map(v => v.attributes['data-lang'].value)
+
+        const lang = navigator.language.toLowerCase()
+        const showingLang = langAvailable.includes(lang)
+            ? lang
+            : 'en-us'
+
+        if (showingLang) {
+            Array.from(
+                document.querySelectorAll(`*[data-lang=${lang}]`)
+            ).forEach(v => {
+                console.log(v)
+                v.classList.add('show')
+            })
+        }
+    }
+
+    function onSelectLanguage (lang) {
+        Array.from(
+                document.querySelectorAll(`*[data-lang]`)
+        ).forEach(v => {
+            if (v.attributes['data-lang'].value === lang) {
+                v.classList.add('show')
+            } else {
+                v.classList.remove('show')
+            }
+        })
+
+        const titleText = document.querySelector(`.title[data-lang=${lang}]`).textContent
+        document.title = document.title.replace(/.+ \|/g, `${titleText} |`)
+    }
+</script>
 </html>

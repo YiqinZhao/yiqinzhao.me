@@ -1,5 +1,6 @@
 <html>
     
+    
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -46,13 +47,31 @@
         }
 
         .meta-row {
-            height: 35px;
             border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
             margin-bottom: 20px;
         }
 
-        .meta-row > div {
+        .meta-row > .stack {
+            margin-bottom: 5px;
+        }
+
+        .meta-row > .stack > div {
             margin-right: 10px;
+        }
+
+        .meta-row > .stack > div:nth-last-child(1) {
+            margin-right: 0;
+        }
+
+        .multi-lang {
+            padding: 10px 15px;
+            box-sizing: border-box;
+            background-color: #f4f5f7;
+        }
+
+        .available-lang {
+            text-decoration: underline;
+            cursor: pointer;
         }
 
         .category {
@@ -63,8 +82,99 @@
             color: rgba(0, 0, 0, 0.3);
         }
 
+        .multi-lang > .label-icon {
+            width: 1.5rem;
+        }
+
+        *[data-lang] {
+            display: none;
+        }
+
         .markdown strong > img {
             border: 1px solid rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-wrapper {
+            background-color: #f4f5f7;
+
+            padding: 0 0 40px 0;
+        }
+
+        .hero-container {
+            padding: 20px 0;
+
+            position: relative;
+
+            /* A fix for Safari image stretch */
+            align-items: flex-start;
+        }
+
+        .hero-img {
+            width: 50%;
+            z-index: 1;
+
+            border-radius: 3px;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+        }
+
+        .slogan {
+            width: 100%;
+            height: 40%;
+
+            position: absolute;
+            top: 30%;
+            z-index: 0;
+
+            background-color: #FFFFFF;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.05);
+        }
+
+        .markdown strong > img {
+            border: 1px solid rgba(0, 0, 0, 0.6);
+        }
+
+        @media (max-width: 480px) {
+            .hero-wrapper {
+                padding: 0;
+                margin-top: -20px;
+            }
+            .hero-res {
+                width: 100%;
+            }
+            .hero-container {
+                padding: 0;
+            }
+            .hero-img {
+                width: 100%;
+                border-radius: 0;
+            }
+            .meta-row {
+                flex-wrap: wrap;
+            }
+            .meta-row > .stack {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .hero-img {
+                box-shadow: 0 0 100px rgba(0, 0, 0, 0.6);
+            }
+
+            .label-icon {
+                filter: invert(1);
+            }
+
+            .multi-lang {
+                background: #2d2d2d;
+            }
+        }
+
+        *.show[data-lang] {
+            display: block;
+        }
+        .hide {
+            display: none !important;
         }
     </style><style>
     .nav-container {
@@ -166,7 +276,7 @@
 
     .social-icon>a {
         position: absolute;
-        background-color: #F9F9F9;
+        background-color: #f4f5f7;
         border-radius: 16px;
     }
 
@@ -444,8 +554,13 @@
 
     
 <body>
+    
+
+    
+
     <div class="responsive-container stack" direction="column">
         
+            
 
 <div class="responsive-container second-res">
     <div class="stack nav-container" vertical-layout="center" horizontal-layout="space-between">
@@ -637,11 +752,13 @@
     })
 </script>
 
+        
 
         
 
-        <div class="markdown">
-            <h1 id="deep-spectrum">Deep Spectrum</h1>
+        
+            <div class="markdown" data-lang="en-us">
+                <h1 id="deep-spectrum">Deep Spectrum</h1>
 <p>Automatically detecting emotional state in human speech, which plays an effective role in areas of human machine interactions, has been a difficult task for machine learning algorithms. Previous work for emotion recognition have mostly focused on the extraction of carefully hand-crafted and tailored features. Recently, spectrogram representations of emotion speech have achieved competitive performance for automatic speech emotion recognition. In this work we propose a method to tackle the problem of deep features, herein denoted as deep spectrum features, extraction from the spectrogram by leveraging Attention-based Bidirectional Long Short-Term Memory Recurrent Neural Networks with fully convolutional networks. The learned deep spectrum features are then fed into a deep neural network (DNN) to predict the final emotion. The proposed model is then evaluated on the Interactive Emotional Dyadic Motion Capture (IEMOCAP) dataset to validate its effectiveness. Promising results indicate that our deep spectrum representations extracted from the proposed model perform the best, 65.2% for weighted accuracy and 68.0% for unweighted accuracy when compared to other existing methods. We then compare the performance of our deep spectrum features with two standard acoustic feature representations for speech-based emotion recognition. When combined with a support vector classifier, the performance of the deep feature representations extracted are comparable with the conventional features. Moreover, we also investigate the impact of different frequency resolutions of the input spectrogram on the performance of the system.</p>
 <h1 id="paper">Paper</h1>
 <p>Zhao, Ziping and <strong>Zhao, Yiqin</strong> and Bao, Zhongtian and Wang, Haishuai and Zhang, Zixing and Li, Chao</p>
@@ -696,15 +813,51 @@
 <h1 id="contact">Contact</h1>
 <p>If you have any questions, please feel free to contact <a href="mailto:yiqinzhao@outlook.com">Yiqin Zhao</a>.</p>
 
-        </div>
+            </div>
+        
 
         
 
 <div class="stack foot" direction="column" horizontal-layout="center">
-    © Yiqin Zhao 2020. Last Updated: Apr 1, 2020
+    © Yiqin Zhao 2020. Last Updated: Apr 4, 2020
     <br/><span>Proudly Powered by <a href="https://github.com/YiqinZhao/Ploceus">Ploceus</a></span>
-</stack>
+</div>
 
     </div>
 </body>
+<script>
+    window.onload = function () {
+        const langAvailable = Array.from(document.querySelectorAll('.markdown'))
+            .map(v => v.attributes['data-lang'].value)
+
+        const lang = navigator.language.toLowerCase()
+        const showingLang = langAvailable.includes(lang)
+            ? lang
+            : 'en-us'
+
+        if (showingLang) {
+            Array.from(
+                document.querySelectorAll(`*[data-lang=${lang}]`)
+            ).forEach(v => {
+                console.log(v)
+                v.classList.add('show')
+            })
+        }
+    }
+
+    function onSelectLanguage (lang) {
+        Array.from(
+                document.querySelectorAll(`*[data-lang]`)
+        ).forEach(v => {
+            if (v.attributes['data-lang'].value === lang) {
+                v.classList.add('show')
+            } else {
+                v.classList.remove('show')
+            }
+        })
+
+        const titleText = document.querySelector(`.title[data-lang=${lang}]`).textContent
+        document.title = document.title.replace(/.+ \|/g, `${titleText} |`)
+    }
+</script>
 </html>

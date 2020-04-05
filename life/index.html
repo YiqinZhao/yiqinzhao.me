@@ -47,11 +47,12 @@
         flex-wrap: wrap;
     }
 
-    .markdown>blockquote {
+    .markdown>.item {
         width: 18%;
 
-        padding: 0;
+        padding: 0 0 10px 0;
         border: none;
+        box-sizing: border-box;
 
         display: flex;
         flex-direction: column;
@@ -63,43 +64,54 @@
         background: transparent;
 
         cursor: pointer;
+
+        transition: all 100ms linear;
     }
 
-    .markdown>blockquote p:nth-child(2) {
+    .markdown > .item:hover {
+        background-color: #f4f5f7;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .markdown>.item .label:nth-child(2) {
         color: rgba(86, 150, 231, 100);
     }
 
-    .markdown>blockquote:hover p {
+    .markdown>.item:hover .label {
         color: rgba(86, 150, 231, 100);
     }
 
-    .markdown>blockquote>p:nth-child(1) {
+    .markdown>.item>.label:nth-child(1) {
         margin-bottom: 1rem;
     }
 
-    .markdown>blockquote img {
+    .markdown>.item img {
         transition: filter 100ms linear;
     }
 
-    .markdown>blockquote:hover img {
+    .markdown>.item:hover img {
         filter: brightness(1.1);
     }
 
-    .markdown>blockquote p {
+    .markdown>.item .label {
+        margin-top: 10px;
+    }
+
+    .markdown > .item > a > div {
         width: 100%;
         text-align: center;
-        margin: 0;
     }
 
     @media (max-width: 480px) {
-        .markdown>blockquote {
+        .markdown>.item {
             width: 100%;
         }
     }
 
     @media (prefers-color-scheme: dark) {
-        blockquote {
-            background-color: transparent !important;
+        .markdown > .item:hover {
+            background-color: #2d2d2d;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
         }
     }
 </style><style>
@@ -202,7 +214,7 @@
 
     .social-icon>a {
         position: absolute;
-        background-color: #F9F9F9;
+        background-color: #f4f5f7;
         border-radius: 16px;
     }
 
@@ -675,37 +687,30 @@
 </script>
 
 
+        
+
         <div class="stack markdown">
             <h1 id="cooking">Cooking</h1>
 <p>I love cooking, I enjoy making delicious food and sharing my beloved recipes. Since I grow up in China 🇨🇳 with the amazing Chinese food culture, the majority of my recipes are Chinese food. I'm writing all recipes in both Chinese and English, which should be recognizable by most people on this planet, hope you will also enjoy them!</p>
-<blockquote>
-<p><img src="cooking/roasted-chicken-thigh/hero.jpg" alt=""></p>
-<p><a href="cooking/roasted-chicken-thigh"><strong>Roasted Chicken Thigh/<br/>香烤鸡腿</strong></a></p>
-</blockquote>
+<p>
+                                    <div class="item">
+                                        <a href="cooking/roasted-chicken-thigh">
+                                            <img src="cooking/roasted-chicken-thigh/thumbnail.jpg" />
+                                            <div class="label">Roasted Chicken Thigh/<br/>烤鸡腿</div>
+                                            
+                                        </a>
+                                    </div></p>
 
         </div>
 
         
 
 <div class="stack foot" direction="column" horizontal-layout="center">
-    © Yiqin Zhao 2020. Last Updated: Apr 1, 2020
+    © Yiqin Zhao 2020. Last Updated: Apr 4, 2020
     <br/><span>Proudly Powered by <a href="https://github.com/YiqinZhao/Ploceus">Ploceus</a></span>
-</stack>
+</div>
 
     </div>
 </body>
-
-<script>
-    window.addEventListener('load', function () {
-        document.querySelectorAll('blockquote').forEach((v, i) => {
-            v.addEventListener('click', (() => {
-                let target = v.children[1].children[0].href
-                return function (e) {
-                    window.location.href = target
-                }
-            })())
-        })
-    })
-</script>
 
 </html>

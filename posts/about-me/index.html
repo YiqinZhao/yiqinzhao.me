@@ -1,5 +1,6 @@
 <html>
     
+    
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -46,13 +47,31 @@
         }
 
         .meta-row {
-            height: 35px;
             border-bottom: 1px dashed rgba(0, 0, 0, 0.4);
             margin-bottom: 20px;
         }
 
-        .meta-row > div {
+        .meta-row > .stack {
+            margin-bottom: 5px;
+        }
+
+        .meta-row > .stack > div {
             margin-right: 10px;
+        }
+
+        .meta-row > .stack > div:nth-last-child(1) {
+            margin-right: 0;
+        }
+
+        .multi-lang {
+            padding: 10px 15px;
+            box-sizing: border-box;
+            background-color: #f4f5f7;
+        }
+
+        .available-lang {
+            text-decoration: underline;
+            cursor: pointer;
         }
 
         .category {
@@ -63,8 +82,99 @@
             color: rgba(0, 0, 0, 0.3);
         }
 
+        .multi-lang > .label-icon {
+            width: 1.5rem;
+        }
+
+        *[data-lang] {
+            display: none;
+        }
+
         .markdown strong > img {
             border: 1px solid rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-wrapper {
+            background-color: #f4f5f7;
+
+            padding: 0 0 40px 0;
+        }
+
+        .hero-container {
+            padding: 20px 0;
+
+            position: relative;
+
+            /* A fix for Safari image stretch */
+            align-items: flex-start;
+        }
+
+        .hero-img {
+            width: 50%;
+            z-index: 1;
+
+            border-radius: 3px;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+        }
+
+        .slogan {
+            width: 100%;
+            height: 40%;
+
+            position: absolute;
+            top: 30%;
+            z-index: 0;
+
+            background-color: #FFFFFF;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.05);
+        }
+
+        .markdown strong > img {
+            border: 1px solid rgba(0, 0, 0, 0.6);
+        }
+
+        @media (max-width: 480px) {
+            .hero-wrapper {
+                padding: 0;
+                margin-top: -20px;
+            }
+            .hero-res {
+                width: 100%;
+            }
+            .hero-container {
+                padding: 0;
+            }
+            .hero-img {
+                width: 100%;
+                border-radius: 0;
+            }
+            .meta-row {
+                flex-wrap: wrap;
+            }
+            .meta-row > .stack {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .hero-img {
+                box-shadow: 0 0 100px rgba(0, 0, 0, 0.6);
+            }
+
+            .label-icon {
+                filter: invert(1);
+            }
+
+            .multi-lang {
+                background: #2d2d2d;
+            }
+        }
+
+        *.show[data-lang] {
+            display: block;
+        }
+        .hide {
+            display: none !important;
         }
     </style><style>
     .nav-container {
@@ -166,7 +276,7 @@
 
     .social-icon>a {
         position: absolute;
-        background-color: #F9F9F9;
+        background-color: #f4f5f7;
         border-radius: 16px;
     }
 
@@ -444,8 +554,13 @@
 
     
 <body>
+    
+
+    
+
     <div class="responsive-container stack" direction="column">
         
+            
 
 <div class="responsive-container second-res">
     <div class="stack nav-container" vertical-layout="center" horizontal-layout="space-between">
@@ -637,22 +752,44 @@
     })
 </script>
 
+        
 
         
             <div class="stack" direction="column">
-                <div class="title">About Me</div>
-                <div class="stack meta-row" vertical-layout="center">
-                    <div class="category">About</div>
-                    <div class="date">
-                        Mar 12, 2020
+                
+                    <div class="title">About Me</div>
+                
+
+
+                <div class="stack meta-row" vertical-layout="center" horizontal-layout="space-between">
+                    <div class="stack meta-attributes">
+                        <div class="category">About</div>
+                        <div class="date">
+                            Mar 12, 2020
+                        </div>
+
+                        
+                            <div class="eta" data-lang="en-us">2 min</div>
+                        
                     </div>
-                    <div class="eta">2 min</div>
+
+                    <div class="stack multi-lang hide ">
+                        <div class="label-icon">
+                            <img src="/assets/img/language.svg" alt="">
+                        </div>
+                        
+                            <div class="available-lang" onclick="onSelectLanguage('en-us')">
+                                English
+                            </div>
+                        
+                    </div>
                 </div>
             </div>
         
 
-        <div class="markdown">
-            <p>Hi, I'm Yiqin, nice to meet you! Please let me introduce myself! ❤️❤️❤️</p>
+        
+            <div class="markdown" data-lang="en-us">
+                <p>Hi, I'm Yiqin, nice to meet you! Please let me introduce myself! ❤️❤️❤️</p>
 <!-- more -->
 <pre class="hljs"><code><span class="hljs-comment">// file - yiqinzhao.ts</span>
 
@@ -692,7 +829,7 @@
 
     booksInProgress: <span class="hljs-built_in">string</span>[] = [<span class="hljs-string">"L'Ancien Régime et la Révolution"</span>]
 
-    musicArtistsLiked: <span class="hljs-built_in">string</span>[] = [
+    musicFavoriteArtists: <span class="hljs-built_in">string</span>[] = [
         <span class="hljs-string">'IU'</span>, <span class="hljs-string">'BLACKPINK'</span>, <span class="hljs-string">'SUNMI'</span>, <span class="hljs-string">'RedVelvet'</span>,
         <span class="hljs-string">'Avril Lavigne'</span>, <span class="hljs-string">'Carly Rae Jepsen'</span>,
         <span class="hljs-string">'G.E.M'</span>, <span class="hljs-string">'Taylor Swift'</span>
@@ -713,7 +850,7 @@
     <span class="hljs-comment">// Implementation for GraduateStudent interface</span>
     degreeInProgress: Degrees.Master
     school: Universities.WorcesterPolytechnicInstitute
-    advisor: Human = Universities.WorcesterPolytechnicInstitute.ComputerScience.Faculties.TianGuo
+    advisor: Human = Universities.WorcesterPolytechnicInstitute.ComputerScience.Faculties.<a href="https://tianguo.info">TianGuo</a>
     researchInterests: <span class="hljs-built_in">string</span>[] = [
         <span class="hljs-string">'mobile augmented reality'</span>, <span class="hljs-string">'mobile deep learning'</span>
     ]
@@ -730,15 +867,51 @@
 }
 </code></pre>
 
-        </div>
+            </div>
+        
 
         
 
 <div class="stack foot" direction="column" horizontal-layout="center">
-    © Yiqin Zhao 2020. Last Updated: Apr 1, 2020
+    © Yiqin Zhao 2020. Last Updated: Apr 4, 2020
     <br/><span>Proudly Powered by <a href="https://github.com/YiqinZhao/Ploceus">Ploceus</a></span>
-</stack>
+</div>
 
     </div>
 </body>
+<script>
+    window.onload = function () {
+        const langAvailable = Array.from(document.querySelectorAll('.markdown'))
+            .map(v => v.attributes['data-lang'].value)
+
+        const lang = navigator.language.toLowerCase()
+        const showingLang = langAvailable.includes(lang)
+            ? lang
+            : 'en-us'
+
+        if (showingLang) {
+            Array.from(
+                document.querySelectorAll(`*[data-lang=${lang}]`)
+            ).forEach(v => {
+                console.log(v)
+                v.classList.add('show')
+            })
+        }
+    }
+
+    function onSelectLanguage (lang) {
+        Array.from(
+                document.querySelectorAll(`*[data-lang]`)
+        ).forEach(v => {
+            if (v.attributes['data-lang'].value === lang) {
+                v.classList.add('show')
+            } else {
+                v.classList.remove('show')
+            }
+        })
+
+        const titleText = document.querySelector(`.title[data-lang=${lang}]`).textContent
+        document.title = document.title.replace(/.+ \|/g, `${titleText} |`)
+    }
+</script>
 </html>
