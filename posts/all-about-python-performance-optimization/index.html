@@ -763,7 +763,7 @@
 
                 <div class="stack meta-row" vertical-layout="center" horizontal-layout="space-between">
                     <div class="stack meta-attributes">
-                        <div class="category">Tech</div>
+                        <div class="category">Python</div>
                         <div class="date">
                             Mar 13, 2020
                         </div>
@@ -879,7 +879,7 @@ optimized_func(arr)
         
 
 <div class="stack foot" direction="column" horizontal-layout="center">
-    © Yiqin Zhao 2020. Last Updated: Apr 4, 2020
+    © Yiqin Zhao 2020. Last Updated: Apr 5, 2020
     <br/><span>Proudly Powered by <a href="https://github.com/YiqinZhao/Ploceus">Ploceus</a></span>
 </div>
 
@@ -895,14 +895,12 @@ optimized_func(arr)
             ? lang
             : 'en-us'
 
-        if (showingLang) {
-            Array.from(
-                document.querySelectorAll(`*[data-lang=${lang}]`)
-            ).forEach(v => {
-                console.log(v)
-                v.classList.add('show')
-            })
-        }
+        Array.from(
+            document.querySelectorAll(`*[data-lang=${showingLang}]`)
+        ).forEach(v => {
+            console.log(v)
+            v.classList.add('show')
+        })
     }
 
     function onSelectLanguage (lang) {
