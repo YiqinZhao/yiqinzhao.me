@@ -2,11 +2,11 @@
     font-size: 18px;
     /* custom variables */
     --tint-color: rgba(86, 150, 231, 100);
-    --bg-color: #ffffff;
+    --bg-color: #ececec;
     --font-color: #000000;
-    --front-color: rgba(0, 0, 0, .1);
+    --front-color: rgb(211, 211, 211);
     --line-color: rgba(0, 0, 0, 0.4);
-    --highlight-color: rgba(0, 0, 0, .05);
+    --highlight-color: rgb(224, 224, 224);
 }
 
 * {
