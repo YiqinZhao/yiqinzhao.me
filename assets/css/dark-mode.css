@@ -1,59 +1,20 @@
 /* Dark Mode */
-
 @media (prefers-color-scheme: dark) {
-    body {
-        background-color: #393939;
-        color: white;
+    :root {
+        --bg-color: #2D2D2D;
+        --font-color: #ffffff;
+        --front-color: #0a0a0a;
+        --highlight-color: rgb(70, 70, 70);
+        --line-color: rgba(255, 255, 255, 0.4);
     }
-    .qin {
-        border-color: rgba(255, 255, 255, 0.8);
+    .vector-image {
+        filter: invert();
     }
-    .qin::before {
-        border-color: rgba(255, 255, 255, 0.5);
-    }
-    .qin::after {
-        border-color: rgba(255, 255, 255, 0.5);
-    }
-    .qin>img {
-        filter: invert(1) contrast(10);
-    }
-    .slogan-text {
-        filter: invert(1);
-    }
-    .slogan {
-        background-color: #393939;
-        box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
-    }
-    .slogan-des {
-        opacity: 0.8;
-    }
-    .hero-wrapper {
-        background-color: #2d2d2d;
-    }
-    .social-icon>a {
-        background-color: #393939;
-    }
-    .social-icon>a>img {
-        filter: invert(1);
-    }
-    .social-float {
-        background-color: #393939;
-    }
-    .social-float img {
-        filter: invert(0.9);
-    }
-    .social-float>div>a>p {
-        color: #ffffff;
-    }
-    .social-float>div>a:hover {
-        background-color: #2d2d2d;
-    }
-    .foot {
-        border-color: rgba(255, 255, 255, 0.4);
-        color: rgba(255, 255, 255, 0.6);
+    article a:hover {
+        text-decoration-color: rgba(255, 255, 255, 0.7);
     }
     .markdown blockquote {
-        background-color: #2d2d2d;
+        background-color: #232323;
     }
     .markdown blockquote p {
         color: #ffffff;
@@ -66,9 +27,6 @@
     }
     .title a {
         color: #FFFFFF;
-    }
-    .article-item {
-        border-color: rgba(255, 255, 255, 0.4);
     }
     .meta-row {
         border-color: rgba(255, 255, 255, 0.4);
@@ -85,25 +43,11 @@
 }
 
 /* Mobile */
-
 @media (max-width: 480px) and (prefers-color-scheme: dark) {
-    .nav-container {
-        background-color: #2d2d2d;
-        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-    }
     .yiqinzhao img {
         filter: invert(1);
     }
     .menu-icon>img {
         filter: invert(1);
-    }
-    .menu-row-mobile {
-        background-color: #2d2d2d;
-    }
-    .social-icons-mobile>div>a>img {
-        filter: invert(1);
-    }
-    .social-icons-mobile>div>a>p {
-        color: #ffffff;
     }
 }
