@@ -139,11 +139,6 @@ span > img {
     }
 }
 
-article a:hover {
-    text-decoration: underline;
-    text-decoration-color: rgba(0, 0, 0, 0.7);
-}
-
 /* Shared Components */
 
 .stack {
@@ -213,7 +208,6 @@ article a:hover {
 /* Page */
 
 a {
-    /* color: black; */
     text-decoration: none;
 }
 
@@ -247,6 +241,18 @@ img {
     font-weight: bold;
 }
 
+.markdown a {
+    text-decoration: underline;
+}
+
+a {
+    text-decoration-color: rgba(0, 0, 0, 0.7) !important;
+}
+a:hover {
+    text-decoration-color: rgba(0, 0, 0, 0.7) !important;
+    text-decoration: underline;
+}
+
 .markdown p {
     margin: 0 0 1.25rem 0;
     font-size: 1rem;
@@ -256,14 +262,6 @@ img {
 .markdown li {
     margin-bottom: 0.25rem;
 }
-
-/* .markdown a, .markdown .md-def-url {
-    text-decoration: underline;
-}
-
-.markdown a:hover {
-    text-decoration: underline;
-} */
 
 .markdown table {
     width: 100%;
