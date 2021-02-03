@@ -1,8 +1,10 @@
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-color: #2D2D2D;
         --font-rgb: 255, 255, 255;
+        --highlight-rgb: 70, 70, 70;
+
+        --bg-color: #2D2D2D;
         --font-color: #ffffff;
         --front-color: #0a0a0a;
         --highlight-color: rgb(70, 70, 70);

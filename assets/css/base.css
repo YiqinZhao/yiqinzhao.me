@@ -1,9 +1,11 @@
 :root {
     font-size: 18px;
     /* custom variables */
+    --font-rgb: 0, 0, 0;
+    --highlight-rgb: 224, 224, 224;
+
     --tint-color: rgba(86, 150, 231, 100);
     --bg-color: #ececec;
-    --font-rgb: 0, 0, 0;
     --font-color: #000000;
     --front-color: rgb(211, 211, 211);
     --line-color: rgba(0, 0, 0, 0.4);
