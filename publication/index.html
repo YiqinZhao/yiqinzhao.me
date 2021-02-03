@@ -103,12 +103,13 @@
     function updateContentUI () {
         document.querySelectorAll(".pub-row")
             .forEach(element => {
-                const showElement = Object.keys(filterState)
-                    .reduce((decision, key) => (
+                const keys =  Object.keys(filterState)
+                const showElement = keys.length !== 1
+                    ? true : keys.reduce((decision, key) => (
                         decision || filterState[key]
                             .reduce((d, v) => (
-                                d || element.getAttribute(`data-${key}`).includes(v)
-                            ), false)
+                                d && element.getAttribute(`data-${key}`).includes(v)
+                            ), true)
                     ), false)
 
                 showElement
