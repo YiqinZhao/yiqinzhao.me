@@ -30,10 +30,6 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
-article {
-    padding-top: 20px;
-}
-
 header {
     grid-row: 1;
     grid-column: 2;
@@ -176,6 +172,10 @@ div.encrypted {
     header {
         grid-column: 1 / -1;
         padding: 0;
+    }
+
+    article {
+        padding-top: 20px;
     }
 
     .markdown pre.hljs {
