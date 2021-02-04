@@ -5,7 +5,7 @@
     --highlight-rgb: 224, 224, 224;
 
     --tint-color: rgba(86, 150, 231, 100);
-    --bg-color: #ececec;
+    --bg-color: #f5f5f5;
     --font-color: #000000;
     --front-color: rgb(211, 211, 211);
     --line-color: rgba(0, 0, 0, 0.4);
@@ -31,7 +31,7 @@ body {
 }
 
 article {
-    /* padding-top: 20px; */
+    padding-top: 20px;
 }
 
 header {
