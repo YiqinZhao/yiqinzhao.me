@@ -14,11 +14,10 @@
         filter: invert();
     }
     a {
-        text-decoration-color: rgba(255, 255, 255, 0.7) !important;
+        text-decoration-color: rgba(255, 255, 255, 0.7);
     }
     a:hover {
-        text-decoration-color: rgba(255, 255, 255, 0.7) !important;
-        text-decoration: underline;
+        text-decoration-color: rgba(255, 255, 255, 0.7);
     }
     .markdown blockquote {
         background-color: #232323;
@@ -31,9 +30,6 @@
     }
     .markdown .hljs>code {
         color: inherit;
-    }
-    .title a {
-        color: #FFFFFF;
     }
     .meta-row {
         border-color: rgba(255, 255, 255, 0.4);
