@@ -457,7 +457,7 @@ a:hover {
     border-radius: 2px;
     /* font-weight: 700; */
     display: inline-flex;
-    overflow: scroll;
+    overflow: auto;
     font-family: 'Menlo', 'Consolas', 'Inconsolata', monospace;
 }
 
