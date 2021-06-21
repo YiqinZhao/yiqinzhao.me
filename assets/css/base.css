@@ -152,13 +152,13 @@ div.encrypted {
 
 @media (min-width: 320px) {
     body {
-        grid-template-columns: 20px 1fr 20px;
+        grid-template-columns: 20px minmax(0, 1fr) 20px;
     }
 }
 
 @media (min-width: 768px) {
     body {
-        grid-template-columns: 20px 1fr 20px;
+        grid-template-columns: 20px minmax(0, 1fr) 20px;
     }
 }
 
