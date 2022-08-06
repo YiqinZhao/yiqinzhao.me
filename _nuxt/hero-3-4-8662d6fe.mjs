@@ -1,0 +1,1 @@
+import{J as s}from"./entry-637e5fcf.mjs";var i=`${s()}assets/img/icons/email.svg`,t=`${s()}assets/img/icons/github.svg`,r=`${s()}assets/img/icons/twitter.svg`,m=`${s()}assets/img/icons/instagram.svg`,o=`${s()}assets/img/hero-3-4.jpg`;export{i as _,t as a,r as b,m as c,o as d};
