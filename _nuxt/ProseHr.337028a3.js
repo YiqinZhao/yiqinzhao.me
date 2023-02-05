@@ -1,1 +1,0 @@
-import{_ as r}from"./_plugin-vue_export-helper.c27b6911.js";import{a4 as e,a5 as o}from"./query.5d7015b2.js";const c={};function t(a,n){return e(),o("hr")}const f=r(c,[["render",t]]);export{f as default};
