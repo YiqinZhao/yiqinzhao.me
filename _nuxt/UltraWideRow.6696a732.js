@@ -1,1 +1,0 @@
-import{r as o}from"./slot.6250570b.js";import{_ as r}from"./_plugin-vue_export-helper.c27b6911.js";import{o as t,c as s,a}from"./entry.79aee30d.js";import"./node.e4a9c3bc.js";const c={},l={class:"xl:w-[175%] xl:ml-[-37.5%]"};function n(e,d){return t(),s("div",null,[a("div",l,[o(e.$slots,"default",{unwrap:"p"})])])}const p=r(c,[["render",n]]);export{p as default};
