@@ -1,0 +1,1 @@
+import{_ as a}from"./DlAUqK2U.js";import{c as o,o as s,a as t,y as r}from"./DA4o9k_R.js";const c={},n={class:"xl:w-[175%] xl:ml-[-37.5%]"};function l(e,_){return s(),o("div",null,[t("div",n,[r(e.$slots,"default",{unwrap:"p"})])])}const f=Object.assign(a(c,[["render",l]]),{__name:"UltraWideRow"});export{f as default};
