@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Redirecting…</title>
+<meta http-equiv="refresh" content="0; url=https://yiqinzhao.phd">
+<script>
+(function() {
+  // Current path + query + hash
+  var newUrl = "https://yiqinzhao.phd" + window.location.pathname + window.location.search + window.location.hash;
+  window.location.replace(newUrl);
+})();
+</script>
+<noscript>
+  <meta http-equiv="refresh" content="0; url=https://yiqinzhao.phd">
+</noscript>
+</head>
+<body>
+  <p>If you are not redirected, <a id="redirect-link" href="#">click here</a>.</p>
+  <script>
+    document.getElementById('redirect-link').href =
+      "https://yiqinzhao.phd" + window.location.pathname + window.location.search + window.location.hash;
+  </script>
+</body>
+</html>
+
